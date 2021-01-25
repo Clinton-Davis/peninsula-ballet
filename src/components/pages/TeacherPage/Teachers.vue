@@ -1,14 +1,27 @@
 <template>
   <section id="teachers__Section">
     <div class="teachers__Img" :style="teachersImg">
-      <div class="cardContainer"></div>
+      <div class="cardContainer">
+        <TeacherCard
+          v-for="teacher in teachers"
+          :key="teacher.id"
+          :teacher-name="teacher.name"
+          :img-src="teacher.img"
+          :tag-line="teacher.tag"
+          :sort-desc="teacher.snip"
+          :heading="teacher.heading"
+          :bio="teacher.bio"
+        />
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+import TeacherCard from "../TeacherPage/TeacherCard.vue";
+
 export default {
-  components: {},
+  components: { TeacherCard },
   data() {
     return {
       teachers: [

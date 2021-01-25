@@ -8,7 +8,7 @@ import Attire from "./components/pages/Attire.vue";
 import Covid from "./components/pages/Covid.vue";
 import Enrolment from "./components/pages/Enrolment.vue";
 import Studios from "./components/pages/Studios.vue";
-import Teachers from "./components/pages/TeacherPages/Teachers.vue";
+import Teachers from "./components/pages/TeacherPage/Teachers.vue";
 
 const router = createRouter({
   history: createWebHistory(),
