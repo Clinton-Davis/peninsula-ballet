@@ -248,8 +248,8 @@ export default {
   box-shadow: 1px 20px 25px rgba(0, 0, 0, 0.3);
   background-image: linear-gradient(
     to bottom right,
-    rgba(150, 236, 225, 0.4),
-    rgba(100, 115, 156, 0.493)
+    rgba(150, 236, 225, 0.5),
+    rgba(100, 115, 156, 0.6)
   );
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -257,9 +257,6 @@ export default {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
 }
-/* .schedule__info {
-  margin: 0 1rem 1rem 1rem;
-} */
 .schedule__tables {
   display: flex;
   flex-direction: column;
@@ -275,7 +272,8 @@ h2 {
 }
 table {
   color: black;
-  border: 1px solid lightskyblue;
+  border: 1px solid rgb(135, 206, 250);
+  background-color: rgba(209, 231, 245, 0.795);
   margin: 0.5rem 0;
   padding: 15px;
   border-radius: 10px;

@@ -61,14 +61,14 @@ dialog {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 0;
   margin: 0;
-  animation: teachermodal 0.7s ease-out forwards;
+  animation: teachermodal 0.6s ease-out forwards;
 }
 .modal-enter-active {
-  animation: teachermodal 0.8s ease-out;
+  animation: teachermodal 0.6s ease-out;
 }
 
 .modal-leave-active {
-  animation: teachermodal 0.8s ease-in reverse;
+  animation: teachermodal 0.6s ease-in reverse;
 }
 
 @keyframes teachermodal {

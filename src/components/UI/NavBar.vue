@@ -1,5 +1,16 @@
 <template>
-  <nav>
+  <nav
+    :class="{
+      welcome_colors: welcomePage,
+      teachers_colors: teachersPage,
+      schedule_colors: schedulePage,
+      covid_colors: covidPage,
+      enrolment_colors: enrolmentPage,
+      studio_colors: studiosPage,
+      eventlist_colors: eventlistPage,
+      attire_colors: attirePage,
+    }"
+  >
     <div class="logo">
       <h1 class="" title="Back to Welcome Page">
         <router-link to="/welcome">Peninsula Ballet</router-link>
@@ -33,7 +44,50 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      welcomePage: false,
+      teachersPage: false,
+      schedulePage: false,
+      covidPage: false,
+      enrolmentPage: false,
+      studiosPage: false,
+      eventlistPage: false,
+      attirePage: false,
+    };
+  },
+  watch: {
+    $route(page) {
+      this.changeNavColor(page.name);
+    },
+  },
+  methods: {
+    changeNavColor(page) {
+      if (page === "welcome") {
+        this.welcomePage = true;
+      } else if (page === "teachers") {
+        this.teachersPage = true;
+      } else if (page === "schedule") {
+        this.schedulePage = true;
+      } else if (page === "covid") {
+        this.covidPage = true;
+      } else if (page === "enrolment") {
+        this.enrolmentPage = true;
+      } else if (page === "studios") {
+        this.schedulePage = true;
+      } else if (page === "eventlist") {
+        this.eventlistPage = true;
+      } else {
+        this.attirePage = true;
+      }
+      console.log(this.welcomePage);
+      console.log(this.teachersPage);
+      console.log(this.schedulePage);
+      console.log(this.covidPage);
+    },
+  },
+};
 </script>
 
 <style scoped>
