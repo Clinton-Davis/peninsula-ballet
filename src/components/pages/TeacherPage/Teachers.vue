@@ -32,8 +32,7 @@ export default {
             "https://res.cloudinary.com/peninsulaballet/image/upload/v1611085133/web_pages/tracy500x500_wpapsg.png",
           tag: "Co-Owner",
           snip: "The Royal Academy of Dance registered teacher",
-          heading:
-            "I am a co-owner and teacher at The Peninsula Ballet School.",
+          heading: "Co-owner and teacher at The Peninsula Ballet School.",
           bio:
             "I have always wanted to teach ballet and started teacher training after matriculating, and have been teaching for 30 years.\
               I received my teacher's certificate and did further exams on anatomy and child psychology and development for my Teachers Diploma.\
@@ -50,7 +49,7 @@ export default {
             "https://res.cloudinary.com/peninsulaballet/image/upload/v1611085426/web_pages/Leilani500x500_yhlcjo.png",
           tag: "Co-Owner",
           snip: "The Royal Academy of Dance registered teacher",
-          heading: "I teach RAD ballet and Alianza flamenco.",
+          heading: "Co-owner and teacher at The Peninsula Ballet School.",
           bio:
             "I have taught ballet for 13 years (2006-2019), and have in this past year begun teaching flamenco.\
               In my personal capacity I have produced Resurrection (2015-2017) and Creation and the Cornerstone (2018).\
@@ -69,12 +68,13 @@ export default {
           snip: "A Dance Legend - Royal Academy of Dance",
           heading: "A Brief History",
           bio:
-            "In 1975, Sandra Davis started the Peninsula Ballet School in Fish Hoek, she was a teaching member of The Royal Academy of Dance.\
-                  She did many shows through the years and entered many R.A.D examinations, her studio was well known.\
-                  In 1990 Tracy, Sandy's daughter teamed up with her and they taught together for many years until Sandra sadly passed away.\
-                  In 1999 Tracy took over the studio.\
-                  Leilani also opened a Ballet Studio in Fish Hoek, - The Leilani Beer School of Ballet.\
-                  In 2011, Tracy and Leilani joined their respective studios and co-founded The Peninsula Ballet School.",
+            "In 1975, Sandra Davis started the Sandra Davis Ballet School in Fish Hoek, she was a teaching member of The Royal Academy of Dance.\
+              The ballet school put on many shows through the years and entered many R.A.D examinations, the studio was well known.\
+              In 1990 Tracy Chaston, (Tracy Davis at the time) Sandy's daughter teamed up and they taught together for many years until Sandra sadly passed away.\
+              In 1999 Tracy took over the studio.\
+              Leilani Beer, also a student of Sandra Ballet, opened her Ballet Studio in Fish Hoek, - The Leilani Beer School of Ballet.\
+              In 2011, Tracy and Leilani joined their respective studios and co-founded The Peninsula Ballet School.\
+              The Peninsula Ballet has been going from strength to strength and now teaches Ballet (RAD) and flamenco, with studios in Fish hoek, Muizenberg and kommetjie.",
         },
       ],
       teachersImg: {
