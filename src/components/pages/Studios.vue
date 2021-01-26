@@ -11,7 +11,12 @@
           </h4>
         </div>
         <div class="studio__card-wrapper">
-          <div v-for="studio in studios" :key="studio.id" class="studio__card">
+          <div
+            v-for="studio in studios"
+            :key="studio.id"
+            class="studio__card"
+            title="Go to Google Maps"
+          >
             <a :href="studio.link" target="_blank" rel="noopener noreferrer">
               <h2>{{ studio.name }}</h2>
               <p>{{ studio.address }}</p>

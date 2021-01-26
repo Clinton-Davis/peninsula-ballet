@@ -275,10 +275,13 @@ h2 {
 }
 table {
   color: black;
-  border: 1px solid black;
+  border: 1px solid lightskyblue;
   margin: 0.5rem 0;
-  padding: 5px;
+  padding: 15px;
   border-radius: 10px;
+  box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
+    0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
+  border-radius: 20px;
 }
 th {
   float: left;
