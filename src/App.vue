@@ -1,7 +1,11 @@
 <template>
   <NavBar />
   <main>
-    <router-view></router-view>
+    <router-view v-slot="slotProps">
+      <transition name="route" mode="out-in">
+        <component :is="slotProps.Component"></component>
+      </transition>
+    </router-view>
   </main>
   <Footer />
 </template>
@@ -472,6 +476,7 @@ html {
   min-height: 100vh;
   height: fit-content;
   font-size: 1rem;
+  background-color: var(--black);
 }
 body {
   font-family: var(--Roboto);
@@ -484,6 +489,32 @@ body {
 }
 .vert-aline {
   vertical-align: bottom;
+}
+.route-enter-from {
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.route-enter-active {
+  transition: all 0.5s ease-out;
+}
+
+.route-enter-to {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.route-leave-from {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.route-leave-active {
+  transition: all 0.5s ease-in;
+}
+.route-leave-to {
+  opacity: 0;
+  transform: scale(0.1);
 }
 @media screen and (max-width: 400px) {
   html {
