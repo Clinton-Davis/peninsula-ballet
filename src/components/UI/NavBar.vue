@@ -54,7 +54,7 @@ nav {
 }
 
 .logo h1 {
-  font-size: 2em;
+  font-size: 1.7em;
   cursor: pointer;
   /* color: #0000ff; */
 }
@@ -77,14 +77,16 @@ a {
   text-decoration: none;
   color: inherit;
   background-color: transparent;
-  padding: 2px 5px;
-  border-radius: 20px;
+  padding: 0.5rem 1.125rem;
+  border-radius: 50%;
 }
 
 a:hover,
 a:active,
 a.router-link-active {
   background-color: rgba(160, 160, 160, 0.2);
+  box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.3),
+    0px 2px 21px -1px rgba(0, 0, 0, 0.3) inset;
 }
 .burger {
   display: none;
