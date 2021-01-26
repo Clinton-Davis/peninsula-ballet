@@ -1,19 +1,22 @@
 <template>
   <section id="eventList__Section">
     <div class="eventList__Img" :style="eventsImg">
-      <!-- <EventCard
+      <EventCard
         v-for="event in balletEvents"
         :key="event.id"
         :name="event.name"
         :desc="event.desc"
         :id="event.id"
-      /> -->
+      />
     </div>
   </section>
 </template>
 
 <script>
+import EventCard from "./EventCard.vue";
+
 export default {
+  components: { EventCard },
   data() {
     return {
       balletEvents: [
