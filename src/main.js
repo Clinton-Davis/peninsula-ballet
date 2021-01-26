@@ -22,7 +22,7 @@ const router = createRouter({
     { path: "/enrolment", component: Enrolment },
     { path: "/studios", component: Studios },
     { path: "/eventlist", component: EventList },
-    { path: "/eventlist/:eventId", component: TheEvent },
+    { path: "/eventlist/:eventId", component: TheEvent, props: true },
     { path: "/attire", component: Attire },
   ],
 });

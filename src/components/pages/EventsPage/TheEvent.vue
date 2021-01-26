@@ -26,7 +26,8 @@ import TheGallery from "./TheGallery";
 import TheVideo from "./TheVideo";
 export default {
   components: { TheGallery, TheVideo },
-  props: ["eventPhotos", "balletEvents"],
+  inject: ["eventPhotos", "balletEvents"],
+  props: ["eventId"],
   data() {
     return {
       button: "Show Picture Gallery",
@@ -42,27 +43,44 @@ export default {
       },
     };
   },
-  created() {
-    const eventId = this.$route.params.eventId;
-    const selectedballetEvents = this.balletEvents.find(
-      (balletEvent) => balletEvent.id === eventId
-    );
-    const imageIds = selectedballetEvents.imageIds;
-    const selectedImages = [];
-    for (const image of imageIds) {
-      const selectedeventPhotos = this.eventPhotos.find(
-        (eventPhoto) => eventPhoto.id === image
+  methods: {
+    loadBalletEvents(eventId) {
+      const selectedballetEvents = this.balletEvents.find(
+        (balletEvent) => balletEvent.id === eventId
       );
-      selectedImages.push(selectedeventPhotos);
-    }
-    this.images = selectedImages;
-    this.balletEventName = selectedballetEvents.name;
-    this.balletEventDesc = selectedballetEvents.desc;
-    this.balletEventVideo = selectedballetEvents.video;
-    this.hasVideo = selectedballetEvents.hasVideo;
-    this.btnIsActive = this.hasVideo;
-    this.showImages = !this.hasVideo;
-    console.log(this.images);
+      const imageIds = selectedballetEvents.imageIds;
+      const selectedImages = [];
+      for (const image of imageIds) {
+        const selectedeventPhotos = this.eventPhotos.find(
+          (eventPhoto) => eventPhoto.id === image
+        );
+        selectedImages.push(selectedeventPhotos);
+      }
+      this.images = selectedImages;
+      this.balletEventName = selectedballetEvents.name;
+      this.balletEventDesc = selectedballetEvents.desc;
+      this.balletEventVideo = selectedballetEvents.video;
+      this.hasVideo = selectedballetEvents.hasVideo;
+      this.btnIsActive = this.hasVideo;
+      this.showImages = !this.hasVideo;
+    },
+    changeView() {
+      this.showImages = !this.showImages;
+      this.hasVideo = !this.hasVideo;
+      if (this.showImages === true) {
+        this.button = "Show Video";
+      } else {
+        this.button = "Show Picture Gallery";
+      }
+    },
+  },
+  created() {
+    this.loadBalletEvents(this.eventId);
+  },
+  watch: {
+    eventId(newId) {
+      this.loadBalletEvents(newId);
+    },
   },
 };
 </script>
