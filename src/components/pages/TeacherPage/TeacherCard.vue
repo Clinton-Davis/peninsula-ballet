@@ -70,9 +70,9 @@ export default {
   margin: 2em;
   width: 230px;
   height: 425px;
-  box-shadow: 1px 20px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
+    0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
   border-radius: 30px;
-  border: 2.2px rgb(117, 115, 115) solid;
   background-color: rgba(223, 223, 223, 0.9);
   transition: all 0.2s ease-in-out;
   border-radius: 20px;

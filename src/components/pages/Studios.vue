@@ -1,7 +1,25 @@
 <template>
   <section id="studio__Section">
     <div class="studio__Img" :style="studioImg">
-      <div class="studio__wrapper"></div>
+      <div class="studio__InfoBlock">
+        <div class="studio__InfoBlock-heading">
+          <h1>Studios</h1>
+          <h4>
+            Due to Covid-19, some classes are available online.<br />
+            Fish Hoek and Kommetjie studios are open.<br />
+            Before arriving please be fimila with the
+          </h4>
+        </div>
+        <div class="studio__card-wrapper">
+          <div v-for="studio in studios" :key="studio.id" class="studio__card">
+            <a :href="studio.link" target="_blank" rel="noopener noreferrer">
+              <h2>{{ studio.name }}</h2>
+              <p>{{ studio.address }}</p>
+              <img :src="studio.mapImage" alt="Map image" />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -10,6 +28,24 @@
 export default {
   data() {
     return {
+      studios: [
+        {
+          id: 1,
+          name: "Fish Hoek",
+          address: "St Kirans Presbyerian church 7th Ave & Recreation Rd",
+          link: "https://bit.ly/2WksRlg",
+          mapImage:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/v1611660553/web_pages/fklongmap_vc2gws.png",
+        },
+        {
+          id: 2,
+          name: "Kommetjie",
+          address: "Wellness Centre in Ruby Rd",
+          link: "https://bit.ly/36fsM7e",
+          mapImage:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/v1611660553/web_pages/komLonMap_iryfas.png",
+        },
+      ],
       studioImg: {
         backgroundImage: `url(${require("@/assets/images/dancer_on_rock-min.jpg")})`,
       },
@@ -29,85 +65,108 @@ export default {
 .studio__Img {
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   background-size: cover;
   background-position: top;
   position: relative;
 }
-.studio__wrapper {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.studio__InfoBlock {
+  display: flex;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  flex-direction: column;
+  height: fit-content;
+  min-height: calc(100vh + 10vh);
+
   margin-left: auto;
-  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.404);
+}
+.studio__InfoBlock-heading {
+  position: relative;
+  top: 10vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem auto 6rem auto;
+  width: 100%;
+}
+.studio__card-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+.studio__card {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  height: fit-content;
+  min-height: 16rem;
+  margin: 1rem;
   max-width: 50%;
   position: relative;
-  box-shadow: 1px 20px 25px rgba(0, 0, 0, 0.3);
-  background-image: linear-gradient(
-    to bottom right,
-    rgba(150, 236, 225, 0.4),
-    rgba(100, 115, 156, 0.493)
-  );
+  box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
+    0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+  transition: all 0.3s ease;
 }
-.studio__tables {
+h1,
+h2,
+h4,
+p,
+a {
+  text-align: center;
+  padding: 0.4rem;
+}
+a {
+  width: 100%;
+  min-height: 16rem;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
   display: flex;
   flex-direction: column;
-  width: 20rem;
-  margin: 0.25rem;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.float_left {
-  margin-left: auto;
+h1 {
+  font-size: 5rem;
+  font-family: var(--Italianno);
 }
-/* .studio__tables {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  row-gap: 0.5rem;
-  column-gap: 0.5rem;
-  padding: 2rem 0rem;
-  width: 85%;
-  margin: auto;
-} */
-table {
-  color: white;
-  border: 1px solid white;
-  margin: 0.5rem 0;
-  padding: 5px;
-  border-radius: 10px;
+h2 {
+  font-size: 2rem;
 }
-th {
-  float: left;
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-  font-weight: 600;
+p {
+  font-size: 1.1rem;
 }
-.tRight {
-  float: right;
-  font-size: 1.1em;
+.studio__card:hover,
+.studio__card:active {
+  transform: scale(1.1);
+}
+img {
+  width: 98%;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 20px;
 }
 @media screen and (max-width: 880px) {
-  .studio__wrapper {
+  .studio__card {
     margin: 2rem auto 2rem auto;
     max-width: 80%;
   }
 }
 @media screen and (max-width: 400px) {
-  .studio__wrapper {
+  .studio__card {
     padding: 0.2rem;
     max-width: 98%;
-  }
-  .studio__tables {
-    width: 24rem;
-  }
-  td {
-    font-size: 1.3em;
-  }
-  .tRight {
-    font-size: 1.4em;
+    box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 1),
+      0px 2px 21px -1px rgba(0, 0, 0, 1) inset;
+    border: 1px solid rgb(26, 26, 26);
   }
 }
 </style>
