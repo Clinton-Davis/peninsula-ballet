@@ -108,7 +108,6 @@ export default {
           ],
         },
       ],
-
       eventPhotos: [
         {
           id: "b1",

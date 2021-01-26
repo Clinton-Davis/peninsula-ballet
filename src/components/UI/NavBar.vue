@@ -23,6 +23,9 @@
         <router-link to="/studios">Studios</router-link>
       </li>
       <li>
+        <router-link to="/eventlist">Events</router-link>
+      </li>
+      <li>
         <router-link to="/attire">Attire</router-link>
       </li>
     </ul>

@@ -72,7 +72,6 @@ export default {
 }
 .studio__InfoBlock {
   display: flex;
-  /* justify-content: space-evenly; */
   align-items: center;
   flex-direction: column;
   height: fit-content;
