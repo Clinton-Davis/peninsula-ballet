@@ -3,7 +3,6 @@
   <div class="card">
     <h1 class="text-Shadow-Black">{{ name }}</h1>
     <p>{{ desc }}</p>
-    <img src="" alt="" />
     <small id="open">Click To Open</small>
   </div>
   <!-- </router-link> -->
