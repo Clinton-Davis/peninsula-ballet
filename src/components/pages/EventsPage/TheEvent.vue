@@ -26,11 +26,43 @@ import TheGallery from "./TheGallery";
 import TheVideo from "./TheVideo";
 export default {
   components: { TheGallery, TheVideo },
+  props: ["eventPhotos", "balletEvents"],
   data() {
     return {
+      button: "Show Picture Gallery",
+      balletEventName: "",
+      balletEventDesc: "",
+      balletEventVideo: "",
+      images: [],
+      btnIsActive: false,
       showImages: false,
-      eventsImg: {},
+      hasVideo: false,
+      eventsImg: {
+        backgroundImage: `url(${require("@/assets/images/rob-laughter-dark.jpg")})`,
+      },
     };
+  },
+  created() {
+    const eventId = this.$route.params.eventId;
+    const selectedballetEvents = this.balletEvents.find(
+      (balletEvent) => balletEvent.id === eventId
+    );
+    const imageIds = selectedballetEvents.imageIds;
+    const selectedImages = [];
+    for (const image of imageIds) {
+      const selectedeventPhotos = this.eventPhotos.find(
+        (eventPhoto) => eventPhoto.id === image
+      );
+      selectedImages.push(selectedeventPhotos);
+    }
+    this.images = selectedImages;
+    this.balletEventName = selectedballetEvents.name;
+    this.balletEventDesc = selectedballetEvents.desc;
+    this.balletEventVideo = selectedballetEvents.video;
+    this.hasVideo = selectedballetEvents.hasVideo;
+    this.btnIsActive = this.hasVideo;
+    this.showImages = !this.hasVideo;
+    console.log(this.images);
   },
 };
 </script>

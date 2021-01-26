@@ -442,6 +442,12 @@ export default {
       },
     };
   },
+  provide() {
+    return {
+      balletEvents: this.balletEvents,
+      eventPhotos: this.eventPhotos,
+    };
+  },
 };
 </script>
 <style scoped>

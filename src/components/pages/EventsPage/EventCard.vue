@@ -1,21 +1,21 @@
 <template>
-  <!-- <router-link :to="eventlistLink"> -->
-  <div class="card">
-    <h1 class="text-Shadow-Black">{{ name }}</h1>
-    <p>{{ desc }}</p>
-    <small id="open">Click To Open</small>
-  </div>
-  <!-- </router-link> -->
+  <router-link :to="eventlistLink">
+    <div class="card">
+      <h1 class="text-Shadow-Black">{{ name }}</h1>
+      <p>{{ desc }}</p>
+      <small id="open">Click To Open</small>
+    </div>
+  </router-link>
 </template>
 
 <script>
 export default {
   props: ["id", "name", "desc", "image"],
-  //   computed: {
-  //     eventlistLink() {
-  //       return "/eventlist/" + this.id;
-  //     },
-  //   },
+  computed: {
+    eventlistLink() {
+      return "/eventlist/" + this.id;
+    },
+  },
 };
 </script>
 <style scoped>

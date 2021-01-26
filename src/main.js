@@ -10,6 +10,7 @@ import Enrolment from "./components/pages/Enrolment.vue";
 import Studios from "./components/pages/Studios.vue";
 import Teachers from "./components/pages/TeacherPage/Teachers.vue";
 import EventList from "./components/pages/EventsPage/EventList.vue";
+import TheEvent from "./components/pages/EventsPage/TheEvent.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -21,6 +22,7 @@ const router = createRouter({
     { path: "/enrolment", component: Enrolment },
     { path: "/studios", component: Studios },
     { path: "/eventlist", component: EventList },
+    { path: "/eventlist/:eventId", component: TheEvent },
     { path: "/attire", component: Attire },
   ],
 });
