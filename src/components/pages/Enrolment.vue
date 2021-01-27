@@ -225,7 +225,8 @@
             />
           </div>
           <br />
-          <input type="submit" value="Send" />
+          <input id="formBtn" type="submit" value="Send" />
+          <!-- <input id="formBtn" /> -->
         </form>
       </div>
     </div>
@@ -345,6 +346,12 @@ input {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+}
+#formBtn {
+  transition: all 0.1s linear;
+}
+#formBtn:active {
+  transform: scale(0.9);
 }
 .text {
   text-transform: capitalize;
