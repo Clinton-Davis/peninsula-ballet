@@ -199,6 +199,7 @@ p {
 }
 @media screen and (max-width: 400px) {
   .attire__wrapper {
+    margin-top: 4rem;
     padding: 0.2rem;
     max-width: 98%;
     background-image: linear-gradient(
