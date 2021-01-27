@@ -120,9 +120,4 @@ export default {
     top: 10vh;
   }
 }
-/* @media screen and (max-height: 600px) {
-  #teachers__Section {
-    height: 117vh;
-  }
-} */
 </style>
