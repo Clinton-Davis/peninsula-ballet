@@ -5,20 +5,32 @@
         <!--Form goes here-->
         <form class="contact-form" v-if="!success" @submit.prevent="sendEmail">
           <input
+            class="text"
             type="text"
             name="first_name"
+            minlength="3"
             placeholder="First Name*"
-            v-model="firstName"
+            v-model.trim="firstName"
+            required
           />
 
           <input
+            class="text"
             type="text"
             name="last_name"
+            minlength="3"
             placeholder="Surname*"
-            v-model="lastName"
+            v-model.trim="lastName"
+            required
           />
 
-          <input type="email" name="from_email" placeholder="Email*" />
+          <input
+            class="email"
+            type="email"
+            name="from_email"
+            placeholder="Email*"
+            required
+          />
 
           <!-- Date of Birth -->
           <div id="dobWrapper">
@@ -30,6 +42,7 @@
                 minlength="2"
                 maxlength="2"
                 placeholder="Day"
+                required
               />
             </div>
             &nbsp;/&nbsp;
@@ -40,6 +53,7 @@
                 minlength="2"
                 maxlength="2"
                 placeholder="Mth"
+                required
               />
             </div>
             &nbsp;/&nbsp;
@@ -51,6 +65,7 @@
                 maxlength="4"
                 placeholder="Year"
                 v-model="year"
+                required
               />
             </div>
           </div>
@@ -64,28 +79,35 @@
           />
           <input
             v-if="!isLegal"
+            class="text"
             type="text"
-            name="first_name"
+            name="guardian_name"
+            minlength="6"
             placeholder="Parent/Guardian Full Name*"
-            v-model="parent"
+            v-model.trim="guardian"
+            required
           />
           <input
             type="tel"
             name="contact_number"
-            placeholder="Contact Phone Number*"
-            v-model="contactNumber"
+            minlength="5"
+            placeholder="Contact Number*"
+            v-model.trim="contactNumber"
+            required
           />
           <input
             type="tel"
             name="emergency_number"
-            placeholder="Emergency Contact Phone Number*"
-            v-model="emergencyNumber"
+            minlength="5"
+            placeholder="Emergency Contact Number*"
+            v-model.trim="emergencyNumber"
           />
           <textarea
             name="issues"
+            minlength="2"
             rows="3"
             col="4"
-            placeholder="Emotional Or Physical Limitations/Injurys. (This information will be keep in conferdance)"
+            placeholder="Emotional Or Physical Limitations/Injurys. (Keep in conferdance)"
           ></textarea>
           <div class="termanconditons">
             <h2>
@@ -108,8 +130,8 @@
                 CASH payments are accepted.
               </li>
               <li>
-                A written term's notice is required to terminate classes, or a
-                term's fees will be charged in lieu thereof.
+                A written term's notice is to terminate classes, or a term's
+                fees will be charged in lieu thereof.
               </li>
               <li>
                 Regular and committed attendance is encouraged, and is important
@@ -159,7 +181,7 @@
           <div class="checkBox" v-if="!isLegal">
             <input type="checkbox" value="" id="balletFeesBox" required />
             <label class="" for="balletFeesBox">
-              I <span>{{ parent }}</span> will be responsible for settling
+              I <span>{{ guardian }}</span> will be responsible for settling
               <span>{{ firstName }} {{ lastName }}</span
               >'s Ballet fees.
             </label>
@@ -199,17 +221,13 @@
               name="notBot"
               class="inputStyle"
               placeholder="Check to see if you are a human"
+              required
             />
           </div>
           <br />
-          <input type="submit" value="Send" />
+          <input id="formBtn" type="submit" value="Send" />
+          <!-- <input id="formBtn" /> -->
         </form>
-        <div class="messages" v-if="status === 200">
-          <h1>Thank you</h1>
-          <p>Your enrollment form was successfully send.</p>
-          <p>The teachers will getback to you soon.</p>
-          <p>Best Regards</p>
-        </div>
       </div>
     </div>
   </section>
@@ -220,15 +238,16 @@ import emailjs from "emailjs-com";
 export default {
   data() {
     return {
-      parent: "Parent/Guardian*",
-      firstName: "Student*",
-      contactNumber: "Contact Phone Number*",
-      emergencyNumber: "Emergency Contact Phone Number*",
+      firstName: "",
       lastName: "",
+      guardian: "",
+      contactNumber: "",
+      emergencyNumber: "",
       year: "",
       age: "",
       isLegal: false,
-      success: false,
+      firstnameVality: "pending",
+
       enrollImg: {
         backgroundImage: `url(${require("@/assets/images/little_dancerD.jpg")})`,
       },
@@ -236,17 +255,7 @@ export default {
   },
   watch: {
     year() {
-      const year = new Date();
-      const thisYear = year.getFullYear();
-      const birthYear = this.year;
-      let age = thisYear - birthYear;
-      this.age = age;
-      if (age < 19) {
-        this.isLegal = false;
-      } else {
-        this.isLegal = true;
-      }
-      console.log(this.isLegal);
+      this.checkYear();
     },
     contactNumber() {
       this.emergencyNumber = this.contactNumber;
@@ -260,11 +269,24 @@ export default {
         .then(
           (result) => {
             console.log("SUCCESS!", result.status, result.text);
+            alert("Your enrollment request has been send.");
           },
           (error) => {
             console.log("FAILED...", error);
           }
         );
+    },
+    checkYear() {
+      const year = new Date();
+      const thisYear = year.getFullYear();
+      const birthYear = this.year;
+      let age = thisYear - birthYear;
+      this.age = age;
+      if (age < 19) {
+        this.isLegal = false;
+      } else {
+        this.isLegal = true;
+      }
     },
   },
 };
@@ -325,7 +347,18 @@ input {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
-
+#formBtn {
+  transition: all 0.1s linear;
+}
+#formBtn:active {
+  transform: scale(0.9);
+}
+.text {
+  text-transform: capitalize;
+}
+.email {
+  text-transform: lowercase;
+}
 textarea {
   background-color: rgb(247, 224, 236);
   margin: 0.5rem;

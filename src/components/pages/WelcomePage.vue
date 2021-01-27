@@ -201,11 +201,17 @@ a:active {
 @media screen and (max-width: 400px) {
   .welcome__Wrap {
     margin: 0.125rem;
+    /* margin-top: 3rem; */
   }
   #welcome__Section {
     display: flex;
     position: relative;
-    height: fit-content;
+    height: 100vh;
+  }
+}
+@media screen and (max-height: 600px) {
+  #welcome__Section {
+    height: 117vh;
   }
 }
 </style>

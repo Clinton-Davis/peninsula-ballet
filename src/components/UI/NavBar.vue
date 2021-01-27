@@ -16,7 +16,7 @@
         <router-link to="/welcome">Peninsula Ballet</router-link>
       </h1>
     </div>
-    <ul class="nav-links">
+    <ul class="nav-links" :class="{ nav_active: navActive }">
       <li>
         <router-link to="/teachers">Teachers</router-link>
       </li>
@@ -40,6 +40,47 @@
         <router-link to="/attire">Attire</router-link>
       </li>
     </ul>
+    <div class="burger" @click="bugerClick">
+      <div
+        class="line line1"
+        :class="{
+          welcome_burger: welcomePage,
+          teachers_burger: teachersPage,
+          schedule_burger: schedulePage,
+          covid_burger: covidPage,
+          enrolment_burger: enrolmentPage,
+          studio_burger: studiosPage,
+          eventlist_burger: eventlistPage,
+          attire_burger: attirePage,
+        }"
+      ></div>
+      <div
+        class="line line2"
+        :class="{
+          welcome_burger: welcomePage,
+          teachers_burger: teachersPage,
+          schedule_burger: schedulePage,
+          covid_burger: covidPage,
+          enrolment_burger: enrolmentPage,
+          studio_burger: studiosPage,
+          eventlist_burger: eventlistPage,
+          attire_burger: attirePage,
+        }"
+      ></div>
+      <div
+        class="line line3"
+        :class="{
+          welcome_burger: welcomePage,
+          teachers_burger: teachersPage,
+          schedule_burger: schedulePage,
+          covid_burger: covidPage,
+          enrolment_burger: enrolmentPage,
+          studio_burger: studiosPage,
+          eventlist_burger: eventlistPage,
+          attire_burger: attirePage,
+        }"
+      ></div>
+    </div>
   </nav>
 </template>
 
@@ -47,6 +88,8 @@
 export default {
   data() {
     return {
+      burgerActive: false,
+      navActive: false,
       welcomePage: false,
       teachersPage: false,
       schedulePage: false,
@@ -60,9 +103,29 @@ export default {
   watch: {
     $route(page) {
       this.changeNavColor(page.name);
+      this.closeBurger();
     },
   },
   methods: {
+    bugerClick() {
+      this.burgerActive = !this.burgerActive;
+      if (this.burgerActive === true) {
+        this.navActive = true;
+      } else {
+        this.burgerActive = false;
+        this.navActive = false;
+      }
+      console.log(this.burgerActive);
+    },
+    closeBurger() {
+      if (this.burgerActive === false) {
+        this.navActive = false;
+      } else {
+        this.burgerActive === true;
+        this.navActive = false;
+        this.burgerActive = false;
+      }
+    },
     changeNavColor(page) {
       if (page === "welcome") {
         this.welcomePage = true;
@@ -159,6 +222,86 @@ nav {
   -moz-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.6);
   transition: all 1s ease-in-out;
 }
+
+.logo h1 {
+  font-size: 1.7em;
+  cursor: pointer;
+  /* color: #0000ff; */
+}
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.nav-links li {
+  list-style: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.nav-links li:hover {
+  transform: scale(1.3);
+}
+a {
+  font-size: 1.85em;
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+  padding: 0.5rem 1.125rem;
+  border-radius: 50%;
+}
+
+a:hover,
+a:active,
+a.router-link-active {
+  background-color: rgba(160, 160, 160, 0.2);
+  box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.3),
+    0px 2px 21px -1px rgba(0, 0, 0, 0.3) inset;
+}
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.line {
+  width: 20px;
+  height: 2px;
+  background-color: var(--black);
+  margin: 5px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+/* #navBurgerBg {
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+} */
+
+.toggle .line1 {
+  transform: rotate(-405deg) translate(-5px, 5px);
+  -webkit-transform: rotate(-405deg) translate(-5px, 5px);
+  -moz-transform: rotate(-405deg) translate(-5px, 5px);
+  -ms-transform: rotate(-405deg) translate(-5px, 5px);
+  -o-transform: rotate(-405deg) translate(-5px, 5px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(405deg) translate(-5px, -5px);
+  -webkit-transform: rotate(405deg) translate(-5px, -5px);
+  -moz-transform: rotate(405deg) translate(-5px, -5px);
+  -ms-transform: rotate(405deg) translate(-5px, -5px);
+  -o-transform: rotate(405deg) translate(-5px, -5px);
+}
 .welcome_colors {
   background: #5e6f87; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -215,84 +358,16 @@ nav {
   text-shadow: 1px 1px black;
   color: white;
 }
-.logo h1 {
-  font-size: 1.7em;
-  cursor: pointer;
-  /* color: #0000ff; */
+.welcome_burger,
+.schedule_burger,
+.covid_burger,
+.enrolment_burger,
+.studio_burger,
+.attire_burger {
+  background-color: white;
 }
-.nav-links {
-  display: flex;
-  justify-content: space-around;
-  width: 70%;
-}
-
-.nav-links li {
-  list-style: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.nav-links li:hover {
-  transform: scale(1.3);
-}
-a {
-  font-size: 1.85em;
-  text-decoration: none;
-  color: inherit;
-  background-color: transparent;
-  padding: 0.5rem 1.125rem;
-  border-radius: 50%;
-}
-
-a:hover,
-a:active,
-a.router-link-active {
-  background-color: rgba(160, 160, 160, 0.2);
-  box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.3),
-    0px 2px 21px -1px rgba(0, 0, 0, 0.3) inset;
-}
-.burger {
-  display: none;
-  cursor: pointer;
-}
-
-.burger div {
-  width: 20px;
-  height: 2px;
-  background-color: var(--black);
-  margin: 5px;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-}
-
-/* #navBurgerBg {
-  transition: var(--transition);
-  -webkit-transition: var(--transition);
-  -moz-transition: var(--transition);
-  -ms-transition: var(--transition);
-  -o-transition: var(--transition);
-} */
-
-.toggle .line1 {
-  transform: rotate(-405deg) translate(-5px, 5px);
-  -webkit-transform: rotate(-405deg) translate(-5px, 5px);
-  -moz-transform: rotate(-405deg) translate(-5px, 5px);
-  -ms-transform: rotate(-405deg) translate(-5px, 5px);
-  -o-transform: rotate(-405deg) translate(-5px, 5px);
-}
-
-.toggle .line2 {
-  opacity: 0;
-}
-
-.toggle .line3 {
-  transform: rotate(405deg) translate(-5px, -5px);
-  -webkit-transform: rotate(405deg) translate(-5px, -5px);
-  -moz-transform: rotate(405deg) translate(-5px, -5px);
-  -ms-transform: rotate(405deg) translate(-5px, -5px);
-  -o-transform: rotate(405deg) translate(-5px, -5px);
+.eventlist_burger {
+  background-color: #f9d423;
 }
 
 /* BURGER ANIMATIONS */
@@ -304,8 +379,8 @@ a.router-link-active {
     position: absolute;
     right: 0px;
     height: 90vh;
-    top: 9vh;
-    background-color: var(--offwhite);
+    top: 10vh;
+    background-color: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -326,6 +401,18 @@ a.router-link-active {
   }
   .burger {
     display: block;
+  }
+  .welcome_colors {
+    background: #5e6f87;
+  }
+  .enrolment_colors {
+    background: #16151a;
+  }
+  .eventlist_colors {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  .attire_colors {
+    background: #221d1a;
   }
 }
 
