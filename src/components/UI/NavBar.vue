@@ -11,7 +11,7 @@
       attire_colors: attirePage,
     }"
   >
-    <div v-ripple class="logo">
+    <div class="logo">
       <h1 class="" title="Back to Welcome Page">
         <router-link to="/welcome">Peninsula Ballet</router-link>
       </h1>

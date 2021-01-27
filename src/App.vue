@@ -481,24 +481,7 @@ html {
 body {
   font-family: var(--Roboto);
 }
-/* .circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-color: rgba(212, 209, 209, 0.664);
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  animation: scale 0.5s ease-out;
-}
 
-@keyframes scale {
-  to {
-    transform: translate(-50%, -50%) scale(3);
-    opacity: 0;
-  }
-} */
 .text-Shadow-White {
   text-shadow: 1px 1px rgb(255, 254, 254);
 }
