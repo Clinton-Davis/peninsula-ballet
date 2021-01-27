@@ -2,9 +2,9 @@ import { createApp } from "vue";
 import { init } from "emailjs-com";
 import App from "./App.vue";
 import router from "./router";
-import Ripple from "vue-ripple-directive";
+
 init("user_3B9k5oVXE8HXYgesuRXAt");
 const app = createApp(App);
-app.directive("ripple", Ripple);
+
 app.use(router);
 app.mount("#app");

@@ -227,12 +227,6 @@
           <br />
           <input type="submit" value="Send" />
         </form>
-        <!-- <div class="messages" v-if="status === 200">
-          <h1>Thank you</h1>
-          <p>Your enrollment form was successfully send.</p>
-          <p>The teachers will getback to you soon.</p>
-          <p>Best Regards</p>
-        </div> -->
       </div>
     </div>
   </section>
