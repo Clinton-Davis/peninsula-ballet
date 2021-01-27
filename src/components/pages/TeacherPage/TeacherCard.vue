@@ -69,7 +69,7 @@ export default {
   max-width: 450px;
   margin: 2em;
   width: 230px;
-  height: 425px;
+  min-height: 454px;
   box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
     0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
   border-radius: 30px;
@@ -127,6 +127,9 @@ export default {
   #teacherBio {
     line-height: 1.35rem;
     font-size: 1.125rem;
+  }
+  .card {
+    min-height: 400px;
   }
 }
 </style>

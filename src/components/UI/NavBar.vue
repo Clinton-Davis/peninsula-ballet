@@ -215,7 +215,7 @@ nav {
   top: 0px;
   min-height: 10vh;
   min-width: 100%;
-  /* background-color: var(--offwhite); */
+
   z-index: 99;
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.6);
