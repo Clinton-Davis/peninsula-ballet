@@ -516,6 +516,20 @@ body {
   opacity: 0;
   transform: scale(0.1);
 }
+.nav-enter-from,
+.nav-leave-to {
+  opacity: 0;
+}
+.nav-enter-active {
+  transition: all 0.5s ease-out;
+}
+.nav-leave-active {
+  transition: all 0.5s ease-out;
+}
+.nav-enter-to,
+.nav-leave-from {
+  opacity: 1;
+}
 @media screen and (max-width: 400px) {
   html {
     font-size: 0.8rem;

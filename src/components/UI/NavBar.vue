@@ -1,5 +1,16 @@
 <template>
-  <nav>
+  <nav
+    :class="{
+      welcome_colors: welcomePage,
+      teachers_colors: teachersPage,
+      schedule_colors: schedulePage,
+      covid_colors: covidPage,
+      enrolment_colors: enrolmentPage,
+      studio_colors: studiosPage,
+      eventlist_colors: eventlistPage,
+      attire_colors: attirePage,
+    }"
+  >
     <div class="logo">
       <h1 class="" title="Back to Welcome Page">
         <router-link to="/welcome">Peninsula Ballet</router-link>
@@ -33,7 +44,102 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      welcomePage: false,
+      teachersPage: false,
+      schedulePage: false,
+      covidPage: false,
+      enrolmentPage: false,
+      studiosPage: false,
+      eventlistPage: false,
+      attirePage: false,
+    };
+  },
+  watch: {
+    $route(page) {
+      this.changeNavColor(page.name);
+    },
+  },
+  methods: {
+    changeNavColor(page) {
+      if (page === "welcome") {
+        this.welcomePage = true;
+        this.teachersPage = false;
+        this.schedulePage = false;
+        this.covidPage = false;
+        this.enrolmentPage = false;
+        this.studiosPage = false;
+        this.eventlistPage = false;
+        this.attirePage = false;
+      } else if (page === "teachers") {
+        this.teachersPage = true;
+        this.welcomePage = false;
+        this.schedulePage = false;
+        this.covidPage = false;
+        this.enrolmentPage = false;
+        this.studiosPage = false;
+        this.eventlistPage = false;
+        this.attirePage = false;
+      } else if (page === "schedule") {
+        this.schedulePage = true;
+        this.welcomePage = false;
+        this.teachersPage = false;
+        this.covidPage = false;
+        this.enrolmentPage = false;
+        this.studiosPage = false;
+        this.eventlistPage = false;
+        this.attirePage = false;
+      } else if (page === "covid") {
+        this.covidPage = true;
+        this.welcomePage = false;
+        this.teachersPage = false;
+        this.schedulePage = false;
+        this.enrolmentPage = false;
+        this.studiosPage = false;
+        this.eventlistPage = false;
+        this.attirePage = false;
+      } else if (page === "enrolment") {
+        this.enrolmentPage = true;
+        this.welcomePage = false;
+        this.teachersPage = false;
+        this.schedulePage = false;
+        this.covidPage = false;
+        this.studiosPage = false;
+        this.eventlistPage = false;
+        this.attirePage = false;
+      } else if (page === "studios") {
+        this.studiosPage = true;
+        this.schedulePage = false;
+        this.welcomePage = false;
+        this.teachersPage = false;
+        this.covidPage = false;
+        this.enrolmentPage = false;
+        this.eventlistPage = false;
+        this.attirePage = false;
+      } else if (page === "eventlist") {
+        this.eventlistPage = true;
+        this.welcomePage = false;
+        this.teachersPage = false;
+        this.schedulePage = false;
+        this.covidPage = false;
+        this.enrolmentPage = false;
+        this.studiosPage = false;
+        this.attirePage = false;
+      } else {
+        this.attirePage = true;
+        this.welcomePage = false;
+        this.teachersPage = false;
+        this.schedulePage = false;
+        this.covidPage = false;
+        this.enrolmentPage = false;
+        this.studiosPage = false;
+        this.eventlistPage = false;
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -46,13 +152,69 @@ nav {
   top: 0px;
   min-height: 10vh;
   min-width: 100%;
-  background-color: var(--offwhite);
+  /* background-color: var(--offwhite); */
   z-index: 99;
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.6);
+  transition: all 1s ease-in-out;
 }
-
+.welcome_colors {
+  background: #5e6f87; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #5e6f87,
+    #cfd5e3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5e6f87, #cfd5e3);
+  color: black;
+  text-shadow: 1px 1px rgba(255, 254, 254, 0.8);
+}
+.teachers_colors {
+  background-color: rgba(223, 223, 223, 0.9);
+  color: black;
+  text-shadow: 1px 1px rgba(255, 254, 254, 0.8);
+}
+.schedule_colors {
+  background-color: #6ea4b0;
+  color: white;
+  text-shadow: 1px 1px black;
+}
+.covid_colors {
+  background-color: #a484a2;
+  color: white;
+  text-shadow: 1px 1px black;
+}
+.enrolment_colors {
+  background: #16151a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #16151a,
+    #80686c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #16151a, #80686c);
+  color: white;
+}
+.studio_colors {
+  background-color: #ba9151;
+  color: white;
+  text-shadow: 1px 1px black;
+}
+.eventlist_colors {
+  background-color: transparent;
+  color: #f9d423;
+  text-shadow: 1px 1px rgba(255, 254, 254, 0.151);
+}
+.attire_colors {
+  background: #221d1a; /* fallback for old browsers */
+  background-image: linear-gradient(
+    to right,
+    rgba(153, 122, 104, 0.5),
+    rgba(231, 203, 203, 0.5)
+  );
+  text-shadow: 1px 1px black;
+  color: white;
+}
 .logo h1 {
   font-size: 1.7em;
   cursor: pointer;

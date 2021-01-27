@@ -19,7 +19,8 @@
           Male dancers will require a white t-shirt and black leggings.<br />
           All clothing items can be purchased from a dancewear Outlets, either
           in store or online, however you may prefer to buy in-person in order
-          to try different sizes first.
+          to try different sizes first. <br />
+          Facemasks and/or face shields
         </p>
 
         <h2 class="text-Shadow-Black">Ballet Shoes</h2>
@@ -145,6 +146,7 @@ a:hover {
 p {
   letter-spacing: 0.4px;
   line-height: 1.3rem;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 #attire__section {
