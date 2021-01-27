@@ -41,9 +41,45 @@
       </li>
     </ul>
     <div class="burger" @click="bugerClick">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
+      <div
+        class="line line1"
+        :class="{
+          welcome_burger: welcomePage,
+          teachers_burger: teachersPage,
+          schedule_burger: schedulePage,
+          covid_burger: covidPage,
+          enrolment_burger: enrolmentPage,
+          studio_burger: studiosPage,
+          eventlist_burger: eventlistPage,
+          attire_burger: attirePage,
+        }"
+      ></div>
+      <div
+        class="line line2"
+        :class="{
+          welcome_burger: welcomePage,
+          teachers_burger: teachersPage,
+          schedule_burger: schedulePage,
+          covid_burger: covidPage,
+          enrolment_burger: enrolmentPage,
+          studio_burger: studiosPage,
+          eventlist_burger: eventlistPage,
+          attire_burger: attirePage,
+        }"
+      ></div>
+      <div
+        class="line line3"
+        :class="{
+          welcome_burger: welcomePage,
+          teachers_burger: teachersPage,
+          schedule_burger: schedulePage,
+          covid_burger: covidPage,
+          enrolment_burger: enrolmentPage,
+          studio_burger: studiosPage,
+          eventlist_burger: eventlistPage,
+          attire_burger: attirePage,
+        }"
+      ></div>
     </div>
   </nav>
 </template>
@@ -227,7 +263,7 @@ a.router-link-active {
   cursor: pointer;
 }
 
-.burger div {
+.line {
   width: 20px;
   height: 2px;
   background-color: var(--black);
@@ -322,6 +358,18 @@ a.router-link-active {
   text-shadow: 1px 1px black;
   color: white;
 }
+.welcome_burger,
+.schedule_burger,
+.covid_burger,
+.enrolment_burger,
+.studio_burger,
+.attire_burger {
+  background-color: white;
+}
+.eventlist_burger {
+  background-color: #f9d423;
+}
+
 /* BURGER ANIMATIONS */
 @media screen and (max-width: 880px) {
   body {
