@@ -83,7 +83,7 @@ export default {
   min-height: calc(100vh + 10vh);
 
   margin-left: auto;
-  background-color: rgba(0, 0, 0, 0.404);
+  background-color: #6e563073;
 }
 .studio__InfoBlock-heading {
   position: relative;
@@ -113,6 +113,7 @@ export default {
   box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
     0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
   border-radius: 20px;
+  background-color: #ba9251a9;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
@@ -126,6 +127,7 @@ p,
 a {
   text-align: center;
   padding: 0.4rem;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
 a {
   width: 100%;
@@ -141,10 +143,12 @@ a {
 h1 {
   font-size: 5rem;
   font-family: var(--Italianno);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.8);
 }
 h2 {
   font-size: 2rem;
 }
+
 p {
   font-size: 1.1rem;
 }

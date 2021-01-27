@@ -28,14 +28,13 @@ export default {
   padding: 1rem;
   min-height: 30rem;
   height: fit-content;
-  width: 319px;
+  width: 400px;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   -webkit-box-shadow: inset 0px 0px 0px 10px rgb(221, 188, 3);
   -moz-box-shadow: inset 0px 0px 0px 10px gold;
   box-shadow: inset 0px 0px 10px 10px gold;
-
   border: 5px solid rgb(31, 3, 3);
   border-radius: 10px 10px 10px 10px;
 }
@@ -75,6 +74,7 @@ small {
     top: 10vh;
     min-height: 22rem;
     margin: 1rem auto;
+    width: 315px;
   }
 }
 </style>
