@@ -237,7 +237,6 @@ export default {
         this.studiosPage = false;
         this.eventlistPage = false;
       }
-      console.log(page);
     },
   },
   beforeUnmount() {

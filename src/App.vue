@@ -14,8 +14,9 @@
 <script>
 import NavBar from "./components/UI/NavBar.vue";
 import Footer from "./components/UI/Footer.vue";
-
+import windowScrollPosition from "./windowScrollPosition";
 export default {
+  mixins: [windowScrollPosition("position")],
   components: {
     NavBar,
     Footer,
@@ -23,6 +24,7 @@ export default {
   },
   data() {
     return {
+      windwPos: this.position[1],
       balletEvents: [
         {
           id: "Ballet_In_2020",
@@ -434,6 +436,11 @@ export default {
         },
       ],
     };
+  },
+  watch: {
+    windwPos() {
+      console.log(this.windwPos);
+    },
   },
   provide() {
     return {
