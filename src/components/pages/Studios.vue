@@ -7,7 +7,10 @@
           <h4>
             Due to Covid-19, some classes are available online.<br />
             Fish Hoek and Kommetjie studios are open.<br />
-            Before arriving please be fimila with the
+            Before arriving please familiarize with the <br />
+            <router-link id="covidLink" to="/covid"
+              >Covid Safty Regulations</router-link
+            >
           </h4>
         </div>
         <div class="studio__card-wrapper">
@@ -91,7 +94,7 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 2rem auto 6rem auto;
+  margin: 2rem auto 4rem auto;
   width: 100%;
 }
 .studio__card-wrapper {
@@ -139,6 +142,12 @@ a {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+#covidLink {
+  display: block;
+  padding: 0.4rem;
+  min-height: 1rem;
+  color: #ecbee9;
 }
 h1 {
   font-size: 5rem;

@@ -56,6 +56,7 @@
           enrolment_burger: enrolmentPage,
           studio_burger: studiosPage,
           eventlist_burger: eventlistPage,
+          theEvent_burger: theEventPage,
           attire_burger: attirePage,
         }"
       ></div>
@@ -69,6 +70,7 @@
           enrolment_burger: enrolmentPage,
           studio_burger: studiosPage,
           eventlist_burger: eventlistPage,
+          theEvent_burger: theEventPage,
           attire_burger: attirePage,
         }"
       ></div>
@@ -82,6 +84,7 @@
           enrolment_burger: enrolmentPage,
           studio_burger: studiosPage,
           eventlist_burger: eventlistPage,
+          theEvent_burger: theEventPage,
           attire_burger: attirePage,
         }"
       ></div>
@@ -407,7 +410,8 @@ a.router-link-active {
 .attire_burger {
   background-color: white;
 }
-.eventlist_burger {
+.eventlist_burger,
+.theEvent_burger {
   background-color: #f9d423;
 }
 

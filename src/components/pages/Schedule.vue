@@ -312,5 +312,8 @@ th {
   .tRight {
     font-size: 1.4em;
   }
+  h4 {
+    font-size: 1.3rem;
+  }
 }
 </style>
