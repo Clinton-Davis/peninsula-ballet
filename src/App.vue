@@ -452,7 +452,10 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Italianno&family=Raleway:ital,wght@0,300;0,400;1,300&display=swap");
+@font-face {
+  font-family: "Italianno";
+  src: local("Italianno"), url(./fonts/Italianno-Regular.ttf) format("truetype");
+}
 :root {
   --Italianno: "Italianno", sans-serif;
   --Roboto: "Roboto", sans-serif;
