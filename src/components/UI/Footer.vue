@@ -3,7 +3,7 @@
     <!-- <img id="logo" :src="require('@/assets/images/logo.jpg')" /> -->
     <div class="feet">CopyRight© 2020&nbsp;</div>
     <a
-      href="mailto:southpeninsulaballet@gmail.com?Subject=Contact From Website"
+      href="mailto:tracychaston@gmail.com?Subject=Contact From Website"
       class="feet"
       >Contact Us</a
     >
