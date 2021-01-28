@@ -24,6 +24,10 @@ export default {
   box-shadow: inset 0px 0px 10px 10px gold;
   border: 5px solid rgb(31, 3, 3);
   border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -ms-border-radius: 10px 10px 10px 10px;
+  -o-border-radius: 10px 10px 10px 10px;
 }
 video {
   width: 100%;

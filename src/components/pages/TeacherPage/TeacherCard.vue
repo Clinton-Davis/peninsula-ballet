@@ -72,7 +72,7 @@ export default {
   min-height: 454px;
   box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
     0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
-  border-radius: 30px;
+
   background-color: rgba(223, 223, 223, 0.9);
   transition: all 0.2s ease-in-out;
   border-radius: 20px;

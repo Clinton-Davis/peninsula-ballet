@@ -26,9 +26,10 @@ export default {
   background-color: rgba(14, 10, 10, 0.74);
   margin: 1rem;
   padding: 1rem;
-  min-height: 30rem;
+  min-height: 24rem;
   height: fit-content;
-  width: 400px;
+  min-width: 300px;
+  max-width: 400px;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;

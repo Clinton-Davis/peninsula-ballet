@@ -394,9 +394,9 @@ textarea {
   margin-left: auto;
   margin-right: auto;
 }
-#botCheck label {
+/* #botCheck label {
   margin-bottom: -1rem;
-}
+} */
 #botCheck img {
   margin-left: auto;
   margin-right: auto;

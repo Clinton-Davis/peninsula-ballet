@@ -1,5 +1,5 @@
 <template>
-  <section id="covid__section">
+  <section class="covid__section">
     <div class="covid__Image" :style="maskImage">
       <div class="covid__container">
         <div class="covid__content">
@@ -98,7 +98,7 @@ span {
   font-weight: bold;
 }
 .covid__section {
-  min-height: calc(100vh - 10vh);
+  min-height: 100vh;
   height: fit-content;
 }
 .covid__Image {
@@ -110,7 +110,6 @@ span {
 }
 
 .covid__container {
-  margin-top: 2rem;
   position: relative;
   display: flex;
   min-height: 100vh;
@@ -122,6 +121,7 @@ span {
 }
 
 .covid__content {
+  margin: 5rem 0 3rem 0;
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(

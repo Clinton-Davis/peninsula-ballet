@@ -53,6 +53,10 @@ div {
   z-index: 101;
   font-size: 2rem;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
   opacity: 1;
   transform: scale(1);
   transition: all 0.3s ease-in-out;

@@ -112,8 +112,8 @@ export default {
   position: relative;
   box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
     0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
-  border-radius: 20px;
   background-color: #ba9251a9;
+  border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;

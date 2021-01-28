@@ -4,22 +4,20 @@
       <div class="schedule__wrapper">
         <div class="schedule__content">
           <div class="schedule__info">
-            <h2 class="">
+            <h2>
               Fish Hoek Classes <br />
               (Tracy & Leilani)
             </h2>
             <h4>
               Class times and days may vary depending on the Ballet School's
               yearly calendar.<br />
-              (Show, Eisteddfod or Exam rehearsals)
-            </h4>
-            <p>
+              (Show, Eisteddfod or Exam rehearsals)<br />
               Grade 2's, 4's and Intermediate Foundation has Flamenco classes
               every second week.
-            </p>
+            </h4>
           </div>
           <div class="schedule__tables float_left">
-            <table class="">
+            <table>
               <thead>
                 <th>MONDAY</th>
               </thead>
@@ -222,7 +220,6 @@ export default {
 
 <style scoped>
 #schedule__Section {
-  top: 10vh;
   min-height: calc(100vh - 10vh);
   display: flex;
   position: relative;
@@ -239,12 +236,9 @@ export default {
   position: relative;
 }
 .schedule__wrapper {
-  /* margin-top: 5rem; */
-  margin-bottom: 2rem;
-  margin-left: auto;
+  margin: 4rem 0 2rem auto;
   padding: 2rem;
   max-width: 50%;
-  position: relative;
   box-shadow: 1px 20px 25px rgba(0, 0, 0, 0.3);
   background-image: linear-gradient(
     to bottom right,
@@ -269,6 +263,11 @@ export default {
 h2 {
   text-align: center;
   font-size: 2rem;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.685);
+}
+h4 {
+  text-align: center;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.35);
 }
 table {
   color: black;
@@ -286,6 +285,7 @@ th {
   font-size: 1.5rem;
   margin-bottom: 5px;
   font-weight: 600;
+  text-shadow: 2px 1px rgb(255, 255, 255);
 }
 .tRight {
   float: right;
@@ -300,7 +300,8 @@ th {
 @media screen and (max-width: 400px) {
   .schedule__wrapper {
     padding: 0.2rem;
-    max-width: 98%;
+    max-width: 99%;
+    margin: 6rem auto 2rem auto;
   }
   .schedule__tables {
     width: 24rem;

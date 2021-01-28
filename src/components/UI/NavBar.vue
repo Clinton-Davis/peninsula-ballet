@@ -14,11 +14,14 @@
     }"
   >
     <div class="logo">
-      <h1 class="" title="Back to Welcome Page">
-        <router-link to="/welcome">Peninsula Ballet</router-link>
+      <h1>
+        Peninsula Ballet
       </h1>
     </div>
     <ul class="nav-links" :class="{ nav_active: navActive }">
+      <li>
+        <router-link to="/welcome">Welcome</router-link>
+      </li>
       <li>
         <router-link to="/teachers">Teachers</router-link>
       </li>
@@ -253,7 +256,6 @@ nav {
   top: 0px;
   min-height: 10vh;
   min-width: 100%;
-
   z-index: 99;
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.6);
@@ -264,9 +266,7 @@ nav {
   transform: translateY(-100%);
 }
 .logo h1 {
-  font-size: 1.7em;
-  cursor: pointer;
-  /* color: #0000ff; */
+  font-size: 3rem;
 }
 .nav-links {
   display: flex;
@@ -280,7 +280,7 @@ nav {
   transition: all 0.2s ease;
 }
 .nav-links li:hover {
-  transform: scale(1.3);
+  transform: scale(1.1);
 }
 a {
   font-size: 1.85em;
@@ -353,6 +353,7 @@ a.router-link-active {
   color: black;
   text-shadow: 1px 1px rgba(255, 254, 254, 0.8);
 }
+
 .teachers_colors {
   background-color: rgba(223, 223, 223, 0.9);
   color: black;

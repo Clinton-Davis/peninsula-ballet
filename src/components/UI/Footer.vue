@@ -36,6 +36,7 @@ export default {};
 }
 
 .footer {
+  margin: 1rem 0;
   display: flex;
   justify-content: space-around;
   align-items: center;

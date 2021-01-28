@@ -66,19 +66,15 @@ export default {
 </script>
 
 <style scoped>
-/* WELCOME PAGE */
-
 #welcome__Section {
   display: flex;
   position: relative;
   height: 100vh;
 }
-
 #welcomePara {
   line-height: 20.5px;
   color: rgb(51, 51, 51);
 }
-
 .welcome__Wrap {
   display: flex;
   top: 30px;
@@ -103,6 +99,9 @@ export default {
 }
 .welcome__Content {
   padding: 1rem;
+  box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
+    0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
+  border-radius: 20px;
 }
 .welcome__Heading {
   font-family: var(--Italianno);
@@ -155,7 +154,6 @@ export default {
   position: relative;
   z-index: 44;
 }
-
 .welcome__enrolBtn {
   font-family: var(--Italianno);
   margin-bottom: 1rem;
