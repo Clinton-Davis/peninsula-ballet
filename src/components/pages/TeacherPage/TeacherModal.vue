@@ -52,6 +52,7 @@ div {
 dialog {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.801);
+  color: black;
   top: 13vh;
   left: 10%;
   width: 80%;
