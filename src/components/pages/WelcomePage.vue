@@ -37,7 +37,7 @@
               It teaches children how to stay focused and learn from their
               mistakes, which leads to perseverance and a huge boost in
               self-confidence when they get it right. These are just a few of
-              the welcome__benefits that will stay with them for life.
+              the welcome benefits that will stay with them for life.
             </p>
           </div>
           <div

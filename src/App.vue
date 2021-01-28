@@ -7,6 +7,7 @@
       </transition>
     </router-view>
   </main>
+  <!-- <BackTopTop /> -->
   <Footer />
 </template>
 
@@ -18,6 +19,7 @@ export default {
   components: {
     NavBar,
     Footer,
+    // BackTopTop,
   },
   data() {
     return {
@@ -37,7 +39,7 @@ export default {
             "b3",
             "b4",
             "b5",
-            "b6",
+
             "b7",
             "b8",
             "b9",
@@ -64,7 +66,7 @@ export default {
             "b30",
             "b31",
             "b32",
-            "b33",
+
             "b34",
             "b35",
             "b36",
@@ -138,11 +140,7 @@ export default {
           image:
             "https://res.cloudinary.com/peninsulaballet/image/upload/v1610617763/Ballet%20in%202020/20200915_192631_qjnocv_ny8a0c.jpg",
         },
-        {
-          id: "b6",
-          image:
-            "https://res.cloudinary.com/peninsulaballet/image/upload/v1610617763/Ballet%20in%202020/20200910_181745_jnerry_ku0amn.jpg",
-        },
+
         {
           id: "b7",
           image:
@@ -273,11 +271,7 @@ export default {
           image:
             "https://res.cloudinary.com/peninsulaballet/image/upload/v1610617386/Ballet%20in%202020/20200928_153706_aeqjzt_sm7s9o.jpg",
         },
-        {
-          id: "b33",
-          image:
-            "https://res.cloudinary.com/peninsulaballet/image/upload/v1610617386/Ballet%20in%202020/20200928_113735_meuvkz_mnrsoz.jpg",
-        },
+
         {
           id: "b34",
           image:
@@ -481,7 +475,9 @@ html {
 body {
   font-family: var(--Roboto);
 }
-
+main {
+  position: relative;
+}
 .text-Shadow-White {
   text-shadow: 1px 1px rgb(255, 254, 254);
 }

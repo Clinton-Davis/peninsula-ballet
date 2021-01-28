@@ -20,7 +20,12 @@ const router = createRouter({
     { path: "/enrolment", name: "enrolment", component: Enrolment },
     { path: "/studios", name: "studios", component: Studios },
     { path: "/eventlist", name: "eventlist", component: EventList },
-    { path: "/eventlist/:eventId", component: TheEvent, props: true },
+    {
+      path: "/eventlist/:eventId",
+      name: "theEvent",
+      component: TheEvent,
+      props: true,
+    },
     { path: "/attire", name: "attire", component: Attire },
     { path: "/:notFound(.*)", component: WelcomePage },
   ],

@@ -8,7 +8,9 @@
       enrolment_colors: enrolmentPage,
       studio_colors: studiosPage,
       eventlist_colors: eventlistPage,
+      theEvent_colors: theEventPage,
       attire_colors: attirePage,
+      vanish_nav: closeNav,
     }"
   >
     <div class="logo">
@@ -97,16 +99,31 @@ export default {
       enrolmentPage: false,
       studiosPage: false,
       eventlistPage: false,
+      theEventPage: false,
       attirePage: false,
+      closeNav: false,
     };
   },
   watch: {
     $route(page) {
       this.changeNavColor(page.name);
       this.closeBurger();
+      console.log(page);
     },
   },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+
   methods: {
+    handleScroll(event) {
+      let scrolY = event.path[1].scrollY;
+      if (scrolY > 100) {
+        this.closeNav = true;
+      } else {
+        this.closeNav = false;
+      }
+    },
     bugerClick() {
       this.burgerActive = !this.burgerActive;
       if (this.burgerActive === true) {
@@ -135,6 +152,7 @@ export default {
         this.enrolmentPage = false;
         this.studiosPage = false;
         this.eventlistPage = false;
+        this.theEventPage = false;
         this.attirePage = false;
       } else if (page === "teachers") {
         this.teachersPage = true;
@@ -144,6 +162,7 @@ export default {
         this.enrolmentPage = false;
         this.studiosPage = false;
         this.eventlistPage = false;
+        this.theEventPage = false;
         this.attirePage = false;
       } else if (page === "schedule") {
         this.schedulePage = true;
@@ -153,6 +172,7 @@ export default {
         this.enrolmentPage = false;
         this.studiosPage = false;
         this.eventlistPage = false;
+        this.theEventPage = false;
         this.attirePage = false;
       } else if (page === "covid") {
         this.covidPage = true;
@@ -162,6 +182,7 @@ export default {
         this.enrolmentPage = false;
         this.studiosPage = false;
         this.eventlistPage = false;
+        this.theEventPage = false;
         this.attirePage = false;
       } else if (page === "enrolment") {
         this.enrolmentPage = true;
@@ -171,6 +192,7 @@ export default {
         this.covidPage = false;
         this.studiosPage = false;
         this.eventlistPage = false;
+        this.theEventPage = false;
         this.attirePage = false;
       } else if (page === "studios") {
         this.studiosPage = true;
@@ -180,9 +202,21 @@ export default {
         this.covidPage = false;
         this.enrolmentPage = false;
         this.eventlistPage = false;
+        this.theEventPage = false;
         this.attirePage = false;
       } else if (page === "eventlist") {
         this.eventlistPage = true;
+        this.theEventPage = false;
+        this.welcomePage = false;
+        this.teachersPage = false;
+        this.schedulePage = false;
+        this.covidPage = false;
+        this.enrolmentPage = false;
+        this.studiosPage = false;
+        this.attirePage = false;
+      } else if (page === "theEvent") {
+        this.theEventPage = true;
+        this.eventlistPage = false;
         this.welcomePage = false;
         this.teachersPage = false;
         this.schedulePage = false;
@@ -200,7 +234,11 @@ export default {
         this.studiosPage = false;
         this.eventlistPage = false;
       }
+      console.log(page);
     },
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
@@ -222,7 +260,9 @@ nav {
   -moz-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.6);
   transition: all 1s ease-in-out;
 }
-
+.vanish_nav {
+  transform: translateY(-100%);
+}
 .logo h1 {
   font-size: 1.7em;
   cursor: pointer;
@@ -343,7 +383,8 @@ a.router-link-active {
   color: white;
   text-shadow: 1px 1px black;
 }
-.eventlist_colors {
+.eventlist_colors,
+.theEvent_colors {
   background-color: transparent;
   color: #f9d423;
   text-shadow: 1px 1px rgba(255, 254, 254, 0.151);

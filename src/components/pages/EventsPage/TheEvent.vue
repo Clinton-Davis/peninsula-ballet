@@ -18,14 +18,17 @@
         />
       </div>
     </div>
+    <BackTopTop />
   </section>
 </template>
 
 <script>
 import TheGallery from "./TheGallery";
 import TheVideo from "./TheVideo";
+import BackTopTop from "./BackToTop.vue";
+
 export default {
-  components: { TheGallery, TheVideo },
+  components: { TheGallery, TheVideo, BackTopTop },
   inject: ["eventPhotos", "balletEvents"],
   props: ["eventId"],
   data() {
