@@ -23,11 +23,15 @@
               </thead>
               <tbody>
                 <tr>
+                  <td>Grade 2</td>
+                  <td class="tRight">2:15 - 3:00</td>
+                </tr>
+                <tr>
                   <td>Grade 1</td>
                   <td class="tRight">3:00 - 3:45</td>
                 </tr>
                 <tr>
-                  <td>Grade 3</td>
+                  <td>Grade 4</td>
                   <td class="tRight">3:45 - 4:30</td>
                 </tr>
                 <tr>
@@ -50,11 +54,11 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Grade 2</td>
+                  <td>Grade 3</td>
                   <td class="tRight">3:00 - 3:45</td>
                 </tr>
                 <tr>
-                  <td>Grade 4</td>
+                  <td>Grade 5</td>
                   <td class="tRight">3:45 - 4:30</td>
                 </tr>
                 <tr>
@@ -69,7 +73,7 @@
             </table>
           </div>
           <div class="schedule__tables float_left">
-            <table class="">
+            <table>
               <thead>
                 <th>WEDNESDAY</th>
               </thead>
@@ -79,11 +83,11 @@
                   <td class="tRight">3:00 - 3:45</td>
                 </tr>
                 <tr>
-                  <td>Grade 5</td>
+                  <td>Grade 4</td>
                   <td class="tRight">3:45 - 4:30</td>
                 </tr>
                 <tr>
-                  <td>Grade 3</td>
+                  <td>Grade 5</td>
                   <td class="tRight">4:30 - 5:15</td>
                 </tr>
 
@@ -109,7 +113,7 @@
                   <td class="tRight">3:00 - 3:45</td>
                 </tr>
                 <tr>
-                  <td>Grade 4</td>
+                  <td>Grade 3</td>
                   <td class="tRight">3:45 - 4:30</td>
                 </tr>
                 <tr>
@@ -127,42 +131,6 @@
               </tbody>
             </table>
           </div>
-          <!-- <h2 class="">Muizenberg Junior School Classes (Tracy)</h2>
-      <h2 class="">WEDNESDAY</h2>
-      <table class="">
-        <thead>
-          <tr>
-            <th scope="">Class</th>
-            <th class="tRight" scope="">Times</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Grade R</td>
-            <td class="tRight">1:30-2:00</td>
-          </tr>
-          <tr>
-            <td>Grade 1 (Primary)</td>
-            <td class="tRight">3:00-3:30</td>
-          </tr>
-          <tr>
-            <td>Grade 2 & 3 (Grade 1)</td>
-            <td class="tRight">3:30-4:00</td>
-          </tr>
-          <tr>
-            <td>Grade 4 & 5 (Grade 3)</td>
-            <td class="tRight">4:00-4:45</td>
-          </tr>
-          <tr>
-            <td>Grade 6 & 7 (Grade 5)</td>
-            <td class="tRight">4:45-5:30</td>
-          </tr>
-          <tr>
-            <td>Grade 8 (Intermediate Foundation)</td>
-            <td class="tRight">5:30-6:15</td>
-          </tr>
-        </tbody>
-      </table> -->
           <h2 class="">Kommetjie Classes (Leilani)</h2>
           <div class="schedule__tables float_left">
             <table class="">
@@ -196,6 +164,28 @@
                     (Intermediate Foundation)
                   </td>
                   <td class="tRight">5:00-6:15</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="schedule__tables">
+            <table class="">
+              <thead>
+                <th>WEDNESDAY</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ages 5 - 6</td>
+                  <td class="tRight">3:30 - 4:00</td>
+                </tr>
+
+                <tr>
+                  <td>Ages 7 - 8</td>
+                  <td class="tRight">4:00 - 4:30</td>
+                  <!-- <td>Online Classroom</td> -->
+                </tr>
+                <tr>
+                  <td>Online Classroom</td>
                 </tr>
               </tbody>
             </table>
@@ -242,8 +232,8 @@ export default {
   box-shadow: 1px 20px 25px rgba(0, 0, 0, 0.3);
   background-image: linear-gradient(
     to bottom right,
-    rgba(150, 236, 225, 0.5),
-    rgba(100, 115, 156, 0.6)
+    rgba(150, 236, 225, 0.7),
+    rgba(100, 115, 156, 0.7)
   );
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -280,6 +270,18 @@ table {
     0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
   border-radius: 20px;
 }
+.schedule__table-div {
+  color: black;
+  border: 1px solid rgb(135, 206, 250);
+  background-color: rgba(209, 231, 245, 0.795);
+  margin: 0.5rem;
+
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
+    0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
+  border-radius: 20px;
+}
 th {
   float: left;
   font-size: 1.5rem;
@@ -287,6 +289,7 @@ th {
   font-weight: 600;
   text-shadow: 2px 1px rgb(255, 255, 255);
 }
+
 .tRight {
   float: right;
   font-size: 1.1em;
