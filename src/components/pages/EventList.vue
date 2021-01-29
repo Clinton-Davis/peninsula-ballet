@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import EventCard from "./EventCard.vue";
+import EventCard from ".components/UI/EventCard.vue";
 
 export default {
   inject: ["eventPhotos", "balletEvents"],

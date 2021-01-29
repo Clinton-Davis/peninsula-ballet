@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import TeacherCard from "../TeacherPage/TeacherCard.vue";
+import TeacherCard from ".components/UI/TeacherCard.vue";
 
 export default {
   components: { TeacherCard },

@@ -23,9 +23,9 @@
 </template>
 
 <script>
-import TheGallery from "./TheGallery";
-import TheVideo from "./TheVideo";
-import BackTopTop from "./BackToTop.vue";
+import TheGallery from ".components/UI/TheGallery";
+import TheVideo from ".components/UI/TheVideo";
+import BackTopTop from ".components/UI/BackToTop.vue";
 
 export default {
   components: { TheGallery, TheVideo, BackTopTop },
