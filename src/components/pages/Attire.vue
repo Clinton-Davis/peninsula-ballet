@@ -50,7 +50,8 @@
               class="vert-aline"
               title="Play Video"
               src="https://img.icons8.com/fluent/22/000000/youtube-play.png"/></a
-          >This is where the term “bunheads” comes from. There are a variety of
+          ><br />
+          This is where the term “bunheads” comes from. There are a variety of
           ways to achieve this hairstyle, but one simple method is to brush your
           child’s hair until it is smooth; form it into a ponytail; then using
           an elastic or hair wrap to secure their hair tightly near the top of
