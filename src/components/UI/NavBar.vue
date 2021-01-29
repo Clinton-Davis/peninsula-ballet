@@ -114,7 +114,6 @@ export default {
     $route(page) {
       this.changeNavColor(page.name);
       this.closeBurger();
-      console.log(page);
     },
   },
   mounted() {

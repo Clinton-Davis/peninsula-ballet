@@ -40,7 +40,7 @@
 
         <h2 class="text-Shadow-Black">Hairstyle</h2>
         <p>
-          Ideally, girls’ hair will be pulled back, very neatly into a bun
+          Ideally, girls’ hair will be pulled back, very neatly into a bun.
           <a
             href="https://www.youtube.com/watch?v=3P73C4Oea14&t=1s"
             id="video"
@@ -50,13 +50,13 @@
               class="vert-aline"
               title="Play Video"
               src="https://img.icons8.com/fluent/22/000000/youtube-play.png"/></a
-          >. This is where the term “bunheads” comes from. There are a variety
-          of ways to achieve this hairstyle, but one simple method is to brush
-          your child’s hair until it is smooth; form it into a ponytail; then
-          using an elastic or hair wrap to secure their hair tightly near the
-          top of their hair. This is the classic ballerina bun, although many
-          other variations are functional. If boys are sporting longer hair, it
-          too, should be pulled back.
+          >This is where the term “bunheads” comes from. There are a variety of
+          ways to achieve this hairstyle, but one simple method is to brush your
+          child’s hair until it is smooth; form it into a ponytail; then using
+          an elastic or hair wrap to secure their hair tightly near the top of
+          their hair. This is the classic ballerina bun, although many other
+          variations are functional. If boys are sporting longer hair, it too,
+          should be pulled back.
         </p>
         <h2 class="text-Shadow-Black">Outlets</h2>
         <ul class="attire-p">
