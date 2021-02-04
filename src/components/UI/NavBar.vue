@@ -49,6 +49,7 @@
       <div
         class="line line1"
         :class="{
+          toggle1: navActive,
           welcome_burger: welcomePage,
           teachers_burger: teachersPage,
           schedule_burger: schedulePage,
@@ -60,9 +61,11 @@
           attire_burger: attirePage,
         }"
       ></div>
+
       <div
         class="line line2"
         :class="{
+          toggle2: navActive,
           welcome_burger: welcomePage,
           teachers_burger: teachersPage,
           schedule_burger: schedulePage,
@@ -74,9 +77,11 @@
           attire_burger: attirePage,
         }"
       ></div>
+
       <div
         class="line line3"
         :class="{
+          toggle3: navActive,
           welcome_burger: welcomePage,
           teachers_burger: teachersPage,
           schedule_burger: schedulePage,
@@ -137,7 +142,6 @@ export default {
         this.burgerActive = false;
         this.navActive = false;
       }
-      console.log(this.burgerActive);
     },
     closeBurger() {
       if (this.burgerActive === false) {
@@ -149,6 +153,7 @@ export default {
       }
     },
     changeNavColor(page) {
+      console.log(page);
       if (page === "welcome") {
         this.welcomePage = true;
         this.teachersPage = false;
@@ -221,7 +226,7 @@ export default {
         this.attirePage = false;
       } else if (page === "theEvent") {
         this.theEventPage = true;
-        this.eventlistPage = false;
+        this.eventlistPage = true;
         this.welcomePage = false;
         this.teachersPage = false;
         this.schedulePage = false;
@@ -302,6 +307,11 @@ a.router-link-active {
 .burger {
   display: none;
   cursor: pointer;
+  transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
 }
 
 .line {
@@ -315,16 +325,7 @@ a.router-link-active {
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
 }
-
-/* #navBurgerBg {
-  transition: var(--transition);
-  -webkit-transition: var(--transition);
-  -moz-transition: var(--transition);
-  -ms-transition: var(--transition);
-  -o-transition: var(--transition);
-} */
-
-.toggle .line1 {
+.toggle1 {
   transform: rotate(-405deg) translate(-5px, 5px);
   -webkit-transform: rotate(-405deg) translate(-5px, 5px);
   -moz-transform: rotate(-405deg) translate(-5px, 5px);
@@ -332,11 +333,11 @@ a.router-link-active {
   -o-transform: rotate(-405deg) translate(-5px, 5px);
 }
 
-.toggle .line2 {
+.toggle2 {
   opacity: 0;
 }
 
-.toggle .line3 {
+.toggle3 {
   transform: rotate(405deg) translate(-5px, -5px);
   -webkit-transform: rotate(405deg) translate(-5px, -5px);
   -moz-transform: rotate(405deg) translate(-5px, -5px);

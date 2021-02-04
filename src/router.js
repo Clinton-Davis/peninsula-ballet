@@ -5,9 +5,9 @@ import Attire from "./components/pages/Attire.vue";
 import Covid from "./components/pages/Covid.vue";
 import Enrolment from "./components/pages/Enrolment.vue";
 import Studios from "./components/pages/Studios.vue";
-import Teachers from "./components/pages/TeacherPage/Teachers.vue";
-import EventList from "./components/pages/EventsPage/EventList.vue";
-import TheEvent from "./components/pages/EventsPage/TheEvent.vue";
+import Teachers from "./components/pages/Teachers.vue";
+import EventList from "./components/pages/eventPage/EventList.vue";
+import TheEvent from "./components/pages/eventPage/TheEvent.vue";
 
 const router = createRouter({
   history: createWebHistory(),
