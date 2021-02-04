@@ -18,8 +18,7 @@
 </template>
 
 <script>
-import TeacherCard from ".components/UI/TeacherCard.vue";
-
+import TeacherCard from "../Cards/TeacherCard.vue";
 export default {
   components: { TeacherCard },
   data() {

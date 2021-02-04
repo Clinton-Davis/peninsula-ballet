@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import TeacherModal from "./components/Modals/TeacherModal.vue";
+import TeacherModal from "../Modals/TeacherModal.vue";
 export default {
   components: { TeacherModal },
   props: [

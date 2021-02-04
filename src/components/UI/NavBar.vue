@@ -137,7 +137,6 @@ export default {
         this.burgerActive = false;
         this.navActive = false;
       }
-      console.log(this.burgerActive);
     },
     closeBurger() {
       if (this.burgerActive === false) {
@@ -149,6 +148,7 @@ export default {
       }
     },
     changeNavColor(page) {
+      console.log(page);
       if (page === "welcome") {
         this.welcomePage = true;
         this.teachersPage = false;
@@ -221,7 +221,7 @@ export default {
         this.attirePage = false;
       } else if (page === "theEvent") {
         this.theEventPage = true;
-        this.eventlistPage = false;
+        this.eventlistPage = true;
         this.welcomePage = false;
         this.teachersPage = false;
         this.schedulePage = false;
