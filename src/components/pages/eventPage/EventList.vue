@@ -17,7 +17,6 @@ import EventCard from "../../Cards/EventCard.vue";
 
 export default {
   components: { EventCard },
-  inject: ["eventPhotos", "balletEvents"],
 
   data() {
     return {
@@ -25,6 +24,11 @@ export default {
         backgroundImage: `url(${require("@/assets/images/rob-laughter-dark.jpg")})`,
       },
     };
+  },
+  computed: {
+    balletEvents() {
+      return this.$store.getters["bltEvn/balletEvents"];
+    },
   },
 };
 </script>
