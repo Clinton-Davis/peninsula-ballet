@@ -29,7 +29,6 @@ import BackTopTop from "../../UI/BackToTop.vue";
 
 export default {
   components: { TheGallery, TheVideo, BackTopTop },
-  inject: ["eventPhotos", "balletEvents"],
   props: ["eventId"],
   data() {
     return {
@@ -45,6 +44,14 @@ export default {
         backgroundImage: `url(${require("@/assets/images/rob-laughter-dark.jpg")})`,
       },
     };
+  },
+  computed: {
+    balletEvents() {
+      return this.$store.getters["bltEvn/balletEvents"];
+    },
+    eventPhotos() {
+      return this.$store.getters["evnPic/eventPhotos"];
+    },
   },
   methods: {
     loadBalletEvents(eventId) {
