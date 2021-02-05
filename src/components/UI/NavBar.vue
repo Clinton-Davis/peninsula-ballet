@@ -357,8 +357,8 @@ a.router-link-active {
 }
 
 .teachers_colors {
-  background-color: rgba(223, 223, 223, 0.9);
-  color: black;
+  background-color: #dfdfdfe6;
+  color: #000000;
   text-shadow: 1px 1px rgba(255, 254, 254, 0.8);
 }
 .schedule_colors {
