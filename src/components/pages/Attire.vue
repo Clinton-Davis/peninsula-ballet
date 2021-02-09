@@ -46,6 +46,7 @@
             id="video"
             class="headFont textShadow"
             target="_blank"
+            rel="noopener noreferrer"
             ><img
               class="vert-aline"
               title="Play Video"
@@ -62,7 +63,11 @@
         <h2 class="text-Shadow-Black">Outlets</h2>
         <ul class="attire-p">
           <li>
-            <a href="https://bit.ly/35XtGVP" class="attireInfo " target="_blank"
+            <a
+              href="https://bit.ly/35XtGVP"
+              class="attireInfo "
+              target="_blank"
+              rel="noopener noreferrer"
               ><img
                 class="vert-aline"
                 src="https://img.icons8.com/color/22/000000/visit.png"
@@ -72,7 +77,11 @@
           </li>
 
           <li>
-            <a href="https://bit.ly/2BCEJ8W" class="attireInfo " target="_blank"
+            <a
+              href="https://bit.ly/2BCEJ8W"
+              class="attireInfo "
+              target="_blank"
+              rel="noopener noreferrer"
               ><img
                 class="vert-aline"
                 src="https://img.icons8.com/color/22/000000/visit.png"
@@ -81,7 +90,11 @@
             >
           </li>
           <li>
-            <a href="https://bit.ly/2NfowvA" class="attireInfo " target="_blank"
+            <a
+              href="https://bit.ly/2NfowvA"
+              class="attireInfo "
+              target="_blank"
+              rel="noopener noreferrer"
               ><img
                 class="vert-aline"
                 src="https://img.icons8.com/color/22/000000/visit.png"
@@ -90,7 +103,11 @@
             >
           </li>
           <li>
-            <a href="https://bit.ly/364TUpe" class="attireInfo " target="_blank"
+            <a
+              href="https://bit.ly/364TUpe"
+              class="attireInfo "
+              target="_blank"
+              rel="noopener noreferrer"
               ><img
                 class="vert-aline"
                 src="https://img.icons8.com/color/22/000000/visit.png"

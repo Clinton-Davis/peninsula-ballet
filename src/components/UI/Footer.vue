@@ -14,6 +14,7 @@
           href="https://github.com/Clinton-Davis"
           class="feet-bg"
           target="_blank"
+          rel="noopener noreferrer"
           ><small> Clinton Davis</small></a
         >
         <!-- <img
