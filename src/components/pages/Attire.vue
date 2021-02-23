@@ -132,7 +132,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 h1,
 h2 {
@@ -146,11 +145,9 @@ h1 {
 h2 {
   font-size: 2.5em;
 }
-
 li {
   list-style: none;
 }
-
 a {
   color: white;
   text-decoration: none;
@@ -166,7 +163,6 @@ p {
   line-height: 1.3rem;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
-
 #attire__section {
   top: 1rem;
   display: flex;
