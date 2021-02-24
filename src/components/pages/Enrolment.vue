@@ -419,8 +419,11 @@ textarea {
   margin-bottom: 1rem;
   text-align: center;
 }
+ul {
+  list-style-image: url("../../assets/images/shoe15.svg");
+}
 li {
-  list-style: upper-roman;
+  /* list-style: upper-roman; */
   line-height: 1.4rem;
   letter-spacing: 0.65px;
 }
