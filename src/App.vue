@@ -47,7 +47,7 @@ export default {
   --lightGray: rgba(59, 59, 59, 0.9);
   --border: 1px black solid;
   --offwhite: rgb(224, 222, 222);
-  --lightBlack: rgba(44, 43, 43, 1);
+  --lightBlack: rgb(51, 51, 51);
   --white: white;
   --black: black;
   /* --transition: all 0.5s ease-in; */

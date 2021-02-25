@@ -107,6 +107,7 @@ export default {
   font-family: var(--Italianno);
   font-size: 4em;
   text-align: center;
+  color: black;
 }
 .welcome__Tag {
   font-family: var(--Italianno);
@@ -118,6 +119,7 @@ export default {
   font-family: var(--Italianno);
   font-size: 2.5em;
   margin-top: 1rem;
+  color: black;
 }
 .welcome__benefits {
   font-family: var(--Italianno);
@@ -126,7 +128,7 @@ export default {
 }
 .welcome__benefits p {
   font-family: var(--Roboto);
-  color: var(--lightGray);
+  color: var(--lightBlack);
   font-size: 0.5em;
   text-align: left;
   padding: 0 1rem;
