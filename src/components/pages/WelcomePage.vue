@@ -26,7 +26,7 @@
               <span class="welcome__headder"
                 >Welcome to Peninsula Ballet.
               </span>
-              All the information you will need to start can be fond here. Why
+              All the information you will need to start can be found here. Why
               is it a good idea to start ballet? There are so many benefits to
               learning ballet, besides having fun and making good friends, it
               promotes healthy living as it is great exercise.<br />

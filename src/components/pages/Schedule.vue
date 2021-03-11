@@ -32,17 +32,17 @@
                 </tr>
                 <tr>
                   <td>Grade 4</td>
-                  <td class="tRight">3:45 - 4:30</td>
+                  <td class="tRight">4:15- 5:00</td>
                 </tr>
                 <tr>
                   <td>Intermediate</td>
-                  <td class="tRight">4:30 - 5:45</td>
+                  <td class="tRight">5:00 - 6:15</td>
                 </tr>
                 <tr>
                   <td>
                     Adult Beginners
                   </td>
-                  <td class="tRight">5:45 - 6:45</td>
+                  <td class="tRight">6:15 - 7:15</td>
                 </tr>
               </tbody>
             </table>
@@ -55,19 +55,19 @@
               <tbody>
                 <tr>
                   <td>Grade 3</td>
-                  <td class="tRight">3:00 - 3:45</td>
+                  <td class="tRight">3:15 - 4:00</td>
                 </tr>
                 <tr>
                   <td>Grade 5</td>
-                  <td class="tRight">3:45 - 4:30</td>
+                  <td class="tRight">4:00 - 4:45</td>
                 </tr>
                 <tr>
                   <td>Intermediate Foundation</td>
-                  <td class="tRight">4:30 - 5:30</td>
+                  <td class="tRight">4:45 - 5:45</td>
                 </tr>
                 <tr>
                   <td>Open class</td>
-                  <td class="tRight">5:30 - 6:30</td>
+                  <td class="tRight">5:45 - 6:45</td>
                 </tr>
               </tbody>
             </table>
@@ -83,11 +83,11 @@
                   <td class="tRight">3:00 - 3:45</td>
                 </tr>
                 <tr>
-                  <td>Grade 4</td>
+                  <td>Grade 5</td>
                   <td class="tRight">3:45 - 4:30</td>
                 </tr>
                 <tr>
-                  <td>Grade 5</td>
+                  <td>Grade 4</td>
                   <td class="tRight">4:30 - 5:15</td>
                 </tr>
 
