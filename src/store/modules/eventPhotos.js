@@ -320,6 +320,56 @@ export default {
           image:
             "https://res.cloudinary.com/peninsulaballet/image/upload/v1610618959/Jerusalema%20Challenge/jam_3_oevvbb_kanhhs.jpg",
         },
+        {
+          id: "p1",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1615185166/Ballet%202021/20210211_170315_zvgz6i.webp",
+        },
+        {
+          id: "p2",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1615185123/Ballet%202021/20210208_135828_sadcml.webp",
+        },
+        {
+          id: "p3",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1615185093/Ballet%202021/20210211_152432_naqjbe.webp",
+        },
+        {
+          id: "p4",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1615185092/Ballet%202021/20210211_133631_amllzs.webp",
+        },
+        {
+          id: "p5",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1615185088/Ballet%202021/20210208_165511_kphmec.webp",
+        },
+        {
+          id: "p6",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1615185081/Ballet%202021/20210209_175644_d5jrxn.webp",
+        },
+        {
+          id: "p7",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1615185064/Ballet%202021/20210209_175056_sfduow.webp",
+        },
+        {
+          id: "p8",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1615185057/Ballet%202021/20210211_164703_kure8b.webp",
+        },
+        {
+          id: "p9",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1615185052/Ballet%202021/20210211_160021_oynv8p.webp",
+        },
+        {
+          id: "p10",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1615185044/Ballet%202021/20210211_164716_codfcd.webp",
+        },
       ],
     };
   },

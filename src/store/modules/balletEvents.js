@@ -92,6 +92,26 @@ export default {
             "jc25",
           ],
         },
+        {
+          id: "Ballet_In_2021",
+          name: "Ballet In 2021",
+          desc:
+            "Ballet in the summer months inside can become hot, so we took advantage of the smaller classes and move the lesson to the pool.",
+          hasVideo: false,
+          video: "",
+          imageIds: [
+            "p1",
+            "p2",
+            "p3",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "p10",
+          ],
+        },
       ],
     };
   },
