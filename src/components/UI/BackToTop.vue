@@ -70,6 +70,7 @@ div {
   height: 3rem;
   width: 3rem;
   background-color: rgba(255, 255, 255, 0.123);
+  cursor: pointer;
   z-index: 101;
   font-size: 2rem;
   border-radius: 50%;
