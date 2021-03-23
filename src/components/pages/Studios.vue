@@ -5,8 +5,6 @@
         <div class="studio__InfoBlock-heading">
           <h1>Studios</h1>
           <h4>
-            Due to Covid-19, some classes are available online.<br />
-            Fish Hoek and Kommetjie studios are open.<br />
             Before arriving please familiarize with the <br />
             <router-link id="covidLink" to="/covid"
               >Covid Safty Regulations</router-link
@@ -43,7 +41,7 @@ export default {
           address: "St Kirans Presbyerian church 7th Ave & Recreation Rd",
           link: "https://bit.ly/2WksRlg",
           mapImage:
-            "https://res.cloudinary.com/peninsulaballet/image/upload/v1611660553/web_pages/fklongmap_vc2gws.png",
+            "https://res.cloudinary.com/peninsulaballet/image/upload/q_100/v1616494521/web_pages/Maps/FHMap_vwustf.webp",
         },
         {
           id: 2,
@@ -51,7 +49,23 @@ export default {
           address: "Wellness Centre in Ruby Rd",
           link: "https://bit.ly/36fsM7e",
           mapImage:
-            "https://res.cloudinary.com/peninsulaballet/image/upload/v1611660553/web_pages/komLonMap_iryfas.png",
+            "https://res.cloudinary.com/peninsulaballet/image/upload/q_100/v1616495019/web_pages/Maps/rubyMap_r1lays.webp",
+        },
+        {
+          id: 3,
+          name: "Muizenberg Junior School",
+          address: "Main Rd, Muizenberg",
+          link: "https://bit.ly/396v1Nb",
+          mapImage:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/q_100/v1616494109/web_pages/Maps/MJHSMap_ffoxbm.webp",
+        },
+        {
+          id: 4,
+          name: "Alive Dance Studio",
+          address: "15 Palmer Road Muizenberg",
+          link: "https://bit.ly/3sqRkoB",
+          mapImage:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/q_100/v1616494101/web_pages/Maps/Alive_Studios_yxvdyy.webp",
         },
       ],
       studioImg: {

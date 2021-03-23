@@ -33,7 +33,7 @@
         <router-link to="/covid">Covid</router-link>
       </li>
       <li>
-        <router-link to="/enrolment">Enroll</router-link>
+        <router-link to="/enrolment">Enrol</router-link>
       </li>
       <li>
         <router-link to="/studios">Studios</router-link>

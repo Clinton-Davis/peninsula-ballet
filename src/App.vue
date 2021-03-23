@@ -52,6 +52,9 @@ export default {
   --black: black;
   /* --transition: all 0.5s ease-in; */
 }
+.text_center {
+  text-align: center;
+}
 
 * {
   margin: 0px;
