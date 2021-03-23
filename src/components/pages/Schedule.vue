@@ -190,6 +190,46 @@
               </tbody>
             </table>
           </div>
+          <h2 class="">Muizenberg Junior School</h2>
+          <p class="text_center">
+            (These grades are SCHOOL grades and NOT ballet grades)
+          </p>
+          <div class="schedule__tables float_left">
+            <table class="">
+              <thead>
+                <th>WEDNESDAY</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Grades R & Grade 1</td>
+                  <td class="tRight">1:15-1:45</td>
+                </tr>
+                <tr>
+                  <td>Grades 2 - 4</td>
+                  <td class="tRight">2:40-3:10</td>
+                </tr>
+                <tr>
+                  <td>Grades 5 - 7</td>
+                  <td class="tRight">3:10-4:00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 class="">Alive Dance Studio Muizenberg</h2>
+          <div class="schedule__tables">
+            <table class="">
+              <thead>
+                <th>WEDNESDAY</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Intermediate</td>
+                  <td class="tRight">4:30 - 5:30</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -254,6 +294,7 @@ h2 {
   text-align: center;
   font-size: 2rem;
   text-shadow: 1px 1px rgba(255, 255, 255, 0.685);
+  margin-top: 1rem;
 }
 h4 {
   text-align: center;

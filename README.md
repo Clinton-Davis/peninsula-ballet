@@ -45,7 +45,7 @@ To show all the information in a clean and precise way, I decided to split up th
 ### Structure
 
 **Welcome page**
-This is the first thing they would see. In this page, I wanted to give a general overall feed for the site, Elegant and simple with a direct link to the enrollment form and the benfists of doing Ballet.
+This is the first thing they would see. In this page, I wanted to give a general overall feed for the site, Elegant and simple with a direct link to the enrolment form and the benfists of doing Ballet.
 
 **Teachers Section**
 Here you will be able to read the teachers bios. There is also a history section on it,is a brief history of the school.
@@ -57,7 +57,7 @@ Has a list of the studios the physical address and a button that links to a Goog
 This page has an easy to read table with the different classes and times at each studio.
 I added a download schedule pdf.
 
-**Enrollment Section**
+**enrolment Section**
 The emrolment form sends all the details to the teachers using EmaliJS. There is a auto replay to the student to conferm that they have read and agreed with the Terms and Conditions of the school. The teachers will get a email and respond acordinly.
 
 **Attire Section**

@@ -1,7 +1,7 @@
 <template>
-  <section id="enroll__Section">
-    <div class="enroll__Img" :style="enrollImg">
-      <div class="enroll__wrapper">
+  <section id="enrol__Section">
+    <div class="enrol__Img" :style="enrolImg">
+      <div class="enrol__wrapper">
         <!--Form goes here-->
         <form class="contact-form" v-if="!success" @submit.prevent="sendEmail">
           <input
@@ -248,7 +248,7 @@ export default {
       isLegal: false,
       firstnameVality: "pending",
 
-      enrollImg: {
+      enrolImg: {
         backgroundImage: `url(${require("@/assets/images/little_dancerD.jpg")})`,
       },
     };
@@ -269,7 +269,7 @@ export default {
         .then(
           (result) => {
             console.log("SUCCESS!", result.status, result.text);
-            alert("Your enrollment request has been send.");
+            alert("Your enrolment request has been send.");
           },
           (error) => {
             console.log("FAILED...", error);
@@ -297,14 +297,14 @@ span {
   font-weight: bold;
   font-size: 1.1rem;
 }
-#enroll__Section {
+#enrol__Section {
   display: flex;
   position: relative;
   height: fit-content;
   color: white;
   min-height: 100vh;
 }
-.enroll__Img {
+.enrol__Img {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -314,7 +314,7 @@ span {
   background-attachment: fixed;
   position: relative;
 }
-.enroll__wrapper {
+.enrol__wrapper {
   margin-top: 5rem;
   margin-bottom: 2rem;
   margin-right: auto;
@@ -428,7 +428,7 @@ li {
   letter-spacing: 0.65px;
 }
 
-#enroll_btn {
+#enrol_btn {
   margin-top: 1em;
   padding: 0.25em 2em;
 }
@@ -438,7 +438,7 @@ li {
   font-size: 2rem;
 }
 @media screen and (max-width: 880px) {
-  .enroll__wrapper {
+  .enrol__wrapper {
     margin: 5rem auto 2rem auto;
     max-width: 80%;
   }
@@ -450,7 +450,7 @@ li {
   textarea {
     width: 93%;
   }
-  .enroll__wrapper {
+  .enrol__wrapper {
     margin: 7rem auto 2rem auto;
     padding: 0.2rem;
     max-width: 98%;
