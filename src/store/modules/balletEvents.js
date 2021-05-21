@@ -93,6 +93,26 @@ export default {
           ],
         },
         {
+          id: "Ballet_On_The_Beach",
+          name: "Ballet On The Beach",
+          desc:
+            "When the beach is on your doorstep and it is to hot in the studio, The beach is a great place to cool off and have a lesson.",
+          hasVideo: false,
+          video: "",
+          imageIds: [
+            "bb1",
+            "bb2",
+            "bb3",
+            "bb4",
+            "bb5",
+            "bb6",
+            "bb7",
+            "bb8",
+            "bb9",
+            "bb10",
+          ],
+        },
+        {
           id: "Ballet_In_2021",
           name: "Ballet In 2021",
           desc:

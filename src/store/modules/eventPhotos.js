@@ -370,6 +370,56 @@ export default {
           image:
             "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1615185044/Ballet%202021/20210211_164716_codfcd.webp",
         },
+        {
+          id: "bb1",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1616490612/Beach%20Ballet%20Class/IMG-20210312-WA0013_avmrnt.webp",
+        },
+        {
+          id: "bb2",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1616490584/Beach%20Ballet%20Class/FB_IMG_1616489960112_netcfs.webp",
+        },
+        {
+          id: "bb3",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1616490550/Beach%20Ballet%20Class/FB_IMG_1616489950274_ffzj9e.webp",
+        },
+        {
+          id: "bb4",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1616490535/Beach%20Ballet%20Class/FB_IMG_1616489937179_xtzilk.webp",
+        },
+        {
+          id: "bb5",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1616490531/Beach%20Ballet%20Class/FB_IMG_1616489932462_a32mpr.webp",
+        },
+        {
+          id: "bb6",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1616490521/Beach%20Ballet%20Class/IMG-20210312-WA0014_sdzas8.webp",
+        },
+        {
+          id: "bb7",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1616490509/Beach%20Ballet%20Class/FB_IMG_1616489927209_dvhfjo.webp",
+        },
+        {
+          id: "bb8",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1616490501/Beach%20Ballet%20Class/FB_IMG_1616489909956_c9yyxf.webp",
+        },
+        {
+          id: "bb9",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1616490488/Beach%20Ballet%20Class/FB_IMG_1616489899585_diich0.webp",
+        },
+        {
+          id: "bb10",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1616490485/Beach%20Ballet%20Class/FB_IMG_1616489892228_ahozk3.webp",
+        },
       ],
     };
   },

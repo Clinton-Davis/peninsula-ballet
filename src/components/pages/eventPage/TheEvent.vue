@@ -55,6 +55,7 @@ export default {
   },
   methods: {
     loadBalletEvents(eventId) {
+      //Selects the images associated with the event
       const selectedballetEvents = this.balletEvents.find(
         (balletEvent) => balletEvent.id === eventId
       );
@@ -75,6 +76,8 @@ export default {
       this.showImages = !this.hasVideo;
     },
     changeView() {
+      // Switches between image and video if
+      // if event has a video
       this.showImages = !this.showImages;
       this.hasVideo = !this.hasVideo;
       if (this.showImages === true) {
