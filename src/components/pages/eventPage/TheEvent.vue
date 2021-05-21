@@ -4,7 +4,13 @@
       <div class="theEvent__Info">
         <h1 class="text-Shadow-Black">{{ balletEventName }}</h1>
         <p>{{ balletEventDesc }}</p>
-        <button v-if="btnIsActive" @click="changeView">{{ button }}</button>
+        <button
+          v-if="btnIsActive"
+          @click="changeView"
+          aria-toggle-field-name="Video to image Toggle Button"
+        >
+          {{ button }}
+        </button>
         <div class="theEvent__video">
           <TheVideo v-if="hasVideo" />
         </div>

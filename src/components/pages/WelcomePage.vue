@@ -11,6 +11,7 @@
             <img
               class="leftFire"
               :src="require('@/assets/images/works2.svg')"
+              alt="Fireworks icons"
             />
             <h3 class="textShadow text-Shadow-White">
               Celebrating 10 Years Open
@@ -18,6 +19,7 @@
             <img
               class="rightFire"
               :src="require('@/assets/images/works2.svg')"
+              alt="Fireworks icons"
             />
           </div>
           <div class="welcome__benefits">
@@ -44,7 +46,12 @@
             class="welcome__enrolBtn text-Shadow-White"
             title="Go to Enrolment Form"
           >
-            <router-link to="Enrolment"> Enrolment Form &raquo;</router-link>
+            <router-link
+              to="Enrolment"
+              aria-command-name="Enrolment Form button"
+            >
+              Enrolment Form &raquo;</router-link
+            >
           </div>
         </div>
       </div>

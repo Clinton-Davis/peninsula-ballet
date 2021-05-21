@@ -125,12 +125,12 @@ main {
 }
 @media screen and (max-width: 400px) {
   html {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }
 @media screen and (min-width: 400px) and (max-width: 500px) {
   html {
-    font-size: 0.9rem;
+    font-size: 10rem;
   }
 }
 @media screen and (min-width: 1670px) {
