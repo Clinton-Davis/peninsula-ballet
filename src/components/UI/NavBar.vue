@@ -18,7 +18,7 @@
         Peninsula Ballet
       </h1>
     </div>
-    <ul class="nav-links" :class="{ nav_active: navActive }">
+    <ul class="nav-links " :class="{ nav_active: navActive }">
       <li>
         <router-link to="/welcome">Welcome</router-link>
       </li>
@@ -103,7 +103,7 @@ export default {
     return {
       burgerActive: false,
       navActive: false,
-      welcomePage: false,
+      welcomePage: true,
       teachersPage: false,
       schedulePage: false,
       covidPage: false,
@@ -359,7 +359,6 @@ a.router-link-active {
 .teachers_colors {
   background-color: #dfdfdfe6;
   color: #000000;
-  text-shadow: 1px 1px rgba(255, 254, 254, 0.8);
 }
 .schedule_colors {
   background-color: #6ea4b0;
@@ -487,5 +486,8 @@ a.router-link-active {
     -ms-transform: translateX(0px);
     -o-transform: translateX(0px);
   }
+}
+.text-shadow {
+  text-shadow: 1px 1px rgba(255, 254, 254, 0.8);
 }
 </style>
