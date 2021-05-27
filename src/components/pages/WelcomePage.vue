@@ -28,18 +28,20 @@
               <span class="welcome__headder"
                 >Welcome to Peninsula Ballet.
               </span>
-              All the information you will need to start can be found here. Why
-              is it a good idea to start ballet? There are so many benefits to
-              learning ballet, besides having fun and making good friends, it
-              promotes healthy living as it is great exercise.<br />
-              Being flexible is very important in ballet, it helps stop injury
-              and promotes muscle strength and in turn good posture.<br />
-              Not only is it great for your physical wellbeing but mental
-              strength too.<br />
-              It teaches children how to stay focused and learn from their
-              mistakes, which leads to perseverance and a huge boost in
-              self-confidence when they get it right. These are just a few of
-              the welcome benefits that will stay with them for life.
+              You will find all the information you need to get started here.
+              Why is it a good idea to begin ballet? <br />
+              Aside from having fun and making friends, there are so many
+              benefits to learning ballet, as it is an excellent form of
+              exercise. <br />
+              Having flexibility is essential in ballet, as it helps to prevent
+              injury and promotes muscle strength, which in turn results in good
+              posture. <br />
+              Besides being beneficial for your physical health, it is also
+              beneficial for mental wellbeing. Children learn to remain focused
+              and to learn from their mistakes, which results in perseverance
+              and a boost in self-confidence when they succeed. <br />
+              There are many other benefits that will remain with them for a
+              lifetime.
             </p>
           </div>
           <div
