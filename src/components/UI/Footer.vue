@@ -11,11 +11,11 @@
       <div class="feet"><small>Web Design:</small></div>
       <div class="feet feet-bg">
         <a
-          href="https://github.com/Clinton-Davis"
+          href="https://www.clintondavis.org"
           class="feet-bg"
           target="_blank"
           rel="noopener noreferrer"
-          ><small> Clinton Davis</small></a
+          ><small> ClintonDavis.org</small></a
         >
         <!-- <img
           class="vert-aline "
