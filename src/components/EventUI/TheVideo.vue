@@ -1,6 +1,6 @@
 <template>
   <div class="video__wrapper">
-    <video :src="video" controls></video>
+    <video title="Jerusalema Challenge" :src="video" controls></video>
   </div>
 </template>
 

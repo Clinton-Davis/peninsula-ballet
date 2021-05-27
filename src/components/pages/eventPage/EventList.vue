@@ -1,13 +1,15 @@
 <template>
   <section id="eventList__Section">
     <div class="eventList__Img" :style="eventsImg">
-      <EventCard
-        v-for="event in balletEvents"
-        :key="event.id"
-        :name="event.name"
-        :desc="event.desc"
-        :id="event.id"
-      />
+      <div class="eventList__container">
+        <EventCard
+          v-for="event in balletEvents"
+          :key="event.id"
+          :name="event.name"
+          :desc="event.desc"
+          :id="event.id"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -40,12 +42,16 @@ export default {
   color: white;
   min-height: 100vh;
 }
-.eventList__Img {
-  width: 100%;
+.eventList__container {
+  position: relative;
+  margin-top: 5rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+}
+.eventList__Img {
+  width: 100%;
   background-size: cover;
   background-position: center;
   position: relative;

@@ -1,6 +1,6 @@
 <template>
   <div class="gallery-img">
-    <img :src="imgSrc" alt="" />
+    <img :src="imgSrc" alt="Photo Gallary" />
   </div>
 </template>
 

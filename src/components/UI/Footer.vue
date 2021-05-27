@@ -2,11 +2,7 @@
   <footer class="footer">
     <!-- <img id="logo" :src="require('@/assets/images/logo.jpg')" /> -->
     <div class="feet">CopyRight© 2020&nbsp;</div>
-    <a
-      href="mailto:tracychaston@gmail.com?Subject=Contact From Website"
-      class="feet"
-      >Contact Us</a
-    >
+    <a href="mailto:tracychaston@gmail.com" class="feet">Contact Us</a>
     <div class="feet">
       <div class="feet"><small>Web Design:</small></div>
       <div class="feet feet-bg">

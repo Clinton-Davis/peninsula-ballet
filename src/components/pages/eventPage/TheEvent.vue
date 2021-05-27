@@ -4,7 +4,13 @@
       <div class="theEvent__Info">
         <h1 class="text-Shadow-Black">{{ balletEventName }}</h1>
         <p>{{ balletEventDesc }}</p>
-        <button v-if="btnIsActive" @click="changeView">{{ button }}</button>
+        <button
+          v-if="btnIsActive"
+          @click="changeView"
+          aria-toggle-field-name="Video to image Toggle Button"
+        >
+          {{ button }}
+        </button>
         <div class="theEvent__video">
           <TheVideo v-if="hasVideo" />
         </div>
@@ -55,6 +61,7 @@ export default {
   },
   methods: {
     loadBalletEvents(eventId) {
+      //Selects the images associated with the event
       const selectedballetEvents = this.balletEvents.find(
         (balletEvent) => balletEvent.id === eventId
       );
@@ -75,6 +82,8 @@ export default {
       this.showImages = !this.hasVideo;
     },
     changeView() {
+      // Switches between image and video if
+      // if event has a video
       this.showImages = !this.showImages;
       this.hasVideo = !this.hasVideo;
       if (this.showImages === true) {
