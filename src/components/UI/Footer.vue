@@ -1,23 +1,34 @@
 <template>
-  <footer class="footer">
-    <!-- <img id="logo" :src="require('@/assets/images/logo.jpg')" /> -->
-    <div class="feet">CopyRight© 2020&nbsp;</div>
-    <a href="mailto:tracychaston@gmail.com" class="feet">Contact Us</a>
-    <div class="feet">
-      <div class="feet"><small>Web Design:</small></div>
-      <div class="feet feet-bg">
+  <footer>
+    <div class="footer-container">
+      <a href="mailto:tracychaston@gmail.com" class="feet">
+        <img
+          class="mail_icon icons"
+          :src="require('@/assets/images/email-svgrepo-com.svg')"
+          alt="email icon"
+        />
+        Email Us</a
+      >
+    </div>
+    <div class="sub_footer_container">
+      <div class="subfooter feet vt">
+        &copy; Peninisula Ballet 2021
+      </div>
+      <div class="subfooter feet">
+        Created by
         <a
-          href="https://www.clintondavis.org"
-          class="feet-bg"
+          class="clint_link"
+          href="http://www.clintondavis.org"
           target="_blank"
           rel="noopener noreferrer"
-          ><small> ClintonDavis.org</small></a
         >
-        <!-- <img
-          class="vert-aline "
-          :src="require('@/https://img.icons8.com/fluent/22/000000/github.png')"
-          alt="GitHub"
-        /> -->
+          ClintonDavis.org</a
+        >
+        <img
+          class="cd_icon icons spinning"
+          :src="require('@/assets/images/CD_logo_plain.svg')"
+          alt="email icon"
+        />
       </div>
     </div>
   </footer>
@@ -31,8 +42,29 @@ export default {};
 #logo {
   max-width: 5rem;
 }
+footer {
+  width: 100%;
+  min-height: 10rem;
+}
+.mail_icon {
+  margin: 0.5rem;
+  width: 2rem;
+  vertical-align: middle;
+}
+.clint_link {
+  text-decoration: none;
+  color: #3185eb;
+}
+.clint_link:hover {
+  text-decoration: revert;
+  color: #6fa7ec;
+}
+.cd_icon {
+  width: 2rem;
+  vertical-align: middle;
+}
 
-.footer {
+.footer-container {
   margin: 1rem 0;
   display: flex;
   justify-content: space-around;
@@ -40,44 +72,34 @@ export default {};
   background-color: black;
   min-height: 10vh;
 }
-
-.sub-foot {
-  background-color: rgb(0, 0, 0);
+.sub_footer_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
 .feet {
   color: var(--white);
   font-family: var(--Roboto);
 }
 
-/* BG on web page desinger*/
-.feet-bg {
-  background-image: linear-gradient(
-    -45deg,
-    rgb(27, 240, 8),
-    rgb(250, 95, 95),
-    rgb(94, 102, 241)
-  );
-  color: transparent;
-  font-weight: 800;
-  background-size: 400%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: bg--animation 10s ease-in-out infinite alternate;
-  -webkit-animation: bg--animation 10s ease-in-out infinite alternate;
+.subfooter {
+  text-align: center;
+  margin: 0 1rem;
 }
 
-@keyframes bg--animation {
-  0% {
-    background-position: left;
-  }
+.spinning {
+  animation-name: spin;
+  animation-duration: 20000ms; /* How long lasts 1 turn */
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
 
-  50% {
-    background-position: right;
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-
-  100% {
-    background-position: left;
+  to {
+    transform: rotate(360deg);
   }
 }
 </style>
