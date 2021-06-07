@@ -7,6 +7,11 @@
           :src="require('@/assets/images/BSLogo.png')"
           alt="email icon"
         />
+        <img
+          class="footer_logo"
+          :src="require('@/assets/images/RAD_logo_black_small_mb.jpg')"
+          alt="email icon"
+        />
       </div>
       <div class="main_footer">
         <h4 class="feet">Pages</h4>
@@ -41,7 +46,7 @@
       <div class="main_footer">
         <a href="mailto:tracychaston@gmail.com" class="feet text_center">
           <img
-            class="mail_icon icons"
+            class="mail_icon"
             :src="require('@/assets/images/email-svgrepo-com.svg')"
             alt="email icon"
           />
@@ -54,20 +59,23 @@
         &copy; Peninisula Ballet 2021
       </div>
       <div class="subfooter feet">
-        Created by
         <a
           class="clint_link"
           href="http://www.clintondavis.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          ClintonDavis.org</a
-        >
-        <img
-          class="cd_icon icons spinning"
-          :src="require('@/assets/images/CD_logo_plain.svg')"
-          alt="email icon"
-        />
+          <img
+            class="icons"
+            :src="require('@/assets/images/logo_white.svg')"
+            alt="email icon"
+          />
+          <img
+            class="cd_icon icons spinning"
+            :src="require('@/assets/images/color_icon__blue_favicon.svg')"
+            alt="email icon"
+          />
+        </a>
       </div>
     </div>
   </footer>
@@ -85,6 +93,9 @@ footer {
   width: 100%;
   min-height: 10rem;
   background-color: rgb(0, 0, 0);
+}
+.main_footer {
+  min-width: 8rem;
 }
 a {
   text-decoration: none;
@@ -112,7 +123,10 @@ h4 {
   width: 2rem;
   vertical-align: middle;
 }
-
+.icons {
+  margin: 1rem 4px;
+  vertical-align: sub;
+}
 .footer_logo {
   width: 10rem;
 }
@@ -128,6 +142,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  flex-direction: column;
 }
 .feet {
   color: var(--white);
