@@ -13,9 +13,9 @@
           alt="email icon"
         />
       </div>
-      <div class="main_footer">
-        <h4 class="feet">Pages</h4>
-        <ul>
+      <div class="main_footer ">
+        <h3 class="feet">Pages</h3>
+        <ul class="pages">
           <li>
             <router-link class="feet" to="/welcome">Welcome</router-link>
           </li>
@@ -50,7 +50,7 @@
             :src="require('@/assets/images/email-svgrepo-com.svg')"
             alt="email icon"
           />
-          Have a question? Email Us</a
+          Contact Us</a
         >
       </div>
     </div>
@@ -86,64 +86,91 @@ export default {};
 </script>
 
 <style scoped>
+
 #logo {
   max-width: 5rem;
 }
+
 footer {
   width: 100%;
   min-height: 10rem;
   background-color: rgb(0, 0, 0);
 }
-.main_footer {
-  min-width: 8rem;
-}
+
 a {
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: revert;
 }
+
 h4 {
   margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
 }
+
+.main_footer {
+  display: grid;
+  place-items: center;
+}
+
 .mail_icon {
   margin: 0.5rem;
   width: 2rem;
   vertical-align: middle;
 }
-.clint_link {
-  text-decoration: none;
-  color: #3185eb;
-}
-.clint_link:hover {
-  text-decoration: revert;
-  color: #6fa7ec;
-}
+
 .cd_icon {
   width: 2rem;
   vertical-align: middle;
 }
+
 .icons {
   margin: 1rem 4px;
   vertical-align: sub;
 }
+
 .footer_logo {
   width: 10rem;
 }
-.footer-container {
-  margin: 1rem 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 
+.footer-container {
+  margin: 1rem auto;
   min-height: 10vh;
+  width: min(90%, 75rem);
+  display: grid;
+  gap:1em;
+  grid-auto-flow: column;
+  
 }
+
+.pages {
+  margin: 0 auto;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 50% 50%;
+
+  place-items: center;
+}
+
 .sub_footer_container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex-direction: column;
+ 
 }
+
+@media screen and (max-width: 580px) {
+  .footer-container {
+    grid-auto-flow: row;
+}
+  .sub_footer_container {
+     flex-direction: column;
+  }
+}
+
 .feet {
   color: var(--white);
   font-family: var(--Roboto);
