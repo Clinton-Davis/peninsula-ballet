@@ -51,6 +51,7 @@
             <router-link
               to="Enrolment"
               aria-command-name="Enrolment Form button"
+              aria-label="Link to enrolment page"
             >
               Enrolment Form &raquo;</router-link
             >
