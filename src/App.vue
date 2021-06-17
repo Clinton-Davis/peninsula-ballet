@@ -130,7 +130,7 @@ main {
 }
 @media screen and (min-width: 400px) and (max-width: 500px) {
   html {
-    font-size: 10rem;
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 1670px) {
