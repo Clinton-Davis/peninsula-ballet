@@ -5,15 +5,15 @@
         <img
           class="footer_logo"
           :src="require('@/assets/images/BSLogo.png')"
-          alt="email icon"
+          alt="Peninisula Ballet School Logo"
         />
         <img
           class="footer_logo"
           :src="require('@/assets/images/RAD_logo_black_small_mb.jpg')"
-          alt="email icon"
+          alt="RAD Registered Teacher Logo"
         />
       </div>
-      <div class="main_footer ">
+      <div class="main_footer">
         <h3 class="feet">Pages</h3>
         <ul class="pages">
           <li>
@@ -44,7 +44,11 @@
         </ul>
       </div>
       <div class="main_footer">
-        <a href="mailto:tracychaston@gmail.com" class="feet text_center">
+        <a
+          href="mailto:tracychaston@gmail.com"
+          class="feet text_center"
+          aria-label="Contact Us"
+        >
           <img
             class="mail_icon"
             :src="require('@/assets/images/email-svgrepo-com.svg')"
@@ -52,12 +56,25 @@
           />
           Contact Us</a
         >
+        <a
+          href="https://ecoengineered.co.za/"
+          target="_blank"
+          rel="noopener noreferrer"
+          label="Eco Engineered Sanitising is used."
+          aria-label="Eco Engineered Sanitising is used."
+        >
+          <img
+            class="footer_logo"
+            :src="
+              require('@/assets/images/eco_engineered_sanitising_Trans.png')
+            "
+            alt="Eco Engineered Sanitising Logo"
+          />
+        </a>
       </div>
     </div>
     <div class="sub_footer_container">
-      <div class="subfooter feet vt">
-        &copy; Peninisula Ballet 2021
-      </div>
+      <div class="subfooter feet vt">&copy; Peninisula Ballet 2021</div>
       <div class="subfooter feet">
         <a
           class="clint_link"
