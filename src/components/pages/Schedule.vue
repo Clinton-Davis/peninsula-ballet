@@ -128,6 +128,10 @@
                   <td>Advanced Foundation</td>
                   <td class="tRight">6:15 - 7:15</td>
                 </tr>
+                <tr>
+                  <td>Advanced 2</td>
+                  <td class="tRight">7:15 - 8:30</td>
+                </tr>
               </tbody>
             </table>
           </div>
