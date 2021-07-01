@@ -3,6 +3,20 @@
     <div class="enrol__Img" :style="enrolImg">
       <div class="enrol__wrapper">
         <!--Form goes here-->
+        <p>
+          The Peninsula Ballet School
+          <small
+            >is compliant with the Protection of Personal Information Act 4 of
+            2013 (POPIA). The information that you submit via this online form
+            is safeguarded through industry-standard security layer protocols
+            (SSL or TSL) offering protection from malware and viruses. Your
+            information will only be used for the purpose of enrollment in our
+            classes and for contacting you regarding these classes. We will be
+            adding you, the parent/guardian, to specific Whatsapp Groups, for
+            ease of communication relating to classes. If you would not like to
+            be added to the Whatsapp Group, please advise us accordingly.</small
+          >
+        </p>
         <form class="contact-form" v-if="!success" @submit.prevent="sendEmail">
           <input
             class="text"
@@ -102,13 +116,13 @@
             placeholder="Emergency Contact Number*"
             v-model.trim="emergencyNumber"
           />
-          <textarea
-            name="issues"
-            minlength="2"
-            rows="3"
-            col="4"
-            placeholder="Emotional Or Physical Limitations/Injurys. (Keep in conferdance)"
-          ></textarea>
+          <p>
+            Any other relevant details that we may need to know to enable us to
+            provide you with the best possible training. Please contact us
+            directly to discuss any specific physical or emotional
+            limitations/injuries. <br />(This information will be kept in the
+            strictest of confidence)
+          </p>
           <div class="termanconditons">
             <h2>
               Terms and Conditions of Peninsula Ballet.
@@ -165,17 +179,40 @@
             </ul>
           </div>
           <div class="checkBox">
-            <input type="checkbox" value="" id="termsandConditions" required />
-            <label for="termsandConditions">
-              I have read, understand and accept, the
-              <span>Covid Safty Regulations</span> of Peninsula Ballet.
+            <input
+              style="width:2rem;"
+              type="checkbox"
+              value=""
+              id="guardianConsent"
+              required
+            />
+            <label for="guardianConsent">
+              I hereby <span>consent</span> to the information of my child/the
+              child I have Guardianship of, being sent via this
+              <span> online form </span>to The Peninsula Ballet School in
+              accordance with <span>POPIA.</span>
             </label>
           </div>
           <div class="checkBox">
             <input type="checkbox" value="" id="termsandConditions" required />
             <label for="termsandConditions">
               I have read, understand and accept, the
-              <span>Terms and Conditions</span> of Peninsula Ballet.
+              <span>Covid Safty Regulations</span> of Peninsula Ballet
+            </label>
+          </div>
+
+          <div class="checkBox">
+            <input
+              type="checkbox"
+              style="width:1.2rem;"
+              value=""
+              id="phone"
+              required
+            />
+            <label for="phone">
+              I hereby <span>consent</span> to my
+              <span>phone number being added </span>to the relevant class
+              Whatsapp Group/s.
             </label>
           </div>
           <div class="checkBox" v-if="!isLegal">
@@ -329,6 +366,12 @@ span {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
 }
+
+p {
+  max-width: 62ch;
+  margin: 0.5rem 0;
+  line-height: 1.2rem;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -403,6 +446,7 @@ textarea {
   transform: scale(1.4);
 }
 .checkBox {
+  margin: 0.5rem 0;
   display: flex;
   align-items: center;
 }
