@@ -41,6 +41,11 @@
           <li>
             <router-link class="feet" to="/attire">Attire</router-link>
           </li>
+          <li>
+            <router-link class="feet text-center" to="/privacypolicy"
+              >Privacy Policy</router-link
+            >
+          </li>
         </ul>
       </div>
       <div class="main_footer">
@@ -103,7 +108,6 @@ export default {};
 </script>
 
 <style scoped>
-
 #logo {
   max-width: 5rem;
 }
@@ -158,9 +162,8 @@ h4 {
   min-height: 10vh;
   width: min(90%, 75rem);
   display: grid;
-  gap:1em;
+  gap: 1em;
   grid-auto-flow: column;
-  
 }
 
 .pages {
@@ -176,15 +179,14 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
- 
 }
 
 @media screen and (max-width: 580px) {
   .footer-container {
     grid-auto-flow: row;
-}
+  }
   .sub_footer_container {
-     flex-direction: column;
+    flex-direction: column;
   }
 }
 

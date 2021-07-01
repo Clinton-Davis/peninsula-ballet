@@ -130,7 +130,7 @@
                 </tr>
                 <tr>
                   <td>Advanced 2</td>
-                  <td class="tRight">7:15 - 8:30</td>
+                <td class="tRight">7:15 - 8:30</td>
                 </tr>
               </tbody>
             </table>
