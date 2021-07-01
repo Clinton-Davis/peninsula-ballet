@@ -122,7 +122,7 @@
 
 <style scoped>
 section {
-  background-color: #67554d;
+  background-color: #131313;
   display: flex;
   justify-content: center;
   align-items: center;
