@@ -42,7 +42,7 @@
             <router-link class="feet" to="/attire">Attire</router-link>
           </li>
           <li>
-            <router-link class="feet text-center" to="/privacypolicy"
+            <router-link class="feet text_center" to="/privacypolicy"
               >Privacy Policy</router-link
             >
           </li>
