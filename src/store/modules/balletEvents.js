@@ -132,6 +132,13 @@ export default {
             "p10",
           ],
         },
+        {
+          id: "A_Decade_of_Dance",
+          name: "",
+          desc: "",
+          video: "",
+          imageIds: ["sh1"],
+        },
       ],
     };
   },

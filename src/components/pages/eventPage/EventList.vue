@@ -3,7 +3,7 @@
     <div class="eventList__Img" :style="eventsImg">
       <div class="eventList__container">
         <EventCard
-          v-for="event in balletEvents"
+          v-for="event in balletEvents.slice().reverse()"
           :key="event.id"
           :name="event.name"
           :desc="event.desc"

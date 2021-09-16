@@ -420,6 +420,11 @@ export default {
           image:
             "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,q_100,w_500/v1616490485/Beach%20Ballet%20Class/FB_IMG_1616489892228_ahozk3.webp",
         },
+        {
+          id: "sh1",
+          image:
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,w_400/v1631781643/web_pages/a_decade_of_dance_1_hz4i0f.webp",
+        },
       ],
     };
   },

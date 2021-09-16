@@ -12,7 +12,7 @@
   </teacher-modal>
 
   <div class="card" :title="names" @click="openBio">
-    <img :src="imgSrc" alt="" />
+    <img :src="imgSrc" alt="Image of Teacher" />
     <div class="card_info">
       <h1>{{ teacherName }}</h1>
       <h3>{{ tagLine }}</h3>

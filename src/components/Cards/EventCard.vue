@@ -1,9 +1,10 @@
 <template>
   <router-link :to="eventlistLink">
-    <div class="card">
+    <div :class="{ card: true, background_image: has_bg_image }">
       <h1 class="text-Shadow-Black">{{ name }}</h1>
       <p>{{ desc }}</p>
-      <small id="open">Click To Open</small>
+
+      <small v-if="!has_bg_image" id="open">Click To Open</small>
     </div>
   </router-link>
 </template>
@@ -11,6 +12,16 @@
 <script>
 export default {
   props: ["id", "name", "desc", "image"],
+  data() {
+    return {
+      has_bg_image: false,
+    };
+  },
+  mounted() {
+    if (this.id == "A_Decade_of_Dance") {
+      this.has_bg_image = true;
+    }
+  },
   computed: {
     eventlistLink() {
       return "/eventlist/" + this.id;
@@ -28,7 +39,7 @@ export default {
   padding: 1rem;
   min-height: 24rem;
   height: fit-content;
-  min-width: 300px;
+  min-width: 310px;
   max-width: 400px;
   border-radius: 20px;
   cursor: pointer;
@@ -38,6 +49,16 @@ export default {
   box-shadow: inset 0px 0px 10px 10px gold;
   border: 5px solid rgb(31, 3, 3);
   border-radius: 10px 10px 10px 10px;
+}
+.background_image {
+  background-image: url("https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,w_400/v1631781643/web_pages/a_decade_of_dance_1_hz4i0f.webp");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: inset 0px 0px 0px 7px rgb(221, 188, 3);
+  -moz-box-shadow: inset 0px 0px 0px 7px gold;
+  box-shadow: inset 0px 0px 0px 7px gold;
+  height: 27rem;
 }
 #open {
   position: absolute;

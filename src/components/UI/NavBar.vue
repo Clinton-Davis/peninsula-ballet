@@ -153,7 +153,6 @@ export default {
       }
     },
     changeNavColor(page) {
-      console.log(page);
       if (page === "welcome") {
         this.welcomePage = true;
         this.teachersPage = false;

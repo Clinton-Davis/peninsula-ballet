@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       button: "Show Picture Gallery",
-      balletEventName: "",
+      balletEventName: "A Decade of Dance",
       balletEventDesc: "",
       balletEventVideo: "",
       images: [],
