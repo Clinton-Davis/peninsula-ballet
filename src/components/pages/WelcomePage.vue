@@ -14,7 +14,7 @@
               alt="Fireworks icons"
             />
             <h3 class="textShadow text-Shadow-White">
-              Celebrating 10 Years Open
+              Celebrating A Decade of Dance.
             </h3>
             <img
               class="rightFire"
