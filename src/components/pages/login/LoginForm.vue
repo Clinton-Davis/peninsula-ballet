@@ -1,13 +1,11 @@
 <template>
   <div class="login_form_container">
-    <h1>Login</h1>
-    <br />
     <form action="" method="post">
       <div class="form-control">
-        <input type="email" />
+        <input v-model.trim="email" type="email" />
       </div>
       <div class="form-control">
-        <input type="password" />
+        <input v-model.trim="password" type="password" />
       </div>
       <base-btn type="submit">Login</base-btn>
       <base-btn :link="true" type="submit" @click="changeForm"

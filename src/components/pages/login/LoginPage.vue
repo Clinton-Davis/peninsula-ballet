@@ -2,7 +2,7 @@
   <section class="covid__section">
     <div class="covid__Image" :style="maskImage">
       <base-tile>
-        <h1>Register / Login</h1>
+        <h1>{{ headerCaption }}</h1>
         <div v-if="show_btns" class="login_btn">
           <p>
             Would you like to
@@ -41,6 +41,17 @@ export default {
         backgroundImage: `url(${require("@/assets/images/mask.jpg")})`,
       },
     };
+  },
+  computed: {
+    headerCaption() {
+      if (this.mode === "") {
+        return "Register / Login";
+      } else if (this.mode === "Login") {
+        return "Login";
+      } else {
+        return "Register";
+      }
+    },
   },
   methods: {
     Reg_Form() {

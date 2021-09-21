@@ -1,22 +1,20 @@
 <template>
   <div class="login_form_container">
-    <h1>Register</h1>
-    <br />
     <form action="" method="post">
       <div class="form-control">
-        <input v-model="username" type="text" placeholder="User Name" />
+        <input v-model.trim="username" type="text" placeholder="User Name" />
       </div>
       <div class="form-control">
-        <input v-model="firstName" type="text" placeholder="First Name" />
+        <input v-model.trim="firstName" type="text" placeholder="First Name" />
       </div>
       <div class="form-control">
-        <input v-model="lastName" type="text" placeholder="Last Name" />
+        <input v-model.trim="lastName" type="text" placeholder="Last Name" />
       </div>
       <div class="form-control">
-        <input v-model="email" type="email" placeholder="Email" />
+        <input v-model.trim="email" type="email" placeholder="Email" />
       </div>
       <div class="form-control">
-        <input v-model="password" type="password" placeholder="Password" />
+        <input v-model.trim="password" type="password" placeholder="Password" />
       </div>
 
       <base-btn type="submit">Register</base-btn>
