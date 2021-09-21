@@ -25,10 +25,11 @@ const router = createRouter({
       path: "/login",
       name: "login",
       component: LoginPage,
-      RegForm,
       LoginForm,
+      RegForm,
       props: true,
     },
+
     { path: "/enrolment", name: "enrolment", component: Enrolment },
     { path: "/studios", name: "studios", component: Studios },
     { path: "/eventlist", name: "eventlist", component: EventList },

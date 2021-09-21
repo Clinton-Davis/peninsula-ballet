@@ -3,15 +3,49 @@
     <h1>Login</h1>
     <br />
     <form action="" method="post">
-      <input type="email" />
-      <input type="password" />
-      <button type="submit">Login</button>
+      <div class="form-control">
+        <input type="email" />
+      </div>
+      <div class="form-control">
+        <input type="password" />
+      </div>
+      <base-btn type="submit">Login</base-btn>
+      <base-btn :link="true" type="submit" @click="changeForm"
+        >Register</base-btn
+      >
     </form>
   </div>
 </template>
 
 <script>
-export default {};
+import BaseBtn from "../../EventUI/BaseBtn.vue";
+export default {
+  components: { BaseBtn },
+  data() {
+    return {
+      email: "",
+      password: "",
+      invalidInput: false,
+      error: null,
+    };
+  },
+  methods: {
+    formValidaty() {
+      if (this.email === "" && this.password === "") {
+        this.invalidInput = true;
+        return;
+      }
+      this.invalidInput = false;
+      this.submitForm();
+    },
+    submitForm() {
+      this.error = null;
+    },
+    changeForm() {
+      this.$emit("change-form");
+    },
+  },
+};
 </script>
 
 <style></style>

@@ -1,26 +1,25 @@
 <template>
   <section class="covid__section">
     <div class="covid__Image" :style="maskImage">
-      <div class="covid__container">
-        <div class="covid__content">
-          <h1>Register and Login</h1>
-          <br />
-          <div v-if="show_btns" class="login_btn">
-            <button @click="reg_form">Register</button>
-            <br />
-            <button @click="login_form">Login</button>
-            <br />
+      <base-tile>
+        <h1>Register / Login</h1>
+        <div v-if="show_btns" class="login_btn">
+          <p>
+            Would you like to
+            <base-btn @click="Reg_Form">Register</base-btn> Or
+            <base-btn @click="Login_Form">Login</base-btn>
+          </p>
+        </div>
+        <br />
+        <div class="login_forms" @change-form="ChangeForm">
+          <div v-if="reg" class="reg_form">
+            <RegForm />
           </div>
-          <div class="login_forms">
-            <div v-if="reg" class="reg_form">
-              <RegForm />
-            </div>
-            <div v-if="login" class="login_form">
-              <LoginForm />
-            </div>
+          <div v-if="login" class="login_form">
+            <LoginForm />
           </div>
         </div>
-      </div>
+      </base-tile>
     </div>
   </section>
 </template>
@@ -28,12 +27,15 @@
 <script>
 import RegForm from "./RegForm.vue";
 import LoginForm from "./LoginForm.vue";
+import BaseBtn from "../../EventUI/BaseBtn.vue";
+import BaseTile from "../../EventUI/BaseTile.vue";
 export default {
-  components: { RegForm, LoginForm },
+  components: { RegForm, LoginForm, BaseBtn, BaseTile },
   data() {
     return {
-      login: false,
+      mode: "",
       reg: false,
+      login: false,
       show_btns: true,
       maskImage: {
         backgroundImage: `url(${require("@/assets/images/mask.jpg")})`,
@@ -41,13 +43,22 @@ export default {
     };
   },
   methods: {
-    reg_form() {
-      this.reg = !this.reg;
-      this.show_btns = !this.show_btns;
+    Reg_Form() {
+      this.reg = true;
+      (this.mode = "Register"), (this.show_btns = !this.show_btns);
     },
-    login_form() {
+    Login_Form() {
+      this.login = true;
+      (this.mode = "Login"), (this.show_btns = !this.show_btns);
+    },
+    ChangeForm() {
+      this.reg = !this.reg;
       this.login = !this.login;
-      this.show_btns = !this.show_btns;
+      if (this.mode === "Login") {
+        this.mode = "Register";
+      } else {
+        this.mode = "Login";
+      }
     },
   },
 };
