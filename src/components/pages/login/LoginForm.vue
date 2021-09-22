@@ -8,9 +8,6 @@
         <input v-model.trim="password" type="password" />
       </div>
       <base-btn type="submit">Login</base-btn>
-      <base-btn :link="true" type="submit" @click="changeForm"
-        >Register</base-btn
-      >
     </form>
   </div>
 </template>

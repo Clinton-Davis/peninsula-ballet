@@ -2,37 +2,18 @@ import { createStore } from "vuex";
 
 import balletEventsModule from "./modules/balletEvents.js";
 import eventPhotosModule from "./modules/eventPhotos.js";
+import authModule from "./modules/auth/index.js";
 
 const store = createStore({
   modules: {
     bltEvn: balletEventsModule,
     evnPic: eventPhotosModule,
+    auth: authModule,
   },
   state() {
     return {
       isLoggedIn: false,
     };
-  },
-  mutations: {
-    login(state) {
-      state.isLoggedIn = true;
-    },
-    logout(state) {
-      state.isLoggedIn = false;
-    },
-  },
-  actions: {
-    login(context) {
-      context.commit("login");
-    },
-    logout(context) {
-      context.commit("logout");
-    },
-  },
-  getters: {
-    isAuthenticated(state) {
-      return state.isLoggedIn;
-    },
   },
 });
 

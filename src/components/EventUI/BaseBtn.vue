@@ -66,6 +66,8 @@ a:hover {
   background-color: transparent;
   color: #000;
   border: none;
+  padding: 0.2rem 1.5rem;
+  text-transform: capitalize;
 }
 
 .outline {

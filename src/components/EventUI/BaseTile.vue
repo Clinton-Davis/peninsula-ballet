@@ -38,5 +38,6 @@
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+  transition: all 0.3s ease;
 }
 </style>

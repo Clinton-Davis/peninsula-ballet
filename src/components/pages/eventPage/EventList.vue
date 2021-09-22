@@ -2,6 +2,7 @@
   <section id="eventList__Section">
     <div class="eventList__Img" :style="eventsImg">
       <div class="eventList__container">
+        <div class="name">{{ userDetails }}</div>
         <EventCard
           v-for="event in balletEvents.slice().reverse()"
           :key="event.id"
@@ -30,6 +31,9 @@ export default {
   computed: {
     balletEvents() {
       return this.$store.getters["bltEvn/balletEvents"];
+    },
+    userDetails() {
+      return this.$store.getters["auth/fullName"];
     },
   },
 };

@@ -71,6 +71,10 @@ html {
 body {
   font-family: var(--Roboto);
 }
+.italianno {
+  font-family: var(--Italianno);
+  font-size: 3.3rem;
+}
 main {
   position: relative;
 }

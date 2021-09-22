@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://127.0.0.1/api/";
+const baseUrl = "http://127.0.0.1:8000/api/";
 
 const axiosInstance = axios.create({
   baseUrl: baseUrl,
@@ -13,3 +13,5 @@ const axiosInstance = axios.create({
     accept: "application/json",
   },
 });
+
+export default axiosInstance;
