@@ -74,10 +74,6 @@ export default {
         password: this.password,
       });
     },
-
-    changeForm() {
-      this.$emit("change-form", this.reg_form);
-    },
   },
 };
 </script>

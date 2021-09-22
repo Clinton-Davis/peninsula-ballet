@@ -25,16 +25,26 @@ import RegForm from "./RegForm.vue";
 import LoginForm from "./LoginForm.vue";
 // import BaseBtn from "../../EventUI/BaseBtn.vue";
 import BaseTile from "../../EventUI/BaseTile.vue";
+import { mapGetters } from "vuex";
 export default {
   components: { RegForm, LoginForm, BaseTile },
   data() {
     return {
       mode: "Register",
       reg: true,
+      reg_status: null,
       maskImage: {
         backgroundImage: `url(${require("@/assets/images/mask.jpg")})`,
       },
     };
+  },
+  watch: {
+    reg_status() {
+      console.log(this.reg_status);
+      if (this.reg_status === 201) {
+        this.reg = false;
+      }
+    },
   },
   computed: {
     headerCaption() {
@@ -52,6 +62,7 @@ export default {
       }
     },
   },
+  ...mapGetters(["get_status"]),
   methods: {
     changeForm(value) {
       console.log(value);

@@ -10,10 +10,7 @@ export default {
       firstName: "",
       lastName: "",
       password: "",
-      token: {
-        access: "",
-        refresh: "",
-      },
+      reg_status: null,
     };
   },
   actions,

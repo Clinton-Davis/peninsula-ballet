@@ -7,7 +7,7 @@
       <div class="form-control">
         <input v-model.trim="password" type="password" />
       </div>
-      <base-btn type="submit">Login</base-btn>
+      <base-btn type="submit" @click.prevent="formValidaty">Login</base-btn>
     </form>
   </div>
 </template>
@@ -26,18 +26,21 @@ export default {
   },
   methods: {
     formValidaty() {
-      if (this.email === "" && this.password === "") {
+      if (this.email === "" || this.password === "") {
         this.invalidInput = true;
         return;
+      } else {
+        this.invalidInput = false;
+
+        this.submitLoginForm();
       }
-      this.invalidInput = false;
-      this.submitForm();
     },
-    submitForm() {
+    submitLoginForm() {
       this.error = null;
-    },
-    changeForm() {
-      this.$emit("change-form");
+      this.$store.dispatch("auth/loginUser", {
+        email: this.email,
+        password: this.password,
+      });
     },
   },
 };
