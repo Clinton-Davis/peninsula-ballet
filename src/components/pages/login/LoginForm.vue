@@ -7,6 +7,7 @@
       <div class="form-control">
         <input v-model.trim="password" type="password" />
       </div>
+
       <base-btn type="submit" @click.prevent="formValidaty">Login</base-btn>
     </form>
   </div>

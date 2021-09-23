@@ -13,10 +13,15 @@
       vanish_nav: closeNav,
     }"
   >
-    <div class="logo">
+    <!-- <div class="logo">
       <h1>
         Peninsula Ballet
       </h1>
+    </div> -->
+    <div class="logo">
+      <h3>
+        {{ firstName }}
+      </h3>
     </div>
     <ul class="nav-links " :class="{ nav_active: navActive }">
       <li>
@@ -43,6 +48,12 @@
       </li>
       <li>
         <router-link to="/attire">Attire</router-link>
+      </li>
+      <li v-if="!loggedin">
+        <router-link to="/login">Login</router-link>
+      </li>
+      <li v-else>
+        <router-link to="logout">Logout</router-link>
       </li>
     </ul>
     <div class="burger" @click="bugerClick">
@@ -98,6 +109,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -113,6 +125,9 @@ export default {
       theEventPage: false,
       attirePage: false,
       closeNav: false,
+      loggedin: false,
+      firstName: "",
+      get_status: "",
     };
   },
   watch: {
@@ -123,6 +138,9 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+  },
+  computed: {
+    ...mapGetters("auth", ["firstName", "get_status"]),
   },
 
   methods: {

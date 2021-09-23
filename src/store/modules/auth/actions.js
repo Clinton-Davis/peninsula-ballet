@@ -10,12 +10,12 @@ export default {
         password: payload.password,
       })
       .then((response) => {
-        console.log(response);
-        console.log(response.data);
-        console.log(response.status);
         if (response.status === 201) {
-          context.commit("addUserData", response);
+          context.commit("addUserData", response.status);
         }
+      })
+      .catch((err) => {
+        console.log(err.message);
       });
   },
 
@@ -31,6 +31,9 @@ export default {
         localStorage.setItem("refresh_token", response.data.refresh);
         axiosInstance.defaults.headers["Authorization"] =
           "JWT " + localStorage.getItem("access_token");
+        if (response.status === 200) {
+          console.log(response.status);
+        }
       });
   },
 };

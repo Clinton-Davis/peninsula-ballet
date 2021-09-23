@@ -10,7 +10,7 @@ export default {
       firstName: "",
       lastName: "",
       password: "",
-      reg_status: null,
+      status: null,
     };
   },
   actions,

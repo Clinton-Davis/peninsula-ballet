@@ -1,21 +1,33 @@
 <template>
   <section class="login__section">
     <div class="login__Image" :style="maskImage">
-      <base-tile>
-        <p class="italianno text_center">{{ headerCaption }}</p>
-        <br />
-        <div class="login_forms">
-          <div v-if="reg" class="reg_form">
-            <RegForm />
+      <div class="card_wrapper">
+        <base-tile class="card">
+          <p class="italianno text_center">{{ headerCaption }}</p>
+          <br />
+          <div class="login_forms">
+            <div class="login_form">
+              <LoginForm />
+            </div>
+            <base-btn mode="flat" type="submit" @click.prevent="changeForm">{{
+              BtnCaption
+            }}</base-btn>
           </div>
-          <div v-else class="login_form">
-            <LoginForm />
+        </base-tile>
+        <h1 class="italianno">OR</h1>
+        <base-tile class="card">
+          <p class="italianno text_center">{{ headerCaption }}</p>
+          <br />
+          <div class="login_forms">
+            <div class="login_form">
+              <RegForm />
+            </div>
+            <base-btn mode="flat" type="submit" @click.prevent="changeForm">{{
+              BtnCaption
+            }}</base-btn>
           </div>
-          <base-btn mode="flat" type="submit" @click.prevent="changeForm">{{
-            BtnCaption
-          }}</base-btn>
-        </div>
-      </base-tile>
+        </base-tile>
+      </div>
     </div>
   </section>
 </template>
@@ -25,14 +37,14 @@ import RegForm from "./RegForm.vue";
 import LoginForm from "./LoginForm.vue";
 // import BaseBtn from "../../EventUI/BaseBtn.vue";
 import BaseTile from "../../EventUI/BaseTile.vue";
-import { mapGetters } from "vuex";
+// import { mapGetters } from "vuex";
 export default {
   components: { RegForm, LoginForm, BaseTile },
   data() {
     return {
-      mode: "Register",
-      reg: true,
-      reg_status: null,
+      // mode: "Register",
+      // reg: true,
+      // reg_status: null,
       maskImage: {
         backgroundImage: `url(${require("@/assets/images/mask.jpg")})`,
       },
@@ -40,41 +52,42 @@ export default {
   },
   watch: {
     reg_status() {
-      console.log(this.reg_status);
+      console.log("loginPage watcher:", this.reg_status);
       if (this.reg_status === 201) {
         this.reg = false;
       }
     },
   },
   computed: {
-    headerCaption() {
-      if (this.reg) {
-        return "Register";
-      } else {
-        return "Login";
-      }
-    },
-    BtnCaption() {
-      if (this.reg) {
-        return "Login";
-      } else {
-        return "Register";
-      }
-    },
+    // headerCaption() {
+    //   if (this.reg) {
+    //     return "Register";
+    //   } else {
+    //     return "Login";
+    //   }
+    // },
+    // BtnCaption() {
+    //   if (this.reg) {
+    //     return "Login";
+    //   } else {
+    //     return "Register";
+    //   }
+    // },
   },
-  ...mapGetters(["get_status"]),
+  // ...mapGetters("auth", ["get_status"]),
+
   methods: {
-    changeForm(value) {
-      console.log(value);
-      if (this.reg) {
-        this.reg = false;
-        this.mode = "Login";
-      } else {
-        console.log(this.reg);
-        this.reg = true;
-        this.mode = "Register";
-      }
-    },
+    // changeForm(value) {
+    //   console.log(value);
+    //   if (this.reg) {
+    //     this.reg = false;
+    //     this.mode = "Login";
+    //   } else {
+    //     console.log(this.reg);
+    //     this.reg = true;
+    //     this.mode = "Register";
+    //   }
+    // },
   },
 };
 </script>
@@ -109,5 +122,17 @@ span {
 }
 p {
   transition: all 0.5s ease;
+}
+
+.card_wrapper {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  min-height: 5rem;
 }
 </style>

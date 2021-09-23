@@ -1,6 +1,5 @@
 export default {
-  addUserData(state, responseData) {
-    (responseData.status = state.reg_status),
-      console.log("Mutations", responseData);
+  addUserData(state, status) {
+    (state.status = status), console.log("Mutations", status);
   },
 };

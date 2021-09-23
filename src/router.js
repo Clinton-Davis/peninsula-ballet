@@ -4,6 +4,7 @@ import Schedule from "./components/pages/Schedule.vue";
 import Attire from "./components/pages/Attire.vue";
 import Covid from "./components/pages/Covid.vue";
 import LoginPage from "./components/pages/login/LoginPage.vue";
+import LogOut from "./components/pages/login/LogOut.vue";
 import LoginForm from "./components/pages/login/LoginForm.vue";
 import RegForm from "./components/pages/login/RegForm.vue";
 import Enrolment from "./components/pages/Enrolment.vue";
@@ -27,6 +28,12 @@ const router = createRouter({
       component: LoginPage,
       LoginForm,
       RegForm,
+      props: true,
+    },
+    {
+      path: "/logout",
+      name: "logout",
+      component: LogOut,
       props: true,
     },
 

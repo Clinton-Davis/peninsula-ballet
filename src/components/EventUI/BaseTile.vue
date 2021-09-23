@@ -3,6 +3,9 @@
     <div class="title__content">
       <slot></slot>
     </div>
+    <div class="btn_slot">
+      <slot name="btn"></slot>
+    </div>
   </div>
 </template>
 
@@ -10,18 +13,18 @@
 .title__container {
   position: relative;
   display: flex;
-  min-height: 100vh;
+  min-height: 15.6rem;
   justify-content: center;
   align-items: center;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2rem;
 }
 
 .title__content {
-  margin: 5rem 0 3rem 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: linear-gradient(
     to bottom right,
     rgb(224, 189, 235),

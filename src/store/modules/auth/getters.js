@@ -8,6 +8,7 @@ export default {
   },
 
   get_status(state) {
+    console.log("Getter state", state.reg_status);
     return state.reg_status;
   },
 };
