@@ -8,7 +8,10 @@ import Studios from "./components/pages/Studios.vue";
 import Teachers from "./components/pages/Teachers.vue";
 import EventList from "./components/pages/eventPage/EventList.vue";
 import TheEvent from "./components/pages/eventPage/TheEvent.vue";
-import PrivacyPolicy from "./components/pages/PrivacyPolicy.vue"
+import PrivacyPolicy from "./components/pages/PrivacyPolicy.vue";
+import Login from "./components/pages/auth/Login.vue";
+import Register from "./components/pages/auth/Register.vue";
+import Logout from "./components/pages/auth/Logout.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -21,6 +24,9 @@ const router = createRouter({
     { path: "/enrolment", name: "enrolment", component: Enrolment },
     { path: "/studios", name: "studios", component: Studios },
     { path: "/eventlist", name: "eventlist", component: EventList },
+    { path: "/register", name: "register", component: Register },
+    { path: "/login", name: "login", component: Login },
+    { path: "/logout", name: "logout", component: Logout },
     { path: "/privacypolicy", name: "privacypolicy", component: PrivacyPolicy },
     {
       path: "/eventlist/:eventId",
