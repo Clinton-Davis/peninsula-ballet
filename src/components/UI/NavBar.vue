@@ -13,11 +13,7 @@
       vanish_nav: closeNav,
     }"
   >
-    <div class="logo">
-      <h1>
-        Peninsula Ballet
-      </h1>
-    </div>
+    <div class="logo"></div>
     <ul class="nav-links " :class="{ nav_active: navActive }">
       <li>
         <router-link to="/welcome">Welcome</router-link>
@@ -42,7 +38,10 @@
         <router-link to="/eventlist">Events</router-link>
       </li>
       <li>
-        <router-link to="/attire">Attire</router-link>
+        <router-link to="/login">Login</router-link>
+      </li>
+      <li>
+        <router-link to="/logout">Logout</router-link>
       </li>
     </ul>
     <div class="burger" @click="bugerClick">

@@ -20,15 +20,12 @@
   margin: auto;
 }
 .title__content {
+  min-width: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(224, 189, 235),
-    rgba(255, 255, 255)
-  );
+  background-color: rgba(255, 255, 255, 0.513);
   max-height: auto;
   position: relative;
   padding: 2rem;
