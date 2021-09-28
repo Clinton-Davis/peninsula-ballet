@@ -2,7 +2,7 @@
   <section class="logout__section">
     <div class="logout__Image">
       <base-tile>
-        <h1>Logout</h1>
+        <h1 class="italianno">Logout</h1>
         <base-btn>Logout</base-btn>
       </base-tile>
     </div>
@@ -30,7 +30,7 @@ h3 {
   text-transform: capitalize;
 }
 h1 {
-  font-size: 2.3em;
+  font-size: 3.3em;
 }
 
 .logout__section {

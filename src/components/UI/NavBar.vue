@@ -13,7 +13,7 @@
       vanish_nav: closeNav,
     }"
   >
-    <div class="logo"></div>
+    <!-- <div class="logo"></div> -->
     <ul class="nav-links " :class="{ nav_active: navActive }">
       <li>
         <router-link to="/welcome">Welcome</router-link>
@@ -42,6 +42,9 @@
       </li>
       <li>
         <router-link to="/logout">Logout</router-link>
+      </li>
+      <li>
+        <router-link to="/profile">Profile</router-link>
       </li>
     </ul>
     <div class="burger" @click="bugerClick">
@@ -112,6 +115,7 @@ export default {
       theEventPage: false,
       attirePage: false,
       closeNav: false,
+      isLogin: false,
     };
   },
   watch: {
@@ -122,6 +126,9 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+  },
+  computed: {
+    /**Get is_logged in to true */
   },
 
   methods: {

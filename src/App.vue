@@ -55,6 +55,9 @@ export default {
 .text_center {
   text-align: center;
 }
+.italianno {
+  font-family: var(--Italianno);
+}
 
 * {
   margin: 0px;
