@@ -3,7 +3,7 @@
     <div class="logout__Image">
       <base-tile>
         <h1 class="italianno">Logout</h1>
-        <base-btn>Logout</base-btn>
+        <base-btn @click.prevent="logout">Logout</base-btn>
       </base-tile>
     </div>
   </section>
@@ -12,12 +12,33 @@
 <script>
 import BaseBtn from "../../EventUI/BaseBtn.vue";
 import BaseTile from "../../EventUI/BaseTile.vue";
-
+import axios from "axios";
 export default {
   components: { BaseTile, BaseBtn },
 
   data() {
-    return {};
+    return {
+      isLoading: true,
+    };
+  },
+  methods: {
+    logout() {
+      let token = localStorage.getItem("accesstoken");
+      let headersList = {
+        Authorization: "Token " + token,
+        "Content-Type": "application/json",
+      };
+      let reqOptions = {
+        url: "http://127.0.0.1:8000/api/logout/",
+        method: "POST",
+        headers: headersList,
+        data: "Loging out",
+      };
+      axios.request(reqOptions).then((response) => {
+        console.log("logged_out ", response);
+        this.$store.dispatch("auth/load_data", response);
+      });
+    },
   },
 };
 </script>

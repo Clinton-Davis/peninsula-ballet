@@ -37,14 +37,14 @@
       <li>
         <router-link to="/eventlist">Events</router-link>
       </li>
-      <li>
+      <li v-if="!get_logged_in_status">
         <router-link to="/login">Login</router-link>
       </li>
-      <li>
-        <router-link to="/logout">Logout</router-link>
-      </li>
-      <li>
+      <li v-if="get_logged_in_status">
         <router-link to="/profile">Profile</router-link>
+      </li>
+      <li v-if="get_logged_in_status">
+        <router-link to="/logout">Logout</router-link>
       </li>
     </ul>
     <div class="burger" @click="bugerClick">
@@ -100,6 +100,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -128,7 +129,7 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
   },
   computed: {
-    /**Get is_logged in to true */
+    ...mapGetters("auth", ["get_logged_in_status"]),
   },
 
   methods: {

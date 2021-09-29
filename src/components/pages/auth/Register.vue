@@ -105,7 +105,6 @@ export default {
       };
 
       axios.request(reqOptions).then((response) => {
-        console.log(response);
         this.changeRoute(response);
       });
     },
