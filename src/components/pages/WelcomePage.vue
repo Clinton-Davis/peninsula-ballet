@@ -208,10 +208,21 @@ a:active {
   margin: 0 0.3rem 0 0.4rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .welcome__Wrap {
     margin: 0.125rem;
-    /* margin-top: 3rem; */
+    top: 12vh;
+  }
+  #welcome__Section {
+    display: flex;
+    position: relative;
+    height: 100vh;
+  }
+}
+@media screen and (max-width: 366px) {
+  .welcome__Wrap {
+    margin: 0.125rem;
+    top: 26vh;
   }
   #welcome__Section {
     display: flex;

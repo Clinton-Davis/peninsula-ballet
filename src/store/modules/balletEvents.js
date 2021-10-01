@@ -144,7 +144,6 @@ export default {
   },
   getters: {
     balletEvents(state) {
-      console.log(state);
       return state.balletEvents;
     },
   },

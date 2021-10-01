@@ -55,6 +55,9 @@ export default {
 .text_center {
   text-align: center;
 }
+.italianno {
+  font-family: var(--Italianno);
+}
 
 * {
   margin: 0px;
@@ -122,6 +125,17 @@ main {
 .nav-enter-to,
 .nav-leave-from {
   opacity: 1;
+}
+/**form-control */
+.form-control {
+  width: auto;
+  margin: 0.25rem auto;
+}
+.form-control input {
+  min-width: 280px;
+  width: 100%;
+  border-radius: 5px;
+  height: 1.5rem;
 }
 @media screen and (max-width: 400px) {
   html {
