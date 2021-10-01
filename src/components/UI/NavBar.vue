@@ -13,7 +13,7 @@
       vanish_nav: closeNav,
     }"
   >
-    <!-- <div class="logo"></div> -->
+    <div class="logo"></div>
     <ul class="nav-links " :class="{ nav_active: navActive }">
       <li>
         <router-link to="/welcome">Welcome</router-link>
@@ -37,10 +37,10 @@
       <li>
         <router-link to="/eventlist">Events</router-link>
       </li>
-      <li v-if="!get_logged_status">
+      <li hidden v-if="!get_logged_status">
         <router-link to="/login">Login</router-link>
       </li>
-      <li v-if="get_logged_status">
+      <li hidden v-if="get_logged_status">
         <router-link to="/profile">Profile</router-link>
       </li>
       <li v-if="get_logged_status">
@@ -276,8 +276,15 @@ nav {
 .vanish_nav {
   transform: translateY(-100%);
 }
-.logo h1 {
-  font-size: 3rem;
+.logo {
+  position: relative;
+  min-height: 4rem;
+  width: 4rem;
+  background-image: url("https://res.cloudinary.com/peninsulaballet/image/upload/v1633090277/web_pages/P.B.t_lseztu.webp");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .nav-links {
   display: flex;
