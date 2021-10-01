@@ -134,8 +134,8 @@ export default {
         },
         {
           id: "A_Decade_of_Dance",
-          name: "",
-          desc: "",
+          name: "A Decade of Dance",
+          desc: "A Show celebrating 10 Years of Teaching",
           video: "",
           imageIds: ["sh1"],
         },

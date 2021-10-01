@@ -34,12 +34,13 @@ import TheVideo from "../../EventUI//TheVideo";
 import BackTopTop from "../../UI/BackToTop.vue";
 
 export default {
+  name: "TheEvent",
   components: { TheGallery, TheVideo, BackTopTop },
   props: ["eventId"],
   data() {
     return {
       button: "Show Picture Gallery",
-      balletEventName: "A Decade of Dance",
+      balletEventName: "",
       balletEventDesc: "",
       balletEventVideo: "",
       images: [],
@@ -53,7 +54,9 @@ export default {
   },
   computed: {
     balletEvents() {
-      return this.$store.getters["bltEvn/balletEvents"];
+      let ballet_event = this.$store.getters["bltEvn/balletEvents"];
+      // this.get_event_detail(ballet_event);
+      return ballet_event;
     },
     eventPhotos() {
       return this.$store.getters["evnPic/eventPhotos"];
@@ -65,6 +68,7 @@ export default {
       const selectedballetEvents = this.balletEvents.find(
         (balletEvent) => balletEvent.id === eventId
       );
+      console.log(selectedballetEvents);
       const imageIds = selectedballetEvents.imageIds;
       const selectedImages = [];
       for (const image of imageIds) {
@@ -81,6 +85,9 @@ export default {
       this.btnIsActive = this.hasVideo;
       this.showImages = !this.hasVideo;
     },
+    getBalletEvents(eventId) {
+      console.log(eventId);
+    },
     changeView() {
       // Switches between image and video if
       // if event has a video
@@ -92,9 +99,13 @@ export default {
         this.button = "Show Picture Gallery";
       }
     },
+    // get_event_detail(ballet_event) {
+    //   console.log(ballet_event);
+    // },
   },
   created() {
     this.loadBalletEvents(this.eventId);
+    this.getBalletEvents(this.eventId);
   },
   watch: {
     eventId(newId) {
