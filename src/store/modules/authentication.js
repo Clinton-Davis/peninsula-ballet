@@ -6,17 +6,16 @@ export default {
       last_name: "",
       email: "",
       grade: "",
-      loggedIn: false,
+      is_active: false,
     };
   },
   mutations: {
     load_data(state, data) {
-      console.log("Mutation_data", data);
       state.first_name = data.first_name;
       state.last_name = data.last_name;
       state.email = data.email;
       state.grade = data.grade;
-      state.loggedIn = true;
+      state.is_active = data.is_active;
     },
   },
   actions: {
@@ -29,8 +28,8 @@ export default {
     get_token(state) {
       return state.token;
     },
-    get_logged_in_status(state) {
-      return state.loggedIn;
+    get_logged_status(state) {
+      return state.is_active;
     },
     get_user_data(state) {
       console.log("Mutation_data", state);

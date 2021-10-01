@@ -49,7 +49,6 @@ export default {
         return;
       } else {
         this.invalidInput = false;
-        console.log("Form is valid");
         this.loginUser();
       }
     },
@@ -70,13 +69,40 @@ export default {
         data: data,
       };
 
+      axios
+        .request(reqOptions)
+        .then((response) => {
+          console.log("login response:", response);
+          if (response.status === 200) {
+            const token = response.data.token;
+            localStorage.setItem("accesstoken", token);
+            this.get_profile();
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    get_profile() {
+      let token = localStorage.getItem("accesstoken");
+
+      let headersList = {
+        Authorization: "Token " + token,
+        "Content-Type": "application/json",
+      };
+      let reqOptions = {
+        url: "http://127.0.0.1:8000/api/profile/",
+        method: "GET",
+        headers: headersList,
+      };
       axios.request(reqOptions).then((response) => {
-        console.log(response);
+        console.log("Profile ", response);
         if (response.status === 200) {
-          const token = response.data.token;
-          localStorage.setItem("accesstoken", token);
+          this.$store.dispatch("auth/load_data", response.data);
+          setTimeout(() => {
+            this.$router.push("//eventlist/A_Decade_of_Dance");
+          }, 1750);
         }
-        /**Push to store */
       });
     },
   },

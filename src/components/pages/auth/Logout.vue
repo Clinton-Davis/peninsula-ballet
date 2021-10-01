@@ -2,8 +2,11 @@
   <section class="logout__section">
     <div class="logout__Image">
       <base-tile>
-        <h1 class="italianno">Logout</h1>
-        <base-btn @click.prevent="logout">Logout</base-btn>
+        <h1 v-if="get_logged_status" class="italianno">Logout</h1>
+        <base-btn v-if="get_logged_status" @click.prevent="logout"
+          >Logout</base-btn
+        >
+        <h2 v-if="!get_logged_status">You are now logged out. <br />Bye Bye</h2>
       </base-tile>
     </div>
   </section>
@@ -13,13 +16,15 @@
 import BaseBtn from "../../EventUI/BaseBtn.vue";
 import BaseTile from "../../EventUI/BaseTile.vue";
 import axios from "axios";
+import { mapGetters } from "vuex";
 export default {
   components: { BaseTile, BaseBtn },
 
   data() {
-    return {
-      isLoading: true,
-    };
+    return {};
+  },
+  computed: {
+    ...mapGetters("auth", ["get_logged_status"]),
   },
   methods: {
     logout() {
@@ -36,7 +41,13 @@ export default {
       };
       axios.request(reqOptions).then((response) => {
         console.log("logged_out ", response);
-        this.$store.dispatch("auth/load_data", response);
+        if (response.status === 204) {
+          localStorage.removeItem("accesstoken");
+          this.$store.dispatch("auth/load_data", response);
+          setTimeout(() => {
+            this.$router.push("/welcome");
+          }, 1500);
+        }
       });
     },
   },
