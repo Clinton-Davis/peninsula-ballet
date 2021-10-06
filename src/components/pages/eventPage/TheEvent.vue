@@ -4,6 +4,16 @@
       <div class="theEvent__Info">
         <h1 class="text-Shadow-Black">{{ balletEventName }}</h1>
         <p>{{ balletEventDesc }}</p>
+        <div v-if="get_logged_status" class="showBtn">
+          <base-btn link mode="show" to="/checkout"
+            >Get you Virtual Ticket</base-btn
+          >
+        </div>
+        <div v-else class="showBtn">
+          <base-btn link mode="show" to="/register"
+            >Get you Virtual Ticket</base-btn
+          >
+        </div>
         <button
           v-if="btnIsActive"
           @click="changeView"
@@ -32,14 +42,16 @@
 import TheGallery from "../../EventUI/TheGallery.vue";
 import TheVideo from "../../EventUI//TheVideo";
 import BackTopTop from "../../UI/BackToTop.vue";
-
+import BaseBtn from "../../EventUI/BaseBtn.vue";
+import { mapGetters } from "vuex";
 export default {
   name: "TheEvent",
-  components: { TheGallery, TheVideo, BackTopTop },
+  components: { TheGallery, TheVideo, BackTopTop, BaseBtn },
   props: ["eventId"],
   data() {
     return {
       button: "Show Picture Gallery",
+      is_show: false,
       balletEventName: "",
       balletEventDesc: "",
       balletEventVideo: "",
@@ -53,6 +65,7 @@ export default {
     };
   },
   computed: {
+    ...mapGetters("auth", ["get_logged_status"]),
     balletEvents() {
       let ballet_event = this.$store.getters["bltEvn/balletEvents"];
       // this.get_event_detail(ballet_event);

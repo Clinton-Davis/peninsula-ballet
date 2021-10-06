@@ -74,6 +74,13 @@ a:hover {
   border-color: #000;
   text-transform: capitalize;
 }
+.show {
+  background-color: #f9d423;
+  color: #000;
+  border-color: #000;
+  text-transform: capitalize;
+  box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.3);
+}
 .flat:hover,
 .outline:hover {
   background-color: #000;

@@ -13,6 +13,7 @@ import Login from "./components/pages/auth/Login.vue";
 import Register from "./components/pages/auth/Register.vue";
 import Logout from "./components/pages/auth/Logout.vue";
 import Profile from "./components/pages/Profile.vue";
+import Checkout from "./components/pages/eventPage/Checkout.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -28,6 +29,7 @@ const router = createRouter({
     { path: "/register", name: "register", component: Register },
     { path: "/profile", name: "profile", component: Profile },
     { path: "/login", name: "login", component: Login },
+    { path: "/checkout", name: "checkout", component: Checkout },
     { path: "/logout", name: "logout", component: Logout },
     { path: "/privacypolicy", name: "privacypolicy", component: PrivacyPolicy },
     {

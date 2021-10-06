@@ -100,7 +100,7 @@ export default {
         if (response.status === 200) {
           this.$store.dispatch("auth/load_data", response.data);
           setTimeout(() => {
-            this.$router.push("//eventlist/A_Decade_of_Dance");
+            this.$router.push("/checkout");
           }, 1750);
         }
       });

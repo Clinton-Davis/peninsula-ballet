@@ -135,7 +135,8 @@ export default {
         {
           id: "A_Decade_of_Dance",
           name: "A Decade of Dance",
-          desc: "A Show celebrating 10 Years of Teaching",
+          desc:
+            "We have held a show to celebrate our amazing accomplishment of teaching for 10 years. The dancers are to demonstrate their progress through the years. Because of covid, we were only able to fulfill 50% of the theater's capacity. We have decided to host a virtual performance for those of you who were unable to attend the live event. Tickets are available for R85. Please click here to purchase your ticket.",
           video: "",
           imageIds: ["sh1"],
         },

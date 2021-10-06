@@ -17,11 +17,11 @@ export default {
       has_bg_image: false,
     };
   },
-  mounted() {
-    if (this.id == "A_Decade_of_Dance") {
-      this.has_bg_image = true;
-    }
-  },
+  // mounted() {
+  //   if (this.id == "A_Decade_of_Dance") {
+  //     this.has_bg_image = true;
+  //   }
+  // },
   computed: {
     eventlistLink() {
       return "/eventlist/" + this.id;
