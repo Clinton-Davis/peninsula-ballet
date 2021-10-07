@@ -1,13 +1,15 @@
 <template>
   <section class="checkout">
-    <base-tile class="">
-      <div class="checkout__wrapper ">
-        <div class="checkout__details basetile_background"></div>
-        <div class="checkout__payment_form">
-          <base-btn @click="redirect">Get Ticket</base-btn>
+    <div class="checkout_background">
+      <base-tile class="checkout_border">
+        <div class="checkout__wrapper ">
+          <div class="checkout__details basetile_background"></div>
+          <div class="checkout__payment_form">
+            <base-btn @click="redirect">Get Ticket</base-btn>
+          </div>
         </div>
-      </div>
-    </base-tile>
+      </base-tile>
+    </div>
   </section>
 </template>
 
@@ -36,7 +38,7 @@ export default {
             quantity: 1,
           },
         ],
-        successUrl: "http://localhost:8080/profile",
+        successUrl: "http://localhost:8080/eventlist/A_Decade_of_Dance",
         cancelUrl: "http://localhost:8080/eventlist/A_Decade_of_Dance",
         /*TODO Add email */
         /**customerEmail */
@@ -53,6 +55,12 @@ section {
   min-height: 100vh;
   background: white;
   position: relative;
+}
+.checkout_background {
+  background-image: url("https://res.cloudinary.com/peninsulaballet/image/upload/v1633621321/web_pages/rob-laughter-dark.2ff70db8_ymfw9c.webp");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
 }
 .basetile_background {
   background-image: url("https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,w_768/v1631781643/web_pages/a_decade_of_dance_1_hz4i0f.webp");

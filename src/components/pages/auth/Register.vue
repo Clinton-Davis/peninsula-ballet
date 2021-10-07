@@ -77,6 +77,7 @@ export default {
         this.firstName === "" ||
         this.lastName === "" ||
         this.email === "" ||
+        !this.email.includes("@") ||
         this.password === ""
       ) {
         this.invalidInput = true;

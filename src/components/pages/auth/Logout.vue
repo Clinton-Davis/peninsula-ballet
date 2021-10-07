@@ -2,11 +2,11 @@
   <section class="logout__section">
     <div class="logout__Image">
       <base-tile>
-        <h1 v-if="get_logged_status" class="italianno">Logout</h1>
-        <base-btn v-if="get_logged_status" @click.prevent="logout"
+        <h1 v-if="isAuthenticated" class="italianno">Logout</h1>
+        <base-btn v-if="isAuthenticated" @click.prevent="logout"
           >Logout</base-btn
         >
-        <h2 v-if="!get_logged_status">You are now logged out. <br />Bye Bye</h2>
+        <h2 v-if="!isAuthenticated">You are now logged out. <br />Bye Bye</h2>
       </base-tile>
     </div>
   </section>
@@ -24,7 +24,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters("auth", ["get_logged_status"]),
+    ...mapGetters("auth", ["isAuthenticated"]),
   },
   methods: {
     logout() {
@@ -43,7 +43,7 @@ export default {
         console.log("logged_out ", response);
         if (response.status === 204) {
           localStorage.removeItem("accesstoken");
-          this.$store.dispatch("auth/load_data", response);
+          this.$store.dispatch("auth/logout");
           setTimeout(() => {
             this.$router.push("/welcome");
           }, 1500);

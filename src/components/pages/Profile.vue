@@ -19,6 +19,12 @@
           <li>
             {{ get_user_data.grade }}
           </li>
+          <li>
+            {{ get_user_data.grade }}
+          </li>
+          <li>
+            {{ get_user_data.grade }}
+          </li>
         </ul>
       </div>
     </base-tile>
@@ -35,6 +41,7 @@ export default {
   data() {
     return {
       errors: "",
+      ticket: "",
     };
   },
   created() {
@@ -50,7 +57,6 @@ export default {
   methods: {
     get_profile() {
       let token = localStorage.getItem("accesstoken");
-
       let headersList = {
         Authorization: "Token " + token,
         "Content-Type": "application/json",

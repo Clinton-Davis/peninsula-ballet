@@ -37,13 +37,13 @@
       <li>
         <router-link to="/eventlist">Events</router-link>
       </li>
-      <li hidden v-if="!get_logged_status">
+      <li hidden v-if="!isAuthenticated">
         <router-link to="/login">Login</router-link>
       </li>
-      <li hidden v-if="get_logged_status">
+      <!-- <li hidden v-if="isAuthenticated">
         <router-link to="/profile">Profile</router-link>
-      </li>
-      <li v-if="get_logged_status">
+      </li> -->
+      <li v-if="isAuthenticated">
         <router-link to="/logout">Logout</router-link>
       </li>
     </ul>
@@ -128,7 +128,7 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
   },
   computed: {
-    ...mapGetters("auth", ["get_logged_status"]),
+    ...mapGetters("auth", ["isAuthenticated"]),
   },
 
   methods: {

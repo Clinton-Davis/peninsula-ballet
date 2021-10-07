@@ -44,7 +44,11 @@ export default {
   },
   methods: {
     formValidaty() {
-      if (this.email === "" || this.password === "") {
+      if (
+        this.email === "" ||
+        !this.email.includes("@") ||
+        this.password === ""
+      ) {
         this.invalidInput = true;
         return;
       } else {
@@ -76,6 +80,7 @@ export default {
           if (response.status === 200) {
             const token = response.data.token;
             localStorage.setItem("accesstoken", token);
+            this.$store.dispatch("auth/set_token", token);
             this.get_profile();
           }
         })
@@ -85,23 +90,22 @@ export default {
     },
     get_profile() {
       let token = localStorage.getItem("accesstoken");
-
       let headersList = {
         Authorization: "Token " + token,
         "Content-Type": "application/json",
       };
       let reqOptions = {
-        url: "http://127.0.0.1:8000/api/profile/",
+        url: "http://127.0.0.1:8000/api/get_user_details/",
         method: "GET",
         headers: headersList,
       };
       axios.request(reqOptions).then((response) => {
-        console.log("Profile ", response);
+        console.log("User_details ", response);
         if (response.status === 200) {
           this.$store.dispatch("auth/load_data", response.data);
           setTimeout(() => {
-            this.$router.push("/checkout");
-          }, 1750);
+            this.$router.push("/show");
+          }, 1000);
         }
       });
     },

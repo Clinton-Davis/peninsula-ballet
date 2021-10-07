@@ -14,31 +14,39 @@ import Register from "./components/pages/auth/Register.vue";
 import Logout from "./components/pages/auth/Logout.vue";
 import Profile from "./components/pages/Profile.vue";
 import Checkout from "./components/pages/eventPage/Checkout.vue";
+import PaymentSuccess from "./components/pages/eventPage/PaymentSuccess.vue";
+import Show from "./components/pages/eventPage/Show.vue";
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", redirect: "/welcome" },
-    { path: "/welcome", name: "welcome", component: WelcomePage },
-    { path: "/teachers", name: "teachers", component: Teachers },
-    { path: "/schedule", name: "schedule", component: Schedule },
+    { path: "/attire", name: "attire", component: Attire },
     { path: "/covid", name: "covid", component: Covid },
-    { path: "/enrolment", name: "enrolment", component: Enrolment },
-    { path: "/studios", name: "studios", component: Studios },
-    { path: "/eventlist", name: "eventlist", component: EventList },
-    { path: "/register", name: "register", component: Register },
-    { path: "/profile", name: "profile", component: Profile },
-    { path: "/login", name: "login", component: Login },
     { path: "/checkout", name: "checkout", component: Checkout },
-    { path: "/logout", name: "logout", component: Logout },
-    { path: "/privacypolicy", name: "privacypolicy", component: PrivacyPolicy },
+    { path: "/enrolment", name: "enrolment", component: Enrolment },
+    { path: "/eventlist", name: "eventlist", component: EventList },
     {
       path: "/eventlist/:eventId",
       name: "theEvent",
       component: TheEvent,
       props: true,
     },
-    { path: "/attire", name: "attire", component: Attire },
+    { path: "/login", name: "login", component: Login },
+    { path: "/logout", name: "logout", component: Logout },
+    { path: "/profile", name: "profile", component: Profile },
+    { path: "/privacypolicy", name: "privacypolicy", component: PrivacyPolicy },
+    { path: "/register", name: "register", component: Register },
+    { path: "/schedule", name: "schedule", component: Schedule },
+    { path: "/studios", name: "studios", component: Studios },
+    { path: "/show", name: "show", component: Show },
+    {
+      path: "/success",
+      name: "PaymentSuccess",
+      component: PaymentSuccess,
+    },
+    { path: "/teachers", name: "teachers", component: Teachers },
+    { path: "/welcome", name: "welcome", component: WelcomePage },
     { path: "/:notFound(.*)", component: WelcomePage },
   ],
 });
