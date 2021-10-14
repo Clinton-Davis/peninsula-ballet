@@ -13,6 +13,8 @@
             </h3>
             <br />
             <h3>Enjoy</h3>
+            <br />
+            <base-btn mode="show" link to="/login">Ok</base-btn>
           </div>
         </div>
       </base-tile>
@@ -22,8 +24,9 @@
 
 <script>
 import BaseTile from "../../EventUI/BaseTile.vue";
+import BaseBtn from "../../EventUI/BaseBtn.vue";
 export default {
-  components: { BaseTile },
+  components: { BaseTile, BaseBtn },
 };
 </script>
 

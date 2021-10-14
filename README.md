@@ -273,6 +273,7 @@ All information and bios credited to Tracy Davis and Lielanie Beer.
 All pictures used are from:
 
 - [Unsplash](https://unsplash.com/)
+  Photo by Elena Kloppenburg
   Photo by Naitian（Tony） Wang on Unsplash
   Photo by Gez Xavier Mansfield on Unsplash
   Photo by Etienne Boulanger on Unsplash

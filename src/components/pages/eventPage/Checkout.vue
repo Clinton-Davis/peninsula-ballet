@@ -38,10 +38,8 @@ export default {
             quantity: 1,
           },
         ],
-        successUrl: "http://localhost:8080/eventlist/A_Decade_of_Dance",
+        successUrl: "http://localhost:8080/success",
         cancelUrl: "http://localhost:8080/eventlist/A_Decade_of_Dance",
-        /*TODO Add email */
-        /**customerEmail */
         mode: "payment",
       });
     }

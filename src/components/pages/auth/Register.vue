@@ -5,38 +5,58 @@
         <div v-if="!reg_success" class="wrapper">
           <h1 class="italianno">Register</h1>
           <form method="post">
-            <div class="form-control">
+            <div class="form-control" :class="{ invalid: !first_name.isValid }">
               <input
-                v-model.trim="firstName"
+                v-model.trim="first_name.value"
                 type="text"
                 placeholder="First Name"
+                @blur="clearInvalid"
               />
+              <p v-if="!first_name.isValid" class="errors small">
+                First name should be 2 characters or greater.
+              </p>
             </div>
-            <div class="form-control">
+            <div class="form-control" :class="{ invalid: !last_name.isValid }">
               <input
-                v-model.trim="lastName"
+                v-model.trim="last_name.value"
                 type="text"
                 placeholder="Last Name"
               />
+              <p v-if="!last_name.isValid" class="errors small">
+                Last name should be 2 characters or greater.
+              </p>
             </div>
-            <div class="form-control">
-              <input v-model.trim="email" type="email" placeholder="Email" />
-            </div>
-            <div class="form-control">
+            <div class="form-control" :class="{ invalid: !email.isValid }">
               <input
-                v-model.trim="password"
+                v-model.trim="email.value"
+                type="email"
+                placeholder="Email"
+              />
+              <p v-if="!email.isValid" class="errors small">
+                Email must include @.
+              </p>
+            </div>
+            <div class="form-control" :class="{ invalid: !email.isValid }">
+              <input
+                id="password"
+                v-model.trim="password.value"
                 type="password"
                 placeholder="Password"
               />
+              <label
+                for="password"
+                class="small"
+                :class="{ errors: !password.isValid }"
+              >
+                Must be 8 or longer. Not the same as email or names. Not all
+                Numbers
+              </label>
             </div>
-            <div v-if="invalidInput" class="form-control">
-              <p class="small ">
-                Opps, we have a few errors, <br />
-                Please fill out the form correctly.
-              </p>
+            <div v-if="!formIsValid" class="errors mt">
+              <p>Please fix the errors above and try again</p>
             </div>
 
-            <base-btn type="submit" @click.prevent="formValidaty"
+            <base-btn type="submit" @click.prevent="submitRegForm"
               >Register</base-btn
             >
           </form>
@@ -61,33 +81,69 @@ export default {
 
   data() {
     return {
-      invalidInput: false,
       error: null,
       reg_success: false,
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
+      first_name: {
+        value: "",
+        isValid: true,
+      },
+      last_name: {
+        value: "",
+        isValid: true,
+      },
+      email: {
+        value: "",
+        isValid: true,
+      },
+      password: {
+        value: "",
+        isValid: true,
+      },
+      formIsValid: true,
     };
   },
 
   methods: {
+    clearInvalid(input) {
+      this[input].isValid = true;
+    },
     formValidaty() {
+      /**TODO Its not working propaly */
+      this.formIsValid = true;
+
+      if (this.first_name.value === "" || this.first_name.value.length < 2) {
+        this.first_name.isValid = false;
+        this.formIsValid = false;
+      }
+      if (this.last_name.value === "" || this.last_name.value.length < 2) {
+        this.last_name.isValid = false;
+        this.formIsValid = false;
+      }
       if (
-        this.firstName === "" ||
-        this.lastName === "" ||
-        this.email === "" ||
+        this.email.value === "" ||
+        this.email.value.length < 5 ||
         !this.email.includes("@") ||
-        this.password === ""
+        !this.email.includes(".")
       ) {
-        this.invalidInput = true;
-        return;
-      } else {
-        this.invalidInput = false;
-        this.submitRegForm();
+        this.email.isValid = false;
+        this.formIsValid = false;
+      }
+      if (
+        this.password.value === "" ||
+        this.password.value == this.first_name.value ||
+        this.password.value == this.last_name.value ||
+        this.password.value == this.email.value
+      ) {
+        this.email.isValid = false;
+        this.formIsValid = false;
       }
     },
     submitRegForm() {
+      this.formValidaty();
+      if (!this.formIsValid) {
+        return;
+      }
+
       let headersList = {
         Authorization: "",
         "Content-Type": "application/json",
@@ -131,6 +187,9 @@ h3 {
 h1 {
   font-size: 3.3em;
 }
+.mt {
+  margin-top: 0.75rem;
+}
 
 .reg__section {
   min-height: 100vh;
@@ -143,5 +202,20 @@ h1 {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.small {
+  font-size: 0.7rem;
+}
+.errors {
+  text-align: center;
+  color: red;
+}
+
+.invalid input {
+  border: 1px solid red;
+}
+.invalid label {
+  color: red;
 }
 </style>

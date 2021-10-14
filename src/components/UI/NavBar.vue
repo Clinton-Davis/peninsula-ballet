@@ -37,12 +37,12 @@
       <li>
         <router-link to="/eventlist">Events</router-link>
       </li>
-      <li hidden v-if="!isAuthenticated">
+      <li v-if="!isAuthenticated">
         <router-link to="/login">Login</router-link>
       </li>
-      <!-- <li hidden v-if="isAuthenticated">
+      <li v-if="isAuthenticated">
         <router-link to="/profile">Profile</router-link>
-      </li> -->
+      </li>
       <li v-if="isAuthenticated">
         <router-link to="/logout">Logout</router-link>
       </li>

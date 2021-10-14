@@ -43,15 +43,27 @@ export default {
     get_token(state) {
       return state.token;
     },
+
     get_logged_status(state) {
       return state.is_active;
     },
+
     get_user_data(state) {
       console.log("Mutation_data", state);
       return state;
     },
+
+    get_tickets(state) {
+      const tickets = state.ticket;
+      if (tickets > 0) {
+        return tickets;
+      } else {
+        return false;
+      }
+    },
+
     isAuthenticated(state) {
-      console.log(state);
+      console.log("isAuth", state.token);
       return !!state.token;
     },
   },

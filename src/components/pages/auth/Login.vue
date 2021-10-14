@@ -20,8 +20,8 @@
 
           <base-btn type="submit" @click.prevent="formValidaty">Login</base-btn>
         </form>
-        <p>If you dont have a login yet you can</p>
-        <base-btn link to="/register" mode="flat">Register here</base-btn>
+        <!-- <p>If you dont have a login yet you can</p>
+        <base-btn link to="/register" mode="flat">Register here</base-btn> -->
       </base-tile>
     </div>
   </section>
@@ -104,7 +104,7 @@ export default {
         if (response.status === 200) {
           this.$store.dispatch("auth/load_data", response.data);
           setTimeout(() => {
-            this.$router.push("/show");
+            this.$router.push("/profile");
           }, 1000);
         }
       });

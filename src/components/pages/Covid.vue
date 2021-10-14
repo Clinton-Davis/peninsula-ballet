@@ -91,9 +91,7 @@ h3 {
   text-align: center;
   text-transform: capitalize;
 }
-h1 {
-  font-size: 2.3em;
-}
+
 span {
   font-weight: bold;
 }

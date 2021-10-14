@@ -4,13 +4,9 @@
       <div class="theEvent__Info">
         <h1 class="text-Shadow-Black">{{ balletEventName }}</h1>
         <p>{{ balletEventDesc }}</p>
-        <div v-if="get_logged_status" class="showBtn">
+
+        <div class="showBtn">
           <base-btn link mode="show" to="/checkout"
-            >Get you Virtual Ticket</base-btn
-          >
-        </div>
-        <div v-else class="showBtn">
-          <base-btn link mode="show" to="/register"
             >Get you Virtual Ticket</base-btn
           >
         </div>

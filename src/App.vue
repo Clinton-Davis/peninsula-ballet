@@ -58,7 +58,10 @@ export default {
 .italianno {
   font-family: var(--Italianno);
 }
-
+h1 {
+  font-family: var(--Italianno);
+  font-size: 3rem;
+}
 * {
   margin: 0px;
   padding: 0px;

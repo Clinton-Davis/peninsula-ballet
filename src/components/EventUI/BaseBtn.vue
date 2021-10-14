@@ -30,12 +30,13 @@ export default {
 </script>
 <style scoped>
 button {
-  margin: 0.9rem 0;
+  margin: 0.9rem auto;
   padding: 0.5rem 2rem;
   text-align: center;
   text-transform: uppercase;
   background-color: transparent;
   width: 100%;
+  max-width: 20rem;
   transition: 0.2s;
   color: black;
   box-shadow: 0 0 20px #eee;
@@ -43,12 +44,13 @@ button {
   display: block;
 }
 a {
-  margin: 0.7rem 0;
+  margin: 0.7rem auto;
   padding: 0.4rem 2rem;
   text-align: center;
   text-transform: capitalize;
   background-color: transparent;
   width: 100%;
+  max-width: 20rem;
   transition: 0.2s;
   color: black;
   box-shadow: 0 0 20px #eee;

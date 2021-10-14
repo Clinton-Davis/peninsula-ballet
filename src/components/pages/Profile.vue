@@ -1,84 +1,58 @@
 <template>
   <section>
-    <base-tile>
-      <div v-if="errors" class="errors">
-        <h3>{{ errors }}</h3>
-      </div>
-      <div v-if="!errors" class="content">
-        <h1>{{ get_user_data.first_name }}'s Profile</h1>
-        <ul>
-          <li>
-            {{ get_user_data.first_name }}
-          </li>
-          <li>
-            {{ get_user_data.last_name }}
-          </li>
-          <li>
-            {{ get_user_data.email }}
-          </li>
-          <li>
-            {{ get_user_data.grade }}
-          </li>
-          <li>
-            {{ get_user_data.grade }}
-          </li>
-          <li>
-            {{ get_user_data.grade }}
-          </li>
-        </ul>
-      </div>
-    </base-tile>
+    <div class="profile_backgroud">
+      <base-tile>
+        <div class="content text_center">
+          <h1>{{ get_user_data.first_name }}'s Profile</h1>
+          <div v-if="{ get_tickets }">
+            <p>You have {{ get_tickets }} show activations</p>
+            <br />
+            <p class="text_center">
+              Important! <br />Activation is stated when you click the button.
+            </p>
+            <base-btn link mode="outline" to="/show">Go To Show</base-btn>
+          </div>
+          <div v-else>
+            <p>You dont have a virtual show tickets</p>
+            <br />
+            <base-btn link mode="outline" to="/checkout">Get Tickets</base-btn>
+          </div>
+        </div>
+      </base-tile>
+    </div>
   </section>
 </template>
 
 <script>
 import BaseTile from "../EventUI/BaseTile.vue";
-import axios from "axios";
-import { mapGetters } from "vuex";
 
+import { mapGetters } from "vuex";
+import BaseBtn from "../EventUI/BaseBtn.vue";
 export default {
-  components: { BaseTile },
+  components: { BaseTile, BaseBtn },
   data() {
     return {
       errors: "",
-      ticket: "",
+      tickets: "",
     };
   },
-  created() {
-    this.get_profile();
-  },
+  created() {},
   computed: {
     ...mapGetters("auth", [
       "get_token",
       "get_logged_in_status",
       "get_user_data",
+      "get_tickets",
     ]),
-  },
-  methods: {
-    get_profile() {
-      let token = localStorage.getItem("accesstoken");
-      let headersList = {
-        Authorization: "Token " + token,
-        "Content-Type": "application/json",
-      };
-
-      let reqOptions = {
-        url: "http://127.0.0.1:8000/api/profile/",
-        method: "GET",
-        headers: headersList,
-      };
-      axios
-        .request(reqOptions)
-        .then((response) => {
-          console.log("Profile ", response);
-        })
-        .catch((error) => {
-          console.log(error.response);
-          this.errors = error.response.data.detail;
-        });
-    },
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+.profile_backgroud {
+  background-image: url("https://res.cloudinary.com/peninsulaballet/image/upload/v1632477164/web_pages/elena-kloppenburg_vro8jf.webp");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+</style>

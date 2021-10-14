@@ -25,7 +25,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.513);
+  background-color: rgba(255, 255, 255, 0.76);
   max-height: auto;
   position: relative;
   padding: 2rem;
