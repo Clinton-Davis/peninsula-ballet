@@ -40,8 +40,9 @@ export default {
             quantity: 1,
           },
         ],
-        successUrl: "http://localhost:8080/success",
-        cancelUrl: "http://localhost:8080/eventlist/A_Decade_of_Dance",
+        successUrl: "https://peninsulaballet-staging.netlify.app/success",
+        cancelUrl:
+          "https://peninsulaballet-staging.netlify.app/success/A_Decade_of_Dance",
         mode: "payment",
       });
     }
