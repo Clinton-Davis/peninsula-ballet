@@ -16,7 +16,7 @@ import Profile from "./components/pages/Profile.vue";
 import Checkout from "./components/pages/eventPage/Checkout.vue";
 import PaymentSuccess from "./components/pages/eventPage/PaymentSuccess.vue";
 import Show from "./components/pages/eventPage/Show.vue";
-
+import store from "./store";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -34,12 +34,22 @@ const router = createRouter({
     },
     { path: "/login", name: "login", component: Login },
     { path: "/logout", name: "logout", component: Logout },
-    { path: "/profile", name: "profile", component: Profile },
+    {
+      path: "/profile",
+      name: "profile",
+      component: Profile,
+      meta: { requiredAuth: true },
+    },
     { path: "/privacypolicy", name: "privacypolicy", component: PrivacyPolicy },
     { path: "/register", name: "register", component: Register },
     { path: "/schedule", name: "schedule", component: Schedule },
     { path: "/studios", name: "studios", component: Studios },
-    { path: "/show", name: "show", component: Show },
+    {
+      path: "/show",
+      name: "show",
+      component: Show,
+      meta: { requiredAuth: true },
+    },
     {
       path: "/success",
       name: "PaymentSuccess",
@@ -49,6 +59,18 @@ const router = createRouter({
     { path: "/welcome", name: "welcome", component: WelcomePage },
     { path: "/:notFound(.*)", component: WelcomePage },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiredAuth)) {
+    if (store.getters["auth/isAuthenticated"]) {
+      next();
+    } else {
+      router.replace("/login");
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;

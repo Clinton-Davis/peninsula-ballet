@@ -1,33 +1,42 @@
 <template>
   <section class="login__section">
     <div class="login__Image">
-      <base-tile>
-        <h1 class="italianno">Login</h1>
+      <div v-if="!isAuthenticated" class="tile_wrapper">
+        <base-tile>
+          <h1 class="italianno">Login</h1>
+          <form action="" method="post">
+            <div class="form-control">
+              <input v-model.trim="email" type="email" />
+            </div>
+            <div class="form-control">
+              <input v-model.trim="password" type="password" />
+            </div>
+            <div v-if="invalidInput" class="form-control">
+              <p>
+                Opps, we have a few errors, <br />
+                Please fill out the form correctly.
+              </p>
+            </div>
 
-        <form action="" method="post">
-          <div class="form-control">
-            <input v-model.trim="email" type="email" />
-          </div>
-          <div class="form-control">
-            <input v-model.trim="password" type="password" />
-          </div>
-          <div v-if="invalidInput" class="form-control">
-            <p>
-              Opps, we have a few errors, <br />
-              Please fill out the form correctly.
-            </p>
-          </div>
-
-          <base-btn type="submit" @click.prevent="formValidaty">Login</base-btn>
-        </form>
-        <!-- <p>If you dont have a login yet you can</p>
+            <base-btn type="submit" @click.prevent="formValidaty"
+              >Login</base-btn
+            >
+          </form>
+          <!-- <p>If you dont have a login yet you can</p>
         <base-btn link to="/register" mode="flat">Register here</base-btn> -->
-      </base-tile>
+        </base-tile>
+      </div>
+      <div v-else class="tile_wrapper">
+        <base-tile>
+          <h1 class="italianno">You Are Logged In</h1>
+        </base-tile>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import BaseBtn from "../../EventUI/BaseBtn.vue";
 import BaseTile from "../../EventUI/BaseTile.vue";
 
@@ -41,6 +50,9 @@ export default {
       email: "",
       password: "",
     };
+  },
+  computed: {
+    ...mapGetters("auth", ["isAuthenticated"]),
   },
   methods: {
     formValidaty() {
@@ -102,6 +114,7 @@ export default {
       axios.request(reqOptions).then((response) => {
         console.log("User_details ", response);
         if (response.status === 200) {
+          console.log("Login:", response.data.email);
           this.$store.dispatch("auth/load_data", response.data);
           setTimeout(() => {
             this.$router.push("/profile");

@@ -15,6 +15,7 @@
 import NavBar from "./components/UI/NavBar.vue";
 import Footer from "./components/UI/Footer.vue";
 import windowScrollPosition from "./windowScrollPosition";
+
 export default {
   mixins: [windowScrollPosition("position")],
   components: {
@@ -25,6 +26,9 @@ export default {
     return {
       windwPos: this.position[1],
     };
+  },
+  created() {
+    this.$store.dispatch("auth/autoLogin");
   },
   watch: {
     windwPos() {

@@ -4,7 +4,7 @@
       <base-tile>
         <div class="content text_center">
           <h1>{{ get_user_data.first_name }}'s Profile</h1>
-          <div v-if="{ get_tickets }">
+          <div v-if="get_tickets">
             <p>You have {{ get_tickets }} show activations</p>
             <br />
             <p class="text_center">
@@ -27,6 +27,7 @@
 import BaseTile from "../EventUI/BaseTile.vue";
 
 import { mapGetters } from "vuex";
+import axios from "axios";
 import BaseBtn from "../EventUI/BaseBtn.vue";
 export default {
   components: { BaseTile, BaseBtn },
@@ -36,14 +37,31 @@ export default {
       tickets: "",
     };
   },
-  created() {},
+  created() {
+    this.get_profile();
+  },
   computed: {
-    ...mapGetters("auth", [
-      "get_token",
-      "get_logged_in_status",
-      "get_user_data",
-      "get_tickets",
-    ]),
+    ...mapGetters("auth", ["get_token", "get_user_data", "get_tickets"]),
+  },
+  methods: {
+    get_profile() {
+      let token = localStorage.getItem("accesstoken");
+      let headersList = {
+        Authorization: "Token " + token,
+        "Content-Type": "application/json",
+      };
+      let reqOptions = {
+        url: "http://127.0.0.1:8000/api/get_user_details/",
+        method: "GET",
+        headers: headersList,
+      };
+      axios.request(reqOptions).then((response) => {
+        console.log("User_details ", response);
+        if (response.status === 200) {
+          this.$store.dispatch("auth/load_data", response.data);
+        }
+      });
+    },
   },
 };
 </script>

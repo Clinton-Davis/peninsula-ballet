@@ -2,18 +2,71 @@
   <section class="show_section">
     <div class="show_background">
       <div class="video__wrapper">
-        <h1>Show Goes here</h1>
+        <vue-vimeo-player
+          ref="player"
+          :video-id="videoID"
+          :player-width="width"
+          :player-height="height"
+          @ready="onReady"
+        >
+        </vue-vimeo-player>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import axios from "axios";
+import { vueVimeoPlayer } from "vue-vimeo-player";
 export default {
   name: "Show",
-  components: {},
+  components: { vueVimeoPlayer },
   data() {
-    return {};
+    return {
+      videoID: "626558962",
+      height: 500,
+      width: 700,
+      options: {
+        muted: true,
+        autoplay: false,
+      },
+      playerReady: false,
+    };
+  },
+  watch: {
+    playerReady() {
+      this.activated();
+    },
+  },
+
+  methods: {
+    onReady() {
+      this.playerReady = true;
+    },
+    play() {
+      this.$refs.player.play();
+    },
+    pause() {
+      this.$refs.player.pause();
+    },
+
+    activated() {
+      let token = localStorage.getItem("accesstoken");
+      let data = { activation: 1 };
+      let headersList = {
+        Authorization: "Token " + token,
+        "Content-Type": "application/json",
+      };
+      let reqOptions = {
+        url: "http://127.0.0.1:8000/api/activate/",
+        method: "POST",
+        headers: headersList,
+        data: data,
+      };
+      axios.request(reqOptions).then((response) => {
+        console.log("activatd ", response);
+      });
+    },
   },
 };
 </script>

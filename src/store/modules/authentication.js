@@ -1,3 +1,4 @@
+import axios from "axios";
 export default {
   namespaced: true,
   state() {
@@ -27,6 +28,7 @@ export default {
       state.ticket = 0;
     },
   },
+
   actions: {
     load_data(context, data) {
       context.commit("load_data", data);
@@ -37,15 +39,35 @@ export default {
     logout(context) {
       context.commit("logout");
     },
+    autoLogin(context) {
+      let token = localStorage.getItem("accesstoken");
+      if (!token) {
+        return;
+      } else {
+        context.commit("set_token", token);
+        let headersList = {
+          Authorization: "Token " + token,
+          "Content-Type": "application/json",
+        };
+        let reqOptions = {
+          url: "http://127.0.0.1:8000/api/get_user_details/",
+          method: "GET",
+          headers: headersList,
+        };
+        axios.request(reqOptions).then((response) => {
+          console.log("User_details ", response);
+          if (response.status === 200) {
+            console.log("AutoLogin:", response.data);
+            this.$store.commit("auth/load_data", response.data);
+          }
+        });
+      }
+    },
   },
 
   getters: {
     get_token(state) {
       return state.token;
-    },
-
-    get_logged_status(state) {
-      return state.is_active;
     },
 
     get_user_data(state) {
@@ -63,7 +85,7 @@ export default {
     },
 
     isAuthenticated(state) {
-      console.log("isAuth", state.token);
+      console.log("isAuth", !!state.token);
       return !!state.token;
     },
   },
