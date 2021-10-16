@@ -25,7 +25,9 @@ export default {
 
     onMounted(async () => {
       try {
-        stripe = await loadStripe(process.env.VUE_APP_STRIPE_PUBLISHABLE_KEY);
+        stripe = await loadStripe(
+          process.env.VUE_APP_STRIPE_LIVE_PUBLISHABLE_KEY
+        );
       } catch (error) {
         console.log("Stripe errors", error);
       }
@@ -34,7 +36,7 @@ export default {
       stripe.redirectToCheckout({
         lineItems: [
           {
-            price: "price_1JgwpqCraEfQKyLO70o4oIf0",
+            price: "price_1JlDLcCraEfQKyLOvUsRiahh",
             quantity: 1,
           },
         ],

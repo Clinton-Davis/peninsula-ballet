@@ -58,7 +58,7 @@ export default {
         "Content-Type": "application/json",
       };
       let reqOptions = {
-        url: "http://127.0.0.1:8000/api/activate/",
+        url: "https://peninsula-ballet-backend.herokuapp.com/api/activate/",
         method: "POST",
         headers: headersList,
         data: data,

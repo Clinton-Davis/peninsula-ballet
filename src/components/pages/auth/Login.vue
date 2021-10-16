@@ -79,7 +79,7 @@ export default {
         password: this.password,
       };
       let reqOptions = {
-        url: "http://127.0.0.1:8000/api/login/",
+        url: "https://peninsula-ballet-backend.herokuapp.com/api/login/",
         method: "POST",
         headers: headersList,
         data: data,
@@ -107,7 +107,8 @@ export default {
         "Content-Type": "application/json",
       };
       let reqOptions = {
-        url: "http://127.0.0.1:8000/api/get_user_details/",
+        url:
+          "https://peninsula-ballet-backend.herokuapp.com/api/get_user_details/",
         method: "GET",
         headers: headersList,
       };

@@ -155,7 +155,7 @@ export default {
         password: this.password,
       };
       let reqOptions = {
-        url: "http://127.0.0.1:8000/api/register/",
+        url: "https://peninsula-ballet-backend.herokuapp.com/api/api/register/",
         method: "POST",
         headers: headersList,
         data: data,
