@@ -56,9 +56,7 @@ export default {
           headers: headersList,
         };
         axios.request(reqOptions).then((response) => {
-          console.log("User_details ", response);
           if (response.status === 200) {
-            console.log("AutoLogin:", response.data);
             this.$store.commit("auth/load_data", response.data);
           }
         });
@@ -72,8 +70,7 @@ export default {
     },
 
     get_user_data(state) {
-      console.log("Mutation_data", state);
-      return state;
+      return state.first_name;
     },
 
     get_tickets(state) {
@@ -86,6 +83,7 @@ export default {
     },
 
     isAuthenticated(state) {
+      // TODO MUSG DELETE  console.log
       console.log("isAuth", !!state.token);
       return !!state.token;
     },

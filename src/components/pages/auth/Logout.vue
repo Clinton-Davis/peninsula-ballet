@@ -39,16 +39,20 @@ export default {
         headers: headersList,
         data: "Loging out",
       };
-      axios.request(reqOptions).then((response) => {
-        console.log("logged_out ", response);
-        if (response.status === 204) {
-          localStorage.removeItem("accesstoken");
-          this.$store.dispatch("auth/logout");
-          setTimeout(() => {
-            this.$router.push("/welcome");
-          }, 1500);
-        }
-      });
+      axios
+        .request(reqOptions)
+        .then((response) => {
+          if (response.status === 204) {
+            localStorage.removeItem("accesstoken");
+            this.$store.dispatch("auth/logout");
+            setTimeout(() => {
+              this.$router.push("/welcome");
+            }, 1500);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };

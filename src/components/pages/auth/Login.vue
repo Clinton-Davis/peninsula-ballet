@@ -88,7 +88,6 @@ export default {
       axios
         .request(reqOptions)
         .then((response) => {
-          console.log("login response:", response);
           if (response.status === 200) {
             const token = response.data.token;
             localStorage.setItem("accesstoken", token);
@@ -112,16 +111,19 @@ export default {
         method: "GET",
         headers: headersList,
       };
-      axios.request(reqOptions).then((response) => {
-        console.log("User_details ", response);
-        if (response.status === 200) {
-          console.log("Login:", response.data.email);
-          this.$store.dispatch("auth/load_data", response.data);
-          setTimeout(() => {
-            this.$router.push("/profile");
-          }, 1000);
-        }
-      });
+      axios
+        .request(reqOptions)
+        .then((response) => {
+          if (response.status === 200) {
+            this.$store.dispatch("auth/load_data", response.data);
+            setTimeout(() => {
+              this.$router.push("/profile");
+            }, 1000);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };

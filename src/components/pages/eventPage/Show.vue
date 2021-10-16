@@ -63,9 +63,14 @@ export default {
         headers: headersList,
         data: data,
       };
-      axios.request(reqOptions).then((response) => {
-        console.log("activatd ", response);
-      });
+      axios
+        .request(reqOptions)
+        .then((response) => {
+          if (response.status === 200) console.log("Activated ");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };

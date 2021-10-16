@@ -3,7 +3,7 @@
     <div class="profile_backgroud">
       <base-tile>
         <div class="content text_center">
-          <h1>{{ get_user_data.first_name }}'s Profile</h1>
+          <h1>{{ get_user_data }}'s Profile</h1>
           <div v-if="get_tickets">
             <p>You have {{ get_tickets }} show activations</p>
             <br />
@@ -56,12 +56,16 @@ export default {
         method: "GET",
         headers: headersList,
       };
-      axios.request(reqOptions).then((response) => {
-        console.log("User_details ", response);
-        if (response.status === 200) {
-          this.$store.dispatch("auth/load_data", response.data);
-        }
-      });
+      axios
+        .request(reqOptions)
+        .then((response) => {
+          if (response.status === 200) {
+            this.$store.dispatch("auth/load_data", response.data);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };

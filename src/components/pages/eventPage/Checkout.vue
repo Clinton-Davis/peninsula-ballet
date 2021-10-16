@@ -26,7 +26,7 @@ export default {
     onMounted(async () => {
       try {
         stripe = await loadStripe(
-          process.env.VUE_APP_STRIPE_LIVE_PUBLISHABLE_KEY
+          "pk_live_51JfqAWCraEfQKyLOoxYQNzpJG8AO5TBiP6osvNaWJ79cgV9lOE06sfCjgiBpPaSZ9CZMatyUfEZHMNBY8uXOBSsy00Vbd5mUGM"
         );
       } catch (error) {
         console.log("Stripe errors", error);
