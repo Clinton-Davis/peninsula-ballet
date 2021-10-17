@@ -6,10 +6,14 @@
           <h1 class="italianno">Login</h1>
           <form action="" method="post">
             <div class="form-control">
-              <input v-model.trim="email" type="email" />
+              <input v-model.trim="email" type="email" placeholder="Email" />
             </div>
             <div class="form-control">
-              <input v-model.trim="password" type="password" />
+              <input
+                v-model.trim="password"
+                type="password"
+                placeholder="Password"
+              />
             </div>
             <div v-if="invalidInput" class="form-control">
               <p>
