@@ -3,7 +3,26 @@
     <div class="checkout_background">
       <base-tile class="checkout_border">
         <div class="checkout__wrapper ">
-          <div class="checkout__details basetile_background"></div>
+          <div class="checkout__details basetile_background">
+            <div class="info_wrapper">
+              <div class="info">
+                <h4 class="text_center">Getting your tickets</h4>
+                <p>
+                  The following link will direct you to the Stripe payment
+                  page.<br />
+                  You will need to provide your email address and name in order
+                  to complete this secure payment. <br />
+                  Your email address that you use to make a payment will be the
+                  same one that you use to sign in to the Peninsula Ballet
+                  website, once the transaction has been completed. <br />
+                  We would like you to be aware that your email will not be used
+                  for any other purposes than personal login.<br />
+                  You agree to the above terms of the by clicking the link
+                  below.
+                </p>
+              </div>
+            </div>
+          </div>
           <div class="checkout__payment_form">
             <base-btn @click="redirect">Get Ticket</base-btn>
           </div>
@@ -67,15 +86,28 @@ section {
   background-image: url("https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,w_768/v1631781643/web_pages/a_decade_of_dance_1_hz4i0f.webp");
   background-size: cover;
   background-position: center;
-  height: 25rem;
+  min-height: 19rem;
   width: 100%;
 }
 .checkout__details {
   position: relative;
-  width: 15rem;
+  width: 25rem;
 }
 .checkout__payment_form {
   position: relative;
-  width: 15rem;
+  width: 25rem;
+}
+.info_wrapper {
+  display: flex;
+  background: rgba(255, 255, 255, 0.856);
+  border-radius: 15px;
+}
+.info {
+  margin: 0.5rem;
+  width: 90%;
+}
+.info h4 {
+  font-family: var(--Italianno);
+  font-size: 2.7rem;
 }
 </style>
