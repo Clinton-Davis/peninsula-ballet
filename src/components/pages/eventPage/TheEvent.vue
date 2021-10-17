@@ -77,7 +77,6 @@ export default {
       const selectedballetEvents = this.balletEvents.find(
         (balletEvent) => balletEvent.id === eventId
       );
-      console.log(selectedballetEvents);
       const imageIds = selectedballetEvents.imageIds;
       const selectedImages = [];
       for (const image of imageIds) {
