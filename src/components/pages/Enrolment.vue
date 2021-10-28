@@ -3,7 +3,11 @@
     <div class="enrol__Img" :style="enrolImg">
       <div class="enrol__wrapper">
         <!--Form goes here-->
-        <p>
+        <p class="text_center" v-if="formSend">
+          Thank you {{ first_name }} {{ last_name }} for enrolling. <br />Your
+          form has been sent, and you will hear from us as soon.
+        </p>
+        <p v-if="!formSend">
           The Peninsula Ballet School
           <small
             >is compliant with the Protection of Personal Information Act 4 of
@@ -17,31 +21,30 @@
             be added to the Whatsapp Group, please advise us accordingly.</small
           >
         </p>
-        <form class="contact-form" v-if="!success" @submit.prevent="sendEmail">
+        <form v-if="!formSend" class="contact-form">
           <input
             class="text"
             type="text"
-            name="first_name"
             minlength="3"
             placeholder="First Name*"
-            v-model.trim="firstName"
+            v-model.trim="first_name"
             required
           />
 
           <input
             class="text"
             type="text"
-            name="last_name"
             minlength="3"
             placeholder="Surname*"
-            v-model.trim="lastName"
+            v-model.trim="last_name"
             required
           />
 
           <input
             class="email"
             type="email"
-            name="from_email"
+            name="email"
+            v-model.trim="email"
             placeholder="Email*"
             required
           />
@@ -95,7 +98,7 @@
             v-if="!isLegal"
             class="text"
             type="text"
-            name="guardian_name"
+            name="guardian"
             minlength="6"
             placeholder="Parent/Guardian Full Name*"
             v-model.trim="guardian"
@@ -106,7 +109,7 @@
             name="contact_number"
             minlength="5"
             placeholder="Contact Number*"
-            v-model.trim="contactNumber"
+            v-model.trim="contact_number"
             required
           />
           <input
@@ -114,7 +117,7 @@
             name="emergency_number"
             minlength="5"
             placeholder="Emergency Contact Number*"
-            v-model.trim="emergencyNumber"
+            v-model.trim="emergency_number"
           />
           <p>
             Any other relevant details that we may need to know to enable us to
@@ -262,8 +265,14 @@
             />
           </div>
           <br />
-          <input id="formBtn" type="submit" value="Send" />
-          <!-- <input id="formBtn" /> -->
+
+          <base-btn
+            type="submit"
+            mode="enrollment"
+            :disabled="isDisabled"
+            @click.prevent="formValidaty"
+            >Submit Form</base-btn
+          >
         </form>
       </div>
     </div>
@@ -271,19 +280,24 @@
 </template>
 
 <script>
-import emailjs from "emailjs-com";
+import BaseBtn from "../EventUI/BaseBtn.vue";
+import axios from "axios";
 export default {
+  components: { BaseBtn },
   data() {
     return {
-      firstName: "",
-      lastName: "",
+      first_name: "",
+      last_name: "",
+      email: "",
       guardian: "",
-      contactNumber: "",
-      emergencyNumber: "",
+      contact_number: "",
+      emergency_number: "",
       year: "",
       age: "",
       isLegal: false,
-      firstnameVality: "pending",
+      invalidInput: false,
+      isDisabled: false,
+      formSend: false,
 
       enrolImg: {
         backgroundImage: `url(${require("@/assets/images/little_dancerD.jpg")})`,
@@ -294,32 +308,71 @@ export default {
     year() {
       this.checkYear();
     },
-    contactNumber() {
-      this.emergencyNumber = this.contactNumber;
+    contact_number() {
+      this.emergency_number = this.contact_number;
     },
   },
 
   methods: {
-    sendEmail: (e) => {
-      emailjs
-        .sendForm("southpeninsulaballet", "peninsulaballet", e.target)
-        .then(
-          (result) => {
-            console.log("SUCCESS!", result.status, result.text);
-            alert("Your enrolment request has been send.");
-          },
-          (error) => {
-            console.log("FAILED...", error);
+    formValidaty() {
+      this.isDisabled = true;
+      console.log(this.isDisabled);
+      // if (
+      //   this.first_name === "" ||
+      //   this.last_name === "" ||
+      //   this.email === "" ||
+      //   !this.email.includes("@") ||
+      //   this.contact_number === ""
+      // ) {
+      //   this.invalidInput = true;
+      //   this.isDisabled = false;
+      //   return;
+      // } else {
+      //   this.invalidInput = false;
+      this.sendForm();
+      // }
+    },
+    sendForm() {
+      let headersList = {
+        Authorization: "",
+        "Content-Type": "application/json",
+      };
+      let data = {
+        first_name: this.first_name,
+        last_name: this.last_name,
+        email: this.email,
+        guardian: this.guardian,
+        contact_number: this.contact_number,
+        emergency_number: this.emergency_number,
+        age: this.age,
+      };
+      let reqOptions = {
+        url: "http://127.0.0.1:8000/api/enrollment/",
+        method: "POST",
+        headers: headersList,
+        data: data,
+      };
+      console.log(data);
+      axios
+        .request(reqOptions)
+        .then((response) => {
+          if (response.status === 202) {
+            this.formSend = true;
+            setTimeout(() => {
+              this.formSend = false;
+            }, 10000);
           }
-        );
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
     checkYear() {
       const year = new Date();
       const thisYear = year.getFullYear();
       const birthYear = this.year;
-      let age = thisYear - birthYear;
-      this.age = age;
-      if (age < 19) {
+      this.age = thisYear - birthYear;
+      if (this.age < 19) {
         this.isLegal = false;
       } else {
         this.isLegal = true;
@@ -390,10 +443,10 @@ input {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
-#formBtn {
+.formBtn {
   transition: all 0.1s linear;
 }
-#formBtn:active {
+.formBtn:active {
   transform: scale(0.9);
 }
 .text {
