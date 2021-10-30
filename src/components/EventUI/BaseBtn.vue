@@ -39,9 +39,10 @@ button {
   max-width: 20rem;
   transition: 0.2s;
   color: black;
-  box-shadow: 0 0 20px #eee;
+  box-shadow: 0 0 15px #eee;
   border-radius: 10px;
   display: block;
+  cursor: pointer;
 }
 a {
   margin: 0.7rem auto;
@@ -53,7 +54,7 @@ a {
   max-width: 20rem;
   transition: 0.2s;
   color: black;
-  box-shadow: 0 0 20px #eee;
+  box-shadow: 0 0 15px #eee;
   border-radius: 10px;
   display: block;
 }
@@ -82,6 +83,17 @@ a:hover {
   border-color: #000;
   text-transform: capitalize;
   box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.3);
+}
+.enrollment {
+  background-color: black;
+  color: white;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+}
+.enrollment:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 15px rgb(59, 59, 59);
 }
 .flat:hover,
 .outline:hover {

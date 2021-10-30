@@ -3,7 +3,11 @@
     <div class="enrol__Img" :style="enrolImg">
       <div class="enrol__wrapper">
         <!--Form goes here-->
-        <p>
+        <p class="text_center" v-if="formSend">
+          Thank you {{ first_name }} {{ last_name }} for enrolling. <br />Your
+          form has been sent, and you will hear from us as soon.
+        </p>
+        <p v-if="!formSend">
           The Peninsula Ballet School
           <small
             >is compliant with the Protection of Personal Information Act 4 of
@@ -17,38 +21,37 @@
             be added to the Whatsapp Group, please advise us accordingly.</small
           >
         </p>
-        <form class="contact-form" v-if="!success" @submit.prevent="sendEmail">
+        <form v-if="!formSend" class="contact-form">
           <input
             class="text"
             type="text"
-            name="first_name"
             minlength="3"
-            placeholder="First Name*"
-            v-model.trim="firstName"
+            placeholder="Students First Name*"
+            v-model.trim="first_name"
             required
           />
 
           <input
             class="text"
             type="text"
-            name="last_name"
             minlength="3"
-            placeholder="Surname*"
-            v-model.trim="lastName"
+            placeholder="Students Surname*"
+            v-model.trim="last_name"
             required
           />
 
           <input
             class="email"
             type="email"
-            name="from_email"
+            name="email"
+            v-model.trim="email"
             placeholder="Email*"
             required
           />
 
           <!-- Date of Birth -->
           <div id="dobWrapper">
-            <div class="text"><p>Date of Birth &nbsp;:&nbsp;</p></div>
+            <div class="text"><p>Date of Birth*:&nbsp;</p></div>
             <div class="date">
               <input
                 type="number"
@@ -56,6 +59,7 @@
                 minlength="2"
                 maxlength="2"
                 placeholder="Day"
+                v-model="day"
                 required
               />
             </div>
@@ -67,6 +71,7 @@
                 minlength="2"
                 maxlength="2"
                 placeholder="Mth"
+                v-model="month"
                 required
               />
             </div>
@@ -95,7 +100,7 @@
             v-if="!isLegal"
             class="text"
             type="text"
-            name="guardian_name"
+            name="guardian"
             minlength="6"
             placeholder="Parent/Guardian Full Name*"
             v-model.trim="guardian"
@@ -106,7 +111,7 @@
             name="contact_number"
             minlength="5"
             placeholder="Contact Number*"
-            v-model.trim="contactNumber"
+            v-model.trim="contact_number"
             required
           />
           <input
@@ -114,7 +119,7 @@
             name="emergency_number"
             minlength="5"
             placeholder="Emergency Contact Number*"
-            v-model.trim="emergencyNumber"
+            v-model.trim="emergency_number"
           />
           <p>
             Any other relevant details that we may need to know to enable us to
@@ -247,7 +252,7 @@
             <img
               id="bot-img"
               :src="require('@/assets/images/newbotbal.png')"
-              alt=""
+              alt="A picture of a word."
             />
             <label for="notBot"
               >Please type the word above in the box below</label
@@ -262,8 +267,14 @@
             />
           </div>
           <br />
-          <input id="formBtn" type="submit" value="Send" />
-          <!-- <input id="formBtn" /> -->
+
+          <base-btn
+            type="submit"
+            mode="enrollment"
+            :disabled="isDisabled"
+            @click.prevent="formValidaty"
+            >Submit Form</base-btn
+          >
         </form>
       </div>
     </div>
@@ -271,19 +282,26 @@
 </template>
 
 <script>
-import emailjs from "emailjs-com";
+import BaseBtn from "../EventUI/BaseBtn.vue";
+import axios from "axios";
 export default {
+  components: { BaseBtn },
   data() {
     return {
-      firstName: "",
-      lastName: "",
+      first_name: "",
+      last_name: "",
+      email: "",
       guardian: "",
-      contactNumber: "",
-      emergencyNumber: "",
+      contact_number: "",
+      emergency_number: "",
+      day: "",
+      month: "",
       year: "",
       age: "",
       isLegal: false,
-      firstnameVality: "pending",
+      validInput: false,
+      isDisabled: false,
+      formSend: false,
 
       enrolImg: {
         backgroundImage: `url(${require("@/assets/images/little_dancerD.jpg")})`,
@@ -291,35 +309,85 @@ export default {
     };
   },
   watch: {
+    validInput() {
+      if (this.validInput) {
+        this.sendForm();
+      }
+    },
     year() {
       this.checkYear();
     },
-    contactNumber() {
-      this.emergencyNumber = this.contactNumber;
+    contact_number() {
+      this.emergency_number = this.contact_number;
     },
   },
 
   methods: {
-    sendEmail: (e) => {
-      emailjs
-        .sendForm("southpeninsulaballet", "peninsulaballet", e.target)
-        .then(
-          (result) => {
-            console.log("SUCCESS!", result.status, result.text);
-            alert("Your enrolment request has been send.");
-          },
-          (error) => {
-            console.log("FAILED...", error);
+    formValidaty() {
+      this.isDisabled = true;
+      console.log("isDisabled", this.isDisabled);
+      if (
+        this.first_name !== "" ||
+        this.last_name !== "" ||
+        this.email !== "" ||
+        this.email.includes("@") ||
+        this.email.includes(".") ||
+        this.contact_number !== "" ||
+        this.age !== ""
+      ) {
+        this.validInput = true;
+      } else {
+        console.log("error:");
+        this.validInput = false;
+        this.isDisabled = false;
+        return;
+      }
+    },
+    sendForm() {
+      let headersList = {
+        Authorization: "",
+        "Content-Type": "application/json",
+      };
+      let data = {
+        first_name: this.first_name,
+        last_name: this.last_name,
+        email: this.email,
+        guardian: this.guardian,
+        contact_number: this.contact_number,
+        emergency_number: this.emergency_number,
+        age: this.age,
+      };
+      let reqOptions = {
+        url: "https://peninsula-ballet-backend.herokuapp.com/api/enrollment/",
+        method: "POST",
+        headers: headersList,
+        data: data,
+      };
+
+      axios
+        .request(reqOptions)
+        .then((response) => {
+          console.log(response);
+          if (response.status === 202) {
+            this.formSend = true;
+            setTimeout(() => {
+              this.formSend = false;
+              this.isDisabled = false;
+            }, 10000);
           }
-        );
+        })
+        .catch((err) => {
+          console.log("catch error:", err);
+          this.isDisabled = false;
+          console.log("isDisabled", this.isDisabled);
+        });
     },
     checkYear() {
       const year = new Date();
       const thisYear = year.getFullYear();
       const birthYear = this.year;
-      let age = thisYear - birthYear;
-      this.age = age;
-      if (age < 19) {
+      this.age = thisYear - birthYear;
+      if (this.age < 19) {
         this.isLegal = false;
       } else {
         this.isLegal = true;
@@ -390,10 +458,10 @@ input {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
-#formBtn {
+.formBtn {
   transition: all 0.1s linear;
 }
-#formBtn:active {
+.formBtn:active {
   transform: scale(0.9);
 }
 .text {
