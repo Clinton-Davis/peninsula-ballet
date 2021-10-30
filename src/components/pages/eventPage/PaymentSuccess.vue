@@ -8,7 +8,7 @@
             <h2>Thank you for buying a ticket</h2>
             <br />
             <h3>
-              A conformation email has been send with details on how to view the
+              A confirmation email has been send with details on how to view the
               show.
             </h3>
             <br />

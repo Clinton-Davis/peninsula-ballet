@@ -7,7 +7,7 @@
 
         <div class="showBtn">
           <base-btn link mode="show" to="/checkout"
-            >Get you Virtual Ticket</base-btn
+            >Get your Virtual Ticket</base-btn
           >
         </div>
         <button
