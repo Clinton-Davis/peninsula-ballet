@@ -26,7 +26,7 @@
             class="text"
             type="text"
             minlength="3"
-            placeholder="First Name*"
+            placeholder="Students First Name*"
             v-model.trim="first_name"
             required
           />
@@ -35,7 +35,7 @@
             class="text"
             type="text"
             minlength="3"
-            placeholder="Surname*"
+            placeholder="Students Surname*"
             v-model.trim="last_name"
             required
           />
@@ -51,7 +51,7 @@
 
           <!-- Date of Birth -->
           <div id="dobWrapper">
-            <div class="text"><p>Date of Birth &nbsp;:&nbsp;</p></div>
+            <div class="text"><p>Date of Birth*:&nbsp;</p></div>
             <div class="date">
               <input
                 type="number"
@@ -59,6 +59,7 @@
                 minlength="2"
                 maxlength="2"
                 placeholder="Day"
+                v-model="day"
                 required
               />
             </div>
@@ -70,6 +71,7 @@
                 minlength="2"
                 maxlength="2"
                 placeholder="Mth"
+                v-model="month"
                 required
               />
             </div>
@@ -250,7 +252,7 @@
             <img
               id="bot-img"
               :src="require('@/assets/images/newbotbal.png')"
-              alt=""
+              alt="A picture of a word."
             />
             <label for="notBot"
               >Please type the word above in the box below</label
@@ -292,10 +294,12 @@ export default {
       guardian: "",
       contact_number: "",
       emergency_number: "",
+      day: "",
+      month: "",
       year: "",
       age: "",
       isLegal: false,
-      invalidInput: false,
+      validInput: false,
       isDisabled: false,
       formSend: false,
 
@@ -305,6 +309,11 @@ export default {
     };
   },
   watch: {
+    validInput() {
+      if (this.validInput) {
+        this.sendForm();
+      }
+    },
     year() {
       this.checkYear();
     },
@@ -316,21 +325,23 @@ export default {
   methods: {
     formValidaty() {
       this.isDisabled = true;
-      console.log(this.isDisabled);
-      // if (
-      //   this.first_name === "" ||
-      //   this.last_name === "" ||
-      //   this.email === "" ||
-      //   !this.email.includes("@") ||
-      //   this.contact_number === ""
-      // ) {
-      //   this.invalidInput = true;
-      //   this.isDisabled = false;
-      //   return;
-      // } else {
-      //   this.invalidInput = false;
-      this.sendForm();
-      // }
+      console.log("isDisabled", this.isDisabled);
+      if (
+        this.first_name !== "" ||
+        this.last_name !== "" ||
+        this.email !== "" ||
+        this.email.includes("@") ||
+        this.email.includes(".") ||
+        this.contact_number !== "" ||
+        this.age !== ""
+      ) {
+        this.validInput = true;
+      } else {
+        console.log("error:");
+        this.validInput = false;
+        this.isDisabled = false;
+        return;
+      }
     },
     sendForm() {
       let headersList = {
@@ -347,24 +358,28 @@ export default {
         age: this.age,
       };
       let reqOptions = {
-        url: "http://127.0.0.1:8000/api/enrollment/",
+        url: "https://peninsula-ballet-backend.herokuapp.com/api/enrollment/",
         method: "POST",
         headers: headersList,
         data: data,
       };
-      console.log(data);
+
       axios
         .request(reqOptions)
         .then((response) => {
+          console.log(response);
           if (response.status === 202) {
             this.formSend = true;
             setTimeout(() => {
               this.formSend = false;
+              this.isDisabled = false;
             }, 10000);
           }
         })
         .catch((err) => {
-          console.log(err);
+          console.log("catch error:", err);
+          this.isDisabled = false;
+          console.log("isDisabled", this.isDisabled);
         });
     },
     checkYear() {
