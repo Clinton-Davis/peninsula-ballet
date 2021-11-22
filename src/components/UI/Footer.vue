@@ -83,7 +83,7 @@
       <div class="subfooter feet">
         <a
           class="clint_link"
-          href="http://www.clintondavis.org"
+          href="https://www.digital-web.solutions/"
           target="_blank"
           rel="noopener noreferrer"
         >
