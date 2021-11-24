@@ -15,7 +15,7 @@
     <img :src="imgSrc" alt="Image of Teacher" />
     <div class="card_info">
       <h1>{{ teacherName }}</h1>
-      <h3>{{ tagLine }}</h3>
+      <!-- <h3>{{ tagLine }}</h3> -->
       <p>{{ sortDesc }}</p>
     </div>
   </div>
@@ -69,7 +69,7 @@ export default {
   max-width: 450px;
   margin: 2em;
   width: 230px;
-  min-height: 454px;
+  min-height: 380px;
   box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
     0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
 
@@ -93,7 +93,7 @@ export default {
 }
 
 .card_info h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: var(--Italianno);
   text-align: center;
   padding: 0.1em;
@@ -108,8 +108,8 @@ export default {
 }
 
 #teacherName {
-  font-size: 5rem;
   font-family: var(--Italianno);
+  font-size: 5rem;
 }
 #teacherBio {
   line-height: 1.6rem;

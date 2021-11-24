@@ -83,7 +83,7 @@ export default {
         password: this.password,
       };
       let reqOptions = {
-        url: "https://peninsula-ballet-backend.herokuapp.com/api/login/",
+        url: "https://peninsula-ballet-backend.herokuapp.com/profiles/login/",
         method: "POST",
         headers: headersList,
         data: data,
