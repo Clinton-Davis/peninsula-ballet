@@ -52,7 +52,7 @@ export default {
       };
       let reqOptions = {
         url:
-          "https://peninsula-ballet-backend.herokuapp.com/api/get_user_details/",
+          "https://peninsula-ballet-backend.herokuapp.com/profiles/get_user_details/",
         method: "GET",
         headers: headersList,
       };

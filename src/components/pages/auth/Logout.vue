@@ -34,7 +34,7 @@ export default {
         "Content-Type": "application/json",
       };
       let reqOptions = {
-        url: "https://peninsula-ballet-backend.herokuapp.com/api/logout/",
+        url: "https://peninsula-ballet-backend.herokuapp.com/profiles/logout/",
         method: "POST",
         headers: headersList,
         data: "Loging out",

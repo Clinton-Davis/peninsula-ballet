@@ -8,7 +8,7 @@
           :teacher-name="teacher.name"
           :img-src="teacher.img"
           :tag-line="teacher.tag"
-          :sort-desc="teacher.snip"
+          :sort-desc="teacher.snipet"
           :heading="teacher.heading"
           :bio="teacher.bio"
         />
@@ -30,8 +30,8 @@ export default {
           img:
             "https://res.cloudinary.com/peninsulaballet/image/upload/v1611085133/web_pages/tracy500x500_wpapsg.png",
           tag: "Co-Owner",
-          snip: "The Royal Academy of Dance registered teacher",
-          heading: "Co-owner and teacher at The Peninsula Ballet School.",
+          snipet: "The Royal Academy of Dance registered teacher",
+          heading: "Co-owner and Teacher at The Peninsula Ballet School.",
           bio:
             "I have always wanted to teach ballet and started teacher training after matriculating, and have been teaching for 30 years.\
               I received my teacher's certificate and did further exams on anatomy and child psychology and development for my Teachers Diploma.\
@@ -47,8 +47,8 @@ export default {
           img:
             "https://res.cloudinary.com/peninsulaballet/image/upload/v1611085426/web_pages/Leilani500x500_yhlcjo.png",
           tag: "Co-Owner",
-          snip: "The Royal Academy of Dance registered teacher",
-          heading: "Co-owner and teacher at The Peninsula Ballet School.",
+          snipet: "The Royal Academy of Dance registered teacher",
+          heading: "Co-owner and Teacher at The Peninsula Ballet School.",
           bio:
             "I have taught ballet for 13 years (2006-2019), and have in this past year begun teaching flamenco.\
               In my personal capacity I have produced Resurrection (2015-2017) and Creation and the Cornerstone (2018).\
@@ -60,20 +60,18 @@ export default {
         },
         {
           id: 3,
-          name: "Sandra Davis",
+          name: "Nicolene Van Der Poll",
           img:
-            "https://res.cloudinary.com/peninsulaballet/image/upload/v1611083787/web_pages/sandy_ykalbd.jpg",
+            "https://res.cloudinary.com/peninsulaballet/image/upload/c_fit,q_100,w_500/v1637782623/web_pages/Nicolene_image_i4rxjl.webp",
           tag: "Founder",
-          snip: "A Dance Legend - Royal Academy of Dance",
-          heading: "A Brief History",
+          snipet: "Cape Academy of Dramatic Arts (CADA)",
+          heading: "Substitute Teacher & Production Assistant",
           bio:
-            "In 1975, Sandra Davis started the Sandra Davis Ballet School in Fish Hoek, she was a teaching member of The Royal Academy of Dance.\
-              The ballet school put on many shows through the years and entered many R.A.D examinations, the studio was well known.\
-              In 1990 Tracy Chaston, (Tracy Davis at the time) Sandy's daughter teamed up and they taught together for many years until Sandra sadly passed away.\
-              In 1999 Tracy took over the studio.\
-              Leilani Beer, also a student of Sandra Ballet, opened her Ballet Studio in Fish Hoek, - The Leilani Beer School of Ballet.\
-              In 2011, Tracy and Leilani joined their respective studios and co-founded The Peninsula Ballet School.\
-              The Peninsula Ballet has been going from strength to strength and now teaches Ballet (RAD) and flamenco, with studios in Fish hoek, Muizenberg and kommetjie.",
+            "Nicole's background and passion for the performing arts have enhanced her role at Peninsula Ballet School. She is our Stage Manager, helps with choreography, provides narration and voice overs, assists with certain acting requirements, assists with lighting design, and creates various videos and media content, including content for the school's Jerusalema Challenge.\
+            Ballet became an instant passion for Nicole when she was 3 years old.\
+            After moving to Cape Town, Nicolene joined the Sandra Davis Ballet School, where she studied under Aunty Sandy (Sandra Davis), dancing in several shows, including the Pot Pourri of Dance at the Baxter Theatre.\
+            Nicolene studied speech and drama at the Cape Academy of Dramatic Arts (CADA), achieving distinctions in the Bronze and Silver LAMDA examinations.\
+            Following the birth of her children, Nicolene returned to dance at The Peninsula Ballet School and completed her final vocational RAD examinations.",
         },
       ],
       teachersImg: {
