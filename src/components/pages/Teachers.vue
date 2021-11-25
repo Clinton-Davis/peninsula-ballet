@@ -67,8 +67,8 @@ export default {
           snipet: "Cape Academy of Dramatic Arts (CADA)",
           heading: "Substitute Teacher & Production Assistant",
           bio:
-            "Nicole's background and passion for the performing arts have enhanced her role at Peninsula Ballet School. She is our Stage Manager, helps with choreography, provides narration and voice overs, assists with certain acting requirements, assists with lighting design, and creates various videos and media content, including content for the school's Jerusalema Challenge.\
-            Ballet became an instant passion for Nicole when she was 3 years old.\
+            "Nicolene's background and passion for the performing arts has enhanced her role at Peninsula Ballet School. She is our Stage Manager, helps with choreography, provides narration and voice overs, assists with certain acting requirements, assists with lighting design, and creates various videos and media content, including content for the school's Jerusalema Challenge.\
+            Ballet became an instant passion for Nicolene when she was 3 years old.\
             After moving to Cape Town, Nicolene joined the Sandra Davis Ballet School, where she studied under Aunty Sandy (Sandra Davis), dancing in several shows, including the Pot Pourri of Dance at the Baxter Theatre.\
             Nicolene studied speech and drama at the Cape Academy of Dramatic Arts (CADA), achieving distinctions in the Bronze and Silver LAMDA examinations.\
             Following the birth of her children, Nicolene returned to dance at The Peninsula Ballet School and completed her final vocational RAD examinations.",
