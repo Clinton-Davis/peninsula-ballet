@@ -5,20 +5,20 @@
 </template>
 
 <script>
-export default {
-  props: ["id", "imgSrc"],
-};
+  export default {
+    props: ["id", "imgSrc"]
+  };
 </script>
 
 <style scoped>
-.gallery-img {
-  max-height: 500px;
-  border: 1px solid white;
-  border-radius: 3px;
-}
-.gallery-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-}
+  .gallery-img {
+    max-height: 500px;
+    border: 1px solid white;
+    border-radius: 3px;
+  }
+  .gallery-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
 </style>

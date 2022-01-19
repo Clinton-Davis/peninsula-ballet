@@ -282,294 +282,294 @@
 </template>
 
 <script>
-import BaseBtn from "../EventUI/BaseBtn.vue";
-import axios from "axios";
-export default {
-  components: { BaseBtn },
-  data() {
-    return {
-      first_name: "",
-      last_name: "",
-      email: "",
-      guardian: "",
-      contact_number: "",
-      emergency_number: "",
-      day: "",
-      month: "",
-      year: "",
-      age: "",
-      isLegal: false,
-      validInput: false,
-      isDisabled: false,
-      formSend: false,
+  import BaseBtn from "../EventUI/BaseBtn.vue";
+  import axios from "axios";
+  export default {
+    components: { BaseBtn },
+    data() {
+      return {
+        first_name: "",
+        last_name: "",
+        email: "",
+        guardian: "",
+        contact_number: "",
+        emergency_number: "",
+        day: "",
+        month: "",
+        year: "",
+        age: "",
+        isLegal: false,
+        validInput: false,
+        isDisabled: false,
+        formSend: false,
 
-      enrolImg: {
-        backgroundImage: `url(${require("@/assets/images/little_dancerD.jpg")})`,
+        enrolImg: {
+          backgroundImage: `url(${require("@/assets/images/little_dancerD.jpg")})`
+        }
+      };
+    },
+    watch: {
+      validInput() {
+        if (this.validInput) {
+          this.sendForm();
+        }
       },
-    };
-  },
-  watch: {
-    validInput() {
-      if (this.validInput) {
-        this.sendForm();
+      year() {
+        this.checkYear();
+      },
+      contact_number() {
+        this.emergency_number = this.contact_number;
       }
     },
-    year() {
-      this.checkYear();
-    },
-    contact_number() {
-      this.emergency_number = this.contact_number;
-    },
-  },
 
-  methods: {
-    formValidaty() {
-      this.isDisabled = true;
-      console.log("isDisabled", this.isDisabled);
-      if (
-        this.first_name !== "" ||
-        this.last_name !== "" ||
-        this.email !== "" ||
-        this.email.includes("@") ||
-        this.email.includes(".") ||
-        this.contact_number !== "" ||
-        this.age !== ""
-      ) {
-        this.validInput = true;
-      } else {
-        console.log("error:");
-        this.validInput = false;
-        this.isDisabled = false;
-        return;
-      }
-    },
-    sendForm() {
-      let headersList = {
-        Authorization: "",
-        "Content-Type": "application/json",
-      };
-      let data = {
-        first_name: this.first_name,
-        last_name: this.last_name,
-        email: this.email,
-        guardian: this.guardian,
-        contact_number: this.contact_number,
-        emergency_number: this.emergency_number,
-        age: this.age,
-      };
-      let reqOptions = {
-        url: "https://peninsula-ballet-backend.herokuapp.com/api/enrollment/",
-        method: "POST",
-        headers: headersList,
-        data: data,
-      };
-
-      axios
-        .request(reqOptions)
-        .then((response) => {
-          console.log(response);
-          if (response.status === 202) {
-            this.formSend = true;
-            setTimeout(() => {
-              this.formSend = false;
-              this.isDisabled = false;
-            }, 10000);
-          }
-        })
-        .catch((err) => {
-          console.log("catch error:", err);
+    methods: {
+      formValidaty() {
+        this.isDisabled = true;
+        console.log("isDisabled", this.isDisabled);
+        if (
+          this.first_name !== "" ||
+          this.last_name !== "" ||
+          this.email !== "" ||
+          this.email.includes("@") ||
+          this.email.includes(".") ||
+          this.contact_number !== "" ||
+          this.age !== ""
+        ) {
+          this.validInput = true;
+        } else {
+          console.log("error:");
+          this.validInput = false;
           this.isDisabled = false;
-          console.log("isDisabled", this.isDisabled);
-        });
-    },
-    checkYear() {
-      const year = new Date();
-      const thisYear = year.getFullYear();
-      const birthYear = this.year;
-      this.age = thisYear - birthYear;
-      if (this.age < 19) {
-        this.isLegal = false;
-      } else {
-        this.isLegal = true;
+          return;
+        }
+      },
+      sendForm() {
+        let headersList = {
+          Authorization: "",
+          "Content-Type": "application/json"
+        };
+        let data = {
+          first_name: this.first_name,
+          last_name: this.last_name,
+          email: this.email,
+          guardian: this.guardian,
+          contact_number: this.contact_number,
+          emergency_number: this.emergency_number,
+          age: this.age
+        };
+        let reqOptions = {
+          url: "https://peninsula-ballet-backend.herokuapp.com/api/enrollment/",
+          method: "POST",
+          headers: headersList,
+          data: data
+        };
+
+        axios
+          .request(reqOptions)
+          .then(response => {
+            console.log(response);
+            if (response.status === 202) {
+              this.formSend = true;
+              setTimeout(() => {
+                this.formSend = false;
+                this.isDisabled = false;
+              }, 10000);
+            }
+          })
+          .catch(err => {
+            console.log("catch error:", err);
+            this.isDisabled = false;
+            console.log("isDisabled", this.isDisabled);
+          });
+      },
+      checkYear() {
+        const year = new Date();
+        const thisYear = year.getFullYear();
+        const birthYear = this.year;
+        this.age = thisYear - birthYear;
+        if (this.age < 19) {
+          this.isLegal = false;
+        } else {
+          this.isLegal = true;
+        }
       }
-    },
-  },
-};
+    }
+  };
 </script>
 
 <style scoped>
-span {
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-#enrol__Section {
-  display: flex;
-  position: relative;
-  height: fit-content;
-  color: white;
-  min-height: 100vh;
-}
-.enrol__Img {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-size: cover;
-  background-position: center 90%;
-  background-attachment: fixed;
-  position: relative;
-}
-.enrol__wrapper {
-  margin-top: 5rem;
-  margin-bottom: 2rem;
-  margin-right: auto;
-  padding: 2rem;
-  max-width: 50%;
-  position: relative;
-  box-shadow: 1px 20px 25px rgba(0, 0, 0, 0.3);
-  background-color: rgba(38, 32, 32, 0.4);
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-}
-
-p {
-  max-width: 62ch;
-  margin: 0.5rem 0;
-  line-height: 1.2rem;
-}
-form {
-  display: flex;
-  flex-direction: column;
-}
-input {
-  background-color: rgb(247, 224, 236);
-  margin: 0.5rem;
-  font-size: 1rem;
-  width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 2em;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-}
-.formBtn {
-  transition: all 0.1s linear;
-}
-.formBtn:active {
-  transform: scale(0.9);
-}
-.text {
-  text-transform: capitalize;
-}
-.email {
-  text-transform: lowercase;
-}
-textarea {
-  background-color: rgb(247, 224, 236);
-  margin: 0.5rem;
-  border-radius: 5px;
-  font-size: 1rem;
-  max-width: 500px;
-  min-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: inherit;
-}
-#dobWrapper {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-#dobWrapper input {
-  width: 3.5rem;
-}
-
-#bot-img {
-  width: 75px;
-  height: 25px;
-  margin: 1rem;
-  /* margin: 0.5rem auto; */
-  display: block;
-}
-
-#botCheck {
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* #botCheck label {
-  margin-bottom: -1rem;
-} */
-#botCheck img {
-  margin-left: auto;
-  margin-right: auto;
-  transform: scale(1.4);
-}
-.checkBox {
-  margin: 0.5rem 0;
-  display: flex;
-  align-items: center;
-}
-.checkBox input {
-  font-size: 0.6rem;
-  width: 1rem;
-  margin: 0.5rem;
-}
-
-.termanconditons {
-  margin: 1rem;
-}
-.termanconditons h2 {
-  margin-bottom: 1rem;
-  text-align: center;
-}
-ul {
-  list-style-image: url("../../assets/images/shoe15.svg");
-}
-li {
-  /* list-style: upper-roman; */
-  line-height: 1.4rem;
-  letter-spacing: 0.65px;
-}
-
-#enrol_btn {
-  margin-top: 1em;
-  padding: 0.25em 2em;
-}
-.tandc_heading {
-  text-align: center;
-  margin: 1rem 0;
-  font-size: 2rem;
-}
-@media screen and (max-width: 880px) {
-  .enrol__wrapper {
-    margin: 5rem auto 2rem auto;
-    max-width: 80%;
+  span {
+    font-weight: bold;
+    font-size: 1.1rem;
   }
-}
-@media screen and (max-width: 400px) {
-  input {
+  #enrol__Section {
+    display: flex;
+    position: relative;
+    height: fit-content;
+    color: white;
+    min-height: 100vh;
+  }
+  .enrol__Img {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center 90%;
+    background-attachment: fixed;
+    position: relative;
+  }
+  .enrol__wrapper {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    margin-right: auto;
+    padding: 2rem;
+    max-width: 50%;
+    position: relative;
+    box-shadow: 1px 20px 25px rgba(0, 0, 0, 0.3);
+    background-color: rgba(38, 32, 32, 0.4);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  }
+
+  p {
+    max-width: 62ch;
+    margin: 0.5rem 0;
+    line-height: 1.2rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    background-color: rgb(247, 224, 236);
+    margin: 0.5rem;
+    font-size: 1rem;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2em;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .formBtn {
+    transition: all 0.1s linear;
+  }
+  .formBtn:active {
+    transform: scale(0.9);
+  }
+  .text {
+    text-transform: capitalize;
+  }
+  .email {
+    text-transform: lowercase;
   }
   textarea {
-    width: 93%;
+    background-color: rgb(247, 224, 236);
+    margin: 0.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    max-width: 500px;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: inherit;
   }
-  .enrol__wrapper {
-    margin: 7rem auto 2rem auto;
-    padding: 0.2rem;
-    max-width: 98%;
+  #dobWrapper {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #dobWrapper input {
+    width: 3.5rem;
   }
 
-  .tRight {
-    font-size: 1.4em;
+  #bot-img {
+    width: 75px;
+    height: 25px;
+    margin: 1rem;
+    /* margin: 0.5rem auto; */
+    display: block;
   }
-}
+
+  #botCheck {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* #botCheck label {
+  margin-bottom: -1rem;
+} */
+  #botCheck img {
+    margin-left: auto;
+    margin-right: auto;
+    transform: scale(1.4);
+  }
+  .checkBox {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+  }
+  .checkBox input {
+    font-size: 0.6rem;
+    width: 1rem;
+    margin: 0.5rem;
+  }
+
+  .termanconditons {
+    margin: 1rem;
+  }
+  .termanconditons h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  ul {
+    list-style-image: url("../../assets/images/shoe15.svg");
+  }
+  li {
+    /* list-style: upper-roman; */
+    line-height: 1.4rem;
+    letter-spacing: 0.65px;
+  }
+
+  #enrol_btn {
+    margin-top: 1em;
+    padding: 0.25em 2em;
+  }
+  .tandc_heading {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 2rem;
+  }
+  @media screen and (max-width: 880px) {
+    .enrol__wrapper {
+      margin: 5rem auto 2rem auto;
+      max-width: 80%;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    input {
+      width: 100%;
+    }
+    textarea {
+      width: 93%;
+    }
+    .enrol__wrapper {
+      margin: 7rem auto 2rem auto;
+      padding: 0.2rem;
+      max-width: 98%;
+    }
+
+    .tRight {
+      font-size: 1.4em;
+    }
+  }
 </style>

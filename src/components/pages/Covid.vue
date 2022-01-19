@@ -69,74 +69,74 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      maskImage: {
-        backgroundImage: `url(${require("@/assets/images/mask.jpg")})`,
-      },
-    };
-  },
-};
+  export default {
+    data() {
+      return {
+        maskImage: {
+          backgroundImage: `url(${require("@/assets/images/mask.jpg")})`
+        }
+      };
+    }
+  };
 </script>
 
 <style scoped>
-li {
-  list-style: square;
-  line-height: 1.3rem;
-}
-h1,
-h2,
-h3 {
-  text-align: center;
-  text-transform: capitalize;
-}
+  li {
+    list-style: square;
+    line-height: 1.3rem;
+  }
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+    text-transform: capitalize;
+  }
 
-span {
-  font-weight: bold;
-}
-.covid__section {
-  min-height: 100vh;
-  height: fit-content;
-}
-.covid__Image {
-  min-height: 100vh;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+  span {
+    font-weight: bold;
+  }
+  .covid__section {
+    min-height: 100vh;
+    height: fit-content;
+  }
+  .covid__Image {
+    min-height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
-.covid__container {
-  position: relative;
-  display: flex;
-  min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .covid__container {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.covid__content {
-  margin: 5rem 0 3rem 0;
-  display: flex;
-  flex-direction: column;
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(224, 189, 235),
-    rgba(255, 255, 255)
-  );
-  max-height: auto;
-  position: relative;
-  padding: 2rem;
+  .covid__content {
+    margin: 5rem 0 3rem 0;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(224, 189, 235),
+      rgba(255, 255, 255)
+    );
+    max-height: auto;
+    position: relative;
+    padding: 2rem;
 
-  box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
-    0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-}
+    box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
+      0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  }
 </style>

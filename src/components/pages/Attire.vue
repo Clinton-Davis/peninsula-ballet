@@ -122,109 +122,109 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      attireImage: {
-        backgroundImage: `url(${require("@/assets/images/agility-1850711_1280.jpg")})`,
-      },
-    };
-  },
-};
+  export default {
+    data() {
+      return {
+        attireImage: {
+          backgroundImage: `url(${require("@/assets/images/agility-1850711_1280.jpg")})`
+        }
+      };
+    }
+  };
 </script>
 <style scoped>
-h1,
-h2 {
-  font-family: var(--Italianno);
-  margin: 1rem 0px 0.5rem 0px;
-}
-h1 {
-  font-size: 3em;
-  text-align: center;
-}
-h2 {
-  font-size: 2.5em;
-}
-li {
-  list-style: none;
-}
-a {
-  color: white;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-}
-a:hover {
-  color: white;
-  text-decoration: underline;
-  font-size: 110%;
-}
-p {
-  letter-spacing: 0.4px;
-  line-height: 1.3rem;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
-}
-#attire__section {
-  top: 1rem;
-  display: flex;
-  position: relative;
-  height: fit-content;
-  color: white;
-  height: fit-content;
-}
-.attire__Img {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-size: cover;
-  background-position: top;
-  position: relative;
-}
-.attire__wrapper {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  margin-left: auto;
-  padding: 2rem;
-  max-width: 50%;
-  position: relative;
-  box-shadow: 1px 20px 25px rgba(0, 0, 0, 0.3);
-  background-image: linear-gradient(
-    to bottom right,
-    rgba(153, 122, 104, 0.5),
-    rgba(231, 203, 203, 0.5)
-  );
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-}
-
-.float_left {
-  margin-left: auto;
-  /* color: white; */
-}
-
-@media screen and (max-width: 880px) {
-  .attire__wrapper {
-    margin: 2rem auto 2rem auto;
-    max-width: 80%;
+  h1,
+  h2 {
+    font-family: var(--Italianno);
+    margin: 1rem 0px 0.5rem 0px;
   }
-}
-@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 3em;
+    text-align: center;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  a:hover {
+    color: white;
+    text-decoration: underline;
+    font-size: 110%;
+  }
+  p {
+    letter-spacing: 0.4px;
+    line-height: 1.3rem;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  }
+  #attire__section {
+    top: 1rem;
+    display: flex;
+    position: relative;
+    height: fit-content;
+    color: white;
+    height: fit-content;
+  }
+  .attire__Img {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+  }
   .attire__wrapper {
-    margin-top: 4rem;
-    padding: 0.2rem;
-    max-width: 98%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    padding: 2rem;
+    max-width: 50%;
+    position: relative;
+    box-shadow: 1px 20px 25px rgba(0, 0, 0, 0.3);
     background-image: linear-gradient(
       to bottom right,
       rgba(153, 122, 104, 0.5),
-      rgba(231, 203, 203, 0.2)
+      rgba(231, 203, 203, 0.5)
     );
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
   }
 
-  .tRight {
-    font-size: 1.4em;
+  .float_left {
+    margin-left: auto;
+    /* color: white; */
   }
-}
+
+  @media screen and (max-width: 880px) {
+    .attire__wrapper {
+      margin: 2rem auto 2rem auto;
+      max-width: 80%;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .attire__wrapper {
+      margin-top: 4rem;
+      padding: 0.2rem;
+      max-width: 98%;
+      background-image: linear-gradient(
+        to bottom right,
+        rgba(153, 122, 104, 0.5),
+        rgba(231, 203, 203, 0.2)
+      );
+    }
+
+    .tRight {
+      font-size: 1.4em;
+    }
+  }
 </style>

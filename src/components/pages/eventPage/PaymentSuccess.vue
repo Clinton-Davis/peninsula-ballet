@@ -23,27 +23,27 @@
 </template>
 
 <script>
-import BaseTile from "../../EventUI/BaseTile.vue";
-import BaseBtn from "../../EventUI/BaseBtn.vue";
-export default {
-  components: { BaseTile, BaseBtn },
-};
+  import BaseTile from "../../EventUI/BaseTile.vue";
+  import BaseBtn from "../../EventUI/BaseBtn.vue";
+  export default {
+    components: { BaseTile, BaseBtn }
+  };
 </script>
 
 <style scoped>
-h1 {
-  font-size: 5em;
-  font-family: var(--Italianno);
-}
-h1,
-h2,
-h3 {
-  text-align: center;
-}
-.success_background {
-  background-image: url("https://res.cloudinary.com/peninsulaballet/image/upload/v1633621321/web_pages/rob-laughter-dark.2ff70db8_ymfw9c.webp");
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-}
+  h1 {
+    font-size: 5em;
+    font-family: var(--Italianno);
+  }
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+  .success_background {
+    background-image: url("https://res.cloudinary.com/peninsulaballet/image/upload/v1633621321/web_pages/rob-laughter-dark.2ff70db8_ymfw9c.webp");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+  }
 </style>

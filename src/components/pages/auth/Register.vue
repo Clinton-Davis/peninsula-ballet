@@ -73,150 +73,150 @@
 </template>
 
 <script>
-import BaseBtn from "../../EventUI/BaseBtn.vue";
-import BaseTile from "../../EventUI/BaseTile.vue";
-import axios from "axios";
-export default {
-  components: { BaseTile, BaseBtn },
+  import BaseBtn from "../../EventUI/BaseBtn.vue";
+  import BaseTile from "../../EventUI/BaseTile.vue";
+  import axios from "axios";
+  export default {
+    components: { BaseTile, BaseBtn },
 
-  data() {
-    return {
-      error: null,
-      reg_success: false,
-      first_name: {
-        value: "",
-        isValid: true,
-      },
-      last_name: {
-        value: "",
-        isValid: true,
-      },
-      email: {
-        value: "",
-        isValid: true,
-      },
-      password: {
-        value: "",
-        isValid: true,
-      },
-      formIsValid: true,
-    };
-  },
-
-  methods: {
-    clearInvalid(input) {
-      this[input].isValid = true;
-    },
-    formValidaty() {
-      /**TODO Its not working propaly */
-      this.formIsValid = true;
-
-      if (this.first_name.value === "" || this.first_name.value.length < 2) {
-        this.first_name.isValid = false;
-        this.formIsValid = false;
-      }
-      if (this.last_name.value === "" || this.last_name.value.length < 2) {
-        this.last_name.isValid = false;
-        this.formIsValid = false;
-      }
-      if (
-        this.email.value === "" ||
-        this.email.value.length < 5 ||
-        !this.email.includes("@") ||
-        !this.email.includes(".")
-      ) {
-        this.email.isValid = false;
-        this.formIsValid = false;
-      }
-      if (
-        this.password.value === "" ||
-        this.password.value == this.first_name.value ||
-        this.password.value == this.last_name.value ||
-        this.password.value == this.email.value
-      ) {
-        this.email.isValid = false;
-        this.formIsValid = false;
-      }
-    },
-    submitRegForm() {
-      this.formValidaty();
-      if (!this.formIsValid) {
-        return;
-      }
-
-      let headersList = {
-        Authorization: "",
-        "Content-Type": "application/json",
+    data() {
+      return {
+        error: null,
+        reg_success: false,
+        first_name: {
+          value: "",
+          isValid: true
+        },
+        last_name: {
+          value: "",
+          isValid: true
+        },
+        email: {
+          value: "",
+          isValid: true
+        },
+        password: {
+          value: "",
+          isValid: true
+        },
+        formIsValid: true
       };
-      let data = {
-        first_name: this.firstName,
-        last_name: this.lastName,
-        email: this.email,
-        password: this.password,
-      };
-      let reqOptions = {
-        url:
-          "https://peninsula-ballet-backend.herokuapp.com/profiles/register/",
-        method: "POST",
-        headers: headersList,
-        data: data,
-      };
+    },
 
-      axios.request(reqOptions).then((response) => {
-        this.changeRoute(response);
-      });
-    },
-    changeRoute(response) {
-      if (response.status === 201) {
-        this.reg_success = true;
-        setTimeout(() => {
-          this.$router.push("/login");
-        }, 2000);
+    methods: {
+      clearInvalid(input) {
+        this[input].isValid = true;
+      },
+      formValidaty() {
+        /**TODO Its not working propaly */
+        this.formIsValid = true;
+
+        if (this.first_name.value === "" || this.first_name.value.length < 2) {
+          this.first_name.isValid = false;
+          this.formIsValid = false;
+        }
+        if (this.last_name.value === "" || this.last_name.value.length < 2) {
+          this.last_name.isValid = false;
+          this.formIsValid = false;
+        }
+        if (
+          this.email.value === "" ||
+          this.email.value.length < 5 ||
+          !this.email.includes("@") ||
+          !this.email.includes(".")
+        ) {
+          this.email.isValid = false;
+          this.formIsValid = false;
+        }
+        if (
+          this.password.value === "" ||
+          this.password.value == this.first_name.value ||
+          this.password.value == this.last_name.value ||
+          this.password.value == this.email.value
+        ) {
+          this.email.isValid = false;
+          this.formIsValid = false;
+        }
+      },
+      submitRegForm() {
+        this.formValidaty();
+        if (!this.formIsValid) {
+          return;
+        }
+
+        let headersList = {
+          Authorization: "",
+          "Content-Type": "application/json"
+        };
+        let data = {
+          first_name: this.firstName,
+          last_name: this.lastName,
+          email: this.email,
+          password: this.password
+        };
+        let reqOptions = {
+          url:
+            "https://peninsula-ballet-backend.herokuapp.com/profiles/register/",
+          method: "POST",
+          headers: headersList,
+          data: data
+        };
+
+        axios.request(reqOptions).then(response => {
+          this.changeRoute(response);
+        });
+      },
+      changeRoute(response) {
+        if (response.status === 201) {
+          this.reg_success = true;
+          setTimeout(() => {
+            this.$router.push("/login");
+          }, 2000);
+        }
       }
-    },
-  },
-};
+    }
+  };
 </script>
 
 <style scoped>
-h1,
-h2,
-h3 {
-  text-align: center;
-  text-transform: capitalize;
-}
-h1 {
-  font-size: 3.3em;
-}
-.mt {
-  margin-top: 0.75rem;
-}
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+    text-transform: capitalize;
+  }
+  h1 {
+    font-size: 3.3em;
+  }
+  .mt {
+    margin-top: 0.75rem;
+  }
 
-.reg__section {
-  min-height: 100vh;
-  height: fit-content;
-}
-.reg__Image {
-  min-height: 100vh;
-  background-image: url("https://res.cloudinary.com/peninsulaballet/image/upload/v1632479161/web_pages/avi-richards-unsplash_ffdm5q.webp");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+  .reg__section {
+    min-height: 100vh;
+    height: fit-content;
+  }
+  .reg__Image {
+    min-height: 100vh;
+    background-image: url("https://res.cloudinary.com/peninsulaballet/image/upload/v1632479161/web_pages/avi-richards-unsplash_ffdm5q.webp");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
-.small {
-  font-size: 0.7rem;
-}
-.errors {
-  text-align: center;
-  color: red;
-}
+  .small {
+    font-size: 0.7rem;
+  }
+  .errors {
+    text-align: center;
+    color: red;
+  }
 
-.invalid input {
-  border: 1px solid red;
-}
-.invalid label {
-  color: red;
-}
+  .invalid input {
+    border: 1px solid red;
+  }
+  .invalid label {
+    color: red;
+  }
 </style>

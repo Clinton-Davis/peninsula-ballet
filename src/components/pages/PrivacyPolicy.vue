@@ -121,37 +121,37 @@
 </template>
 
 <style scoped>
-section {
-  background-color: #131313;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-article {
-  margin: 1rem;
-  background-color: whitesmoke;
-  padding: 2rem;
-  margin-top: 5%;
-  box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
-    0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-}
-h1 {
-  text-align: center;
-  margin: 1rem;
-  font-family: var(--Italianno);
-  font-size: 4rem;
-}
-h3 {
-  margin: 1rem 0 0.5rem 0;
-  font-size: 1.5rem;
-}
-p {
-  max-width: 62ch;
-  line-height: 1.4rem;
-}
+  section {
+    background-color: #131313;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  article {
+    margin: 1rem;
+    background-color: whitesmoke;
+    padding: 2rem;
+    margin-top: 5%;
+    box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
+      0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  }
+  h1 {
+    text-align: center;
+    margin: 1rem;
+    font-family: var(--Italianno);
+    font-size: 4rem;
+  }
+  h3 {
+    margin: 1rem 0 0.5rem 0;
+    font-size: 1.5rem;
+  }
+  p {
+    max-width: 62ch;
+    line-height: 1.4rem;
+  }
 </style>
