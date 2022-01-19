@@ -18,6 +18,11 @@
       <li>
         <router-link to="/welcome">Welcome</router-link>
       </li>
+      <!-- // TODO Finish About -->
+      <!-- <li>
+        <router-link to="/welcome">About</router-link>
+      </li> -->
+
       <li>
         <router-link to="/teachers">Teachers</router-link>
       </li>
@@ -36,6 +41,9 @@
       </li>
       <li>
         <router-link to="/eventlist">Events</router-link>
+      </li>
+      <li>
+        <router-link to="/attire">Attire</router-link>
       </li>
       <li v-if="!isAuthenticated">
         <router-link to="/login">Login</router-link>

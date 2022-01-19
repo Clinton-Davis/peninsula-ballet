@@ -6,8 +6,8 @@
         <p>{{ balletEventDesc }}</p>
 
         <div class="showBtn">
-          <base-btn link mode="show" to="/checkout"
-            >Get your Virtual Ticket</base-btn
+          <base-btn link mode="show" to="/eventlist"
+            >YouTube link comming soon</base-btn
           >
         </div>
         <button
