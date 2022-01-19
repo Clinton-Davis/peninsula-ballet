@@ -82,7 +82,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 #teachers__Section {
   min-height: calc(100vh - 10vh);

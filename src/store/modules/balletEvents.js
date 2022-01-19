@@ -60,7 +60,10 @@ export default {
           name: "Jerusalema Challange",
           desc:
             'An Angolan dance troupe recorded themselves dancing to a hit South African house track by DJ Master KG and vocalist Nomcelo in February. \
-                    It became an internet rage during the Covid-19 lockdown known as the #Jerusalemachallenge, with people from across countries uploading videos dancing to Jerusalema. September 24th is South African Heritage Day - President Cyril Ramaphosa urged his people to "take up the challenge and show the world what we are made of." This is our take.',
+                    It became an internet rage during the Covid-19 lockdown known as the #Jerusalemachallenge,\
+                    with people from across countries uploading videos dancing to Jerusalema.\
+                     September 24th is South African Heritage Day - President Cyril Ramaphosa urged his people to\
+                      "take up the challenge and show the world what we are made of." This is our take.',
           hasVideo: true,
           video:
             "https://res.cloudinary.com/dayietcj3/video/upload/v1606342867/TPBS_Jerusalema_Challenge_qmyqil.mp4",
@@ -136,7 +139,9 @@ export default {
           id: "A_Decade_of_Dance",
           name: "A Decade of Dance",
           desc:
-            "We have held a show to celebrate our amazing accomplishment of teaching for 10 years. The dancers are to demonstrate their progress through the years. Because of covid, we were only able to fulfill 50% of the theater's capacity. We have decided to host a virtual performance for those of you who were unable to attend the live event. Tickets are available for R85. Please click here to purchase your ticket.",
+            "We commemorated our 10-year anniversary with a performance entitled 'A Decade of Dance'\
+            As the dancers progress through the years, they demonstrate their progress.\
+            This performance showcases Tracy, Leilani, and Nicolene's excellent choreography and passion for dance with a variety of dancers.",
           video: "",
           imageIds: ["sh1"],
         },
