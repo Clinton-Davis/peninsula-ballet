@@ -57,7 +57,7 @@
           //   address: "Main Rd, Muizenberg",
           //   link: "https://bit.ly/396v1Nb",
           //   mapImage:
-          //     "https://res.cloudinary.com/peninsulaballet/image/upload/q_100/v1616494109/web_pages/Maps/MJHSMap_ffoxbm.webp"
+          //     "https://res.cloudinary.com/peninsulaballet/image/upload/q_100/v1616494109/web_pages/Maps/MJHSMap_ffoxbm.webp",
           // },
           {
             id: 4,

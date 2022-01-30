@@ -8,19 +8,9 @@
             Passionate about teaching
           </h2>
           <div class="welcome__celebration">
-            <img
-              class="leftFire"
-              :src="require('@/assets/images/works2.svg')"
-              alt="Fireworks icons"
-            />
             <h3 class="textShadow text-Shadow-White">
               Celebrating A Decade of Dance.
             </h3>
-            <img
-              class="rightFire"
-              :src="require('@/assets/images/works2.svg')"
-              alt="Fireworks icons"
-            />
           </div>
           <div class="welcome__benefits">
             <!-- <h2 class="text-Shadow-White">Welcome</h2> -->
@@ -39,7 +29,8 @@
               Besides being beneficial for your physical health, it is also
               beneficial for mental wellbeing. Children learn to remain focused
               and to learn from their mistakes, which results in perseverance
-              and a boost in self-confidence when they succeed. <br />
+              and a boost in self-confidence when they succeed.
+              <br />
               There are many other benefits that will remain with them for a
               lifetime.
             </p>
