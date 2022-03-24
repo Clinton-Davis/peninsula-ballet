@@ -14,7 +14,7 @@
         />
       </div>
       <div class="main_footer">
-        <h3 class="feet">Pages</h3>
+        <h3 class="feet ">Pages</h3>
         <ul class="pages">
           <li>
             <router-link class="feet" to="/welcome">Welcome</router-link>
@@ -79,7 +79,9 @@
       </div>
     </div>
     <div class="sub_footer_container">
-      <div class="subfooter feet vt">&copy; Peninisula Ballet 2021</div>
+      <div class="subfooter feet vt">
+        &copy; Peninisula Ballet <span>{{ year }}</span>
+      </div>
       <div class="subfooter feet">
         <a
           class="clint_link"
@@ -104,7 +106,17 @@
 </template>
 
 <script>
-  export default {};
+  export default {
+    data() {
+      return {
+        year: ""
+      };
+    },
+    mounted() {
+      const date = new Date();
+      return (this.year = date.getFullYear());
+    }
+  };
 </script>
 
 <style scoped>
@@ -135,6 +147,9 @@
   .main_footer {
     display: grid;
     place-items: center;
+  }
+  .main_footer h3 {
+    margin-bottom: 1rem;
   }
 
   .mail_icon {
@@ -172,7 +187,7 @@
     gap: 1em;
     grid-template-columns: 50% 50%;
 
-    place-items: center;
+    /* place-items: center; */
   }
 
   .sub_footer_container {
