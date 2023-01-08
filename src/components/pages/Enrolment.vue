@@ -51,14 +51,14 @@
 
           <!-- Date of Birth -->
           <div id="dobWrapper">
-            <div class="text"><p>Date of Birth*:&nbsp;</p></div>
+            <div class="text"><p>Date of Birth:&nbsp;</p></div>
             <div class="date">
               <input
                 type="number"
                 name="day"
                 minlength="2"
                 maxlength="2"
-                placeholder="Day"
+                placeholder="Day*"
                 v-model="day"
                 required
               />
@@ -70,7 +70,7 @@
                 name="mth"
                 minlength="2"
                 maxlength="2"
-                placeholder="Mth"
+                placeholder="Mth*"
                 v-model="month"
                 required
               />
@@ -82,7 +82,7 @@
                 name="year"
                 minlength="4"
                 maxlength="4"
-                placeholder="Year"
+                placeholder="Year*"
                 v-model="year"
                 required
               />
@@ -272,8 +272,8 @@
             type="submit"
             mode="enrollment"
             :disabled="isDisabled"
-            @click.prevent="formValidaty"
-            >Submit Form</base-btn
+            @click.prevent="formValidate"
+            >{{ dynamicBtn }}</base-btn
           >
         </form>
       </div>
@@ -297,7 +297,7 @@
         day: "",
         month: "",
         year: "",
-        age: "",
+        age: null,
         isLegal: false,
         validInput: false,
         isDisabled: false,
@@ -322,22 +322,30 @@
       }
     },
 
+    computed: {
+      dynamicBtn() {
+        if (this.formSend) return "Sending...";
+        return "Enroll";
+      }
+    },
+
     methods: {
-      formValidaty() {
+      formValidate() {
         this.isDisabled = true;
-        console.log("isDisabled", this.isDisabled);
-        if (
-          this.first_name !== "" ||
-          this.last_name !== "" ||
-          this.email !== "" ||
-          this.email.includes("@") ||
-          this.email.includes(".") ||
-          this.contact_number !== "" ||
-          this.age !== ""
-        ) {
-          this.validInput = true;
-        } else {
-          console.log("error:");
+        try {
+          if (
+            this.first_name !== "" ||
+            this.last_name !== "" ||
+            this.email !== "" ||
+            this.email.includes("@") ||
+            this.email.includes(".") ||
+            this.contact_number !== "" ||
+            this.age !== null
+          ) {
+            this.validInput = true;
+          }
+        } catch (error) {
+          console.error("error:", error);
           this.validInput = false;
           this.isDisabled = false;
           return;
@@ -368,7 +376,6 @@
         axios
           .request(reqOptions)
           .then(response => {
-            console.log(response);
             if (response.status === 202) {
               this.formSend = true;
               setTimeout(() => {
@@ -378,9 +385,8 @@
             }
           })
           .catch(err => {
-            console.log("catch error:", err);
+            console.error("catch error:", err);
             this.isDisabled = false;
-            console.log("isDisabled", this.isDisabled);
           });
       },
       checkYear() {
@@ -388,11 +394,7 @@
         const thisYear = year.getFullYear();
         const birthYear = this.year;
         this.age = thisYear - birthYear;
-        if (this.age < 19) {
-          this.isLegal = false;
-        } else {
-          this.isLegal = true;
-        }
+        this.age < 19 ? (this.isLegal = false) : (this.isLegal = true);
       }
     }
   };
