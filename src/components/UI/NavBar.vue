@@ -4,7 +4,7 @@
       welcome_colors: welcomePage,
       teachers_colors: teachersPage,
       schedule_colors: schedulePage,
-      covid_colors: covidPage,
+
       enrolment_colors: enrolmentPage,
       studio_colors: studiosPage,
       eventlist_colors: eventlistPage,
@@ -30,9 +30,9 @@
       <li>
         <router-link to="/schedule">Schedules</router-link>
       </li>
-      <li>
+      <!-- <li>
         <router-link to="/covid">Covid</router-link>
-      </li>
+      </li> -->
       <li>
         <router-link to="/enrolment">Enrol</router-link>
       </li>
@@ -63,7 +63,7 @@
           welcome_burger: welcomePage,
           teachers_burger: teachersPage,
           schedule_burger: schedulePage,
-          covid_burger: covidPage,
+
           enrolment_burger: enrolmentPage,
           studio_burger: studiosPage,
           eventlist_burger: eventlistPage,
@@ -79,7 +79,7 @@
           welcome_burger: welcomePage,
           teachers_burger: teachersPage,
           schedule_burger: schedulePage,
-          covid_burger: covidPage,
+
           enrolment_burger: enrolmentPage,
           studio_burger: studiosPage,
           eventlist_burger: eventlistPage,
@@ -95,7 +95,7 @@
           welcome_burger: welcomePage,
           teachers_burger: teachersPage,
           schedule_burger: schedulePage,
-          covid_burger: covidPage,
+
           enrolment_burger: enrolmentPage,
           studio_burger: studiosPage,
           eventlist_burger: eventlistPage,

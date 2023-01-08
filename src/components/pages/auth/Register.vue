@@ -107,7 +107,7 @@
       clearInvalid(input) {
         this[input].isValid = true;
       },
-      formValidaty() {
+      formValidate() {
         /**TODO Its not working propaly */
         this.formIsValid = true;
 
@@ -139,7 +139,7 @@
         }
       },
       submitRegForm() {
-        this.formValidaty();
+        this.formValidate();
         if (!this.formIsValid) {
           return;
         }

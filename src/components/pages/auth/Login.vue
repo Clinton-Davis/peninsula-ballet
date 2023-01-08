@@ -22,7 +22,7 @@
               </p>
             </div>
 
-            <base-btn type="submit" @click.prevent="formValidaty"
+            <base-btn type="submit" @click.prevent="formValidate"
               >Login</base-btn
             >
           </form>
@@ -59,7 +59,7 @@
       ...mapGetters("auth", ["isAuthenticated"])
     },
     methods: {
-      formValidaty() {
+      formValidate() {
         if (
           this.email === "" ||
           !this.email.includes("@") ||

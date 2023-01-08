@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import WelcomePage from "./components/pages/WelcomePage.vue";
 import Schedule from "./components/pages/Schedule.vue";
 import Attire from "./components/pages/Attire.vue";
-import Covid from "./components/pages/Covid.vue";
+// import Covid from "./components/pages/Covid.vue";
 import Enrolment from "./components/pages/Enrolment.vue";
 import Studios from "./components/pages/Studios.vue";
 import Teachers from "./components/pages/Teachers.vue";
@@ -22,7 +22,7 @@ const router = createRouter({
   routes: [
     { path: "/", redirect: "/welcome" },
     { path: "/attire", name: "attire", component: Attire },
-    { path: "/covid", name: "covid", component: Covid },
+    // { path: "/covid", name: "covid", component: Covid },
     { path: "/checkout", name: "checkout", component: Checkout },
     { path: "/enrolment", name: "enrolment", component: Enrolment },
     { path: "/eventlist", name: "eventlist", component: EventList },
@@ -30,7 +30,7 @@ const router = createRouter({
       path: "/eventlist/:eventId",
       name: "theEvent",
       component: TheEvent,
-      props: true,
+      props: true
     },
     { path: "/login", name: "login", component: Login },
     { path: "/logout", name: "logout", component: Logout },
@@ -38,7 +38,7 @@ const router = createRouter({
       path: "/profile",
       name: "profile",
       component: Profile,
-      meta: { requiredAuth: true },
+      meta: { requiredAuth: true }
     },
     { path: "/privacypolicy", name: "privacypolicy", component: PrivacyPolicy },
     { path: "/register", name: "register", component: Register },
@@ -48,21 +48,21 @@ const router = createRouter({
       path: "/show",
       name: "show",
       component: Show,
-      meta: { requiredAuth: true },
+      meta: { requiredAuth: true }
     },
     {
       path: "/success",
       name: "PaymentSuccess",
-      component: PaymentSuccess,
+      component: PaymentSuccess
     },
     { path: "/teachers", name: "teachers", component: Teachers },
     { path: "/welcome", name: "welcome", component: WelcomePage },
-    { path: "/:notFound(.*)", component: WelcomePage },
-  ],
+    { path: "/:notFound(.*)", component: WelcomePage }
+  ]
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some((record) => record.meta.requiredAuth)) {
+  if (to.matched.some(record => record.meta.requiredAuth)) {
     if (store.getters["auth/isAuthenticated"]) {
       next();
     } else {
