@@ -164,7 +164,7 @@
 
 <style scoped>
   #schedule__Section {
-    min-height: calc(100vh <span>to</span> 10vh);
+    min-height: calc(100vh - 10vh);
     display: flex;
     position: relative;
     height: fit-content;
