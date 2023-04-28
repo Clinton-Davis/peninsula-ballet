@@ -4,10 +4,8 @@
       <div class="schedule__wrapper">
         <div class="schedule__content">
           <div class="schedule__info">
-            <h2>
-              Fish Hoek Classes <br />
-              (Tracy & Leilani)
-            </h2>
+            <h2>Fish Hoek Classes</h2>
+            <br />
             <h4>
               Class times and days may vary depending on the Ballet School's
               yearly calendar.<br />
@@ -15,224 +13,136 @@
               Grade 2's, 4's and Intermediate Foundation has Flamenco classes
               every second week.
             </h4>
+            <br />
           </div>
-          <div class="schedule__tables float_left">
-            <table>
-              <thead>
-                <th>MONDAY</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Grade 2</td>
-                  <td class="tRight">2:15 - 3:00</td>
-                </tr>
-                <tr>
-                  <td>Grade 1</td>
-                  <td class="tRight">3:00 - 3:45</td>
-                </tr>
-                <tr>
-                  <td>Grade 4</td>
-                  <td class="tRight">4:15- 5:00</td>
-                </tr>
-                <tr>
-                  <td>Intermediate</td>
-                  <td class="tRight">5:00 - 6:15</td>
-                </tr>
-                <tr>
-                  <td>
-                    Adult Beginners
-                  </td>
-                  <td class="tRight">6:15 - 7:15</td>
-                </tr>
-              </tbody>
-            </table>
+          <!-- MONDAY-TUES  -->
+          <div class="flex">
+            <div class="schedule__tables">
+              <table>
+                <thead>
+                  <th>MONDAY</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Grade 3</td>
+                    <td class="tRight">3:15 <span>to</span> 4:00</td>
+                  </tr>
+                  <tr>
+                    <td>Intermediate (H)</td>
+                    <td class="tRight">4:00 <span>to</span> 4:45</td>
+                  </tr>
+                  <tr>
+                    <td>Pointe & Strength</td>
+                    <td class="tRight">4:45 <span>to</span> 5:45</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Adult Beginners
+                    </td>
+                    <td class="tRight">5:45 <span>to</span> 6:45</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="schedule__tables">
+              <table class="">
+                <thead>
+                  <th>TUESDAY</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Grade 1</td>
+                    <td class="tRight">3:15 <span>to</span> 4:00</td>
+                  </tr>
+                  <tr>
+                    <td>Grade 4</td>
+                    <td class="tRight">4:00 <span>to</span> 4:45</td>
+                  </tr>
+                  <tr>
+                    <td>Intermediate</td>
+                    <td class="tRight">5:00 <span>to</span> 6:00</td>
+                  </tr>
+                  <tr>
+                    <td>Open / Tone</td>
+                    <td class="tRight">6:00 <span>to</span> 7:00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div class="schedule__tables">
-            <table class="">
-              <thead>
-                <th>TUESDAY</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Grade 3</td>
-                  <td class="tRight">3:15 - 4:00</td>
-                </tr>
-                <tr>
-                  <td>Grade 5</td>
-                  <td class="tRight">4:00 - 4:45</td>
-                </tr>
-                <tr>
-                  <td>Intermediate Foundation</td>
-                  <td class="tRight">4:45 - 5:45</td>
-                </tr>
-                <tr>
-                  <td>Open class</td>
-                  <td class="tRight">5:45 - 6:45</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="schedule__tables float_left">
-            <table>
-              <thead>
-                <th>WEDNESDAY</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Grade 1</td>
-                  <td class="tRight">3:00 - 3:45</td>
-                </tr>
-                <tr>
-                  <td>Grade 5</td>
-                  <td class="tRight">3:45 - 4:30</td>
-                </tr>
-                <tr>
-                  <td>Grade 4</td>
-                  <td class="tRight">4:30 - 5:15</td>
-                </tr>
+          <!-- WED-THURS  -->
+          <div class="flex">
+            <div class="schedule__tables">
+              <table>
+                <thead>
+                  <th>WEDNESDAY</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Primary / Grade 1</td>
+                    <td class="tRight">3:00 <span>to</span> 3:45</td>
+                  </tr>
+                  <tr>
+                    <td>Flamenco (Junior)</td>
+                    <td class="tRight">3:45 <span>to</span> 4:30</td>
+                  </tr>
+                  <tr>
+                    <td>Grade 5</td>
+                    <td class="tRight">4:30 <span>to</span> 5:15</td>
+                  </tr>
 
-                <tr>
-                  <td>Intermediate Foundation</td>
-                  <td class="tRight">5:15 - 6:15</td>
-                </tr>
-                <tr>
-                  <td>Advanced Foundation</td>
-                  <td class="tRight">6:15 - 7:15</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="schedule__tables">
-            <table class="">
-              <thead>
-                <th>THURSDAY</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Grade 2</td>
-                  <td class="tRight">3:00 - 3:45</td>
-                </tr>
-                <tr>
-                  <td>Grade 3</td>
-                  <td class="tRight">3:45 - 4:30</td>
-                </tr>
-                <tr>
-                  <td>Grade 5</td>
-                  <td class="tRight">4:30 - 5:15</td>
-                </tr>
-                <tr>
-                  <td>Intermediate</td>
-                  <td class="tRight">5:15 - 6:15</td>
-                </tr>
-                <tr>
-                  <td>Advanced Foundation</td>
-                  <td class="tRight">6:15 - 7:15</td>
-                </tr>
-                <tr>
-                  <td>Advanced 2</td>
-                  <td class="tRight">7:15 - 8:30</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <h2 class="">Kommetjie Classes (Leilani)</h2>
-          <div class="schedule__tables float_left">
-            <table class="">
-              <thead>
-                <th>TUESDAY</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Pre-Primary</td>
-                  <td class="tRight">1:45-2:15</td>
-                </tr>
-                <tr>
-                  <td>Primary</td>
-                  <td class="tRight">2:15-3:00</td>
-                </tr>
-                <tr>
-                  <td>Grade 2</td>
-                  <td class="tRight">3:00-4:00</td>
-                </tr>
-                <tr>
-                  <td>Grade 4</td>
-                  <td class="tRight">4:00-5:00</td>
-                </tr>
-                <tr>
-                  <td>Adult Beginners</td>
-                  <td class="tRight">4:45-5:45</td>
-                </tr>
-                <tr>
-                  <td>
-                    Grade 8 <br />
-                    (Intermediate Foundation)
-                  </td>
-                  <td class="tRight">5:00-6:15</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="schedule__tables">
-            <table class="">
-              <thead>
-                <th>WEDNESDAY</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Ages 5 - 6</td>
-                  <td class="tRight">3:30 - 4:00</td>
-                </tr>
-
-                <tr>
-                  <td>Ages 7 - 8</td>
-                  <td class="tRight">4:00 - 4:30</td>
-                  <!-- <td>Online Classroom</td> -->
-                </tr>
-                <tr>
-                  <td>Online Classroom</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <h2 class="">Muizenberg Junior School</h2>
-          <p class="text_center">
-            (These grades are SCHOOL grades and NOT ballet grades)
-          </p>
-          <div class="schedule__tables float_left">
-            <table class="">
-              <thead>
-                <th>WEDNESDAY</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Grades R & Grade 1</td>
-                  <td class="tRight">1:15-1:45</td>
-                </tr>
-                <tr>
-                  <td>Grades 2 - 4</td>
-                  <td class="tRight">2:40-3:10</td>
-                </tr>
-                <tr>
-                  <td>Grades 5 - 7</td>
-                  <td class="tRight">3:10-4:00</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h2 class="">Alive Dance Studio Muizenberg</h2>
-          <div class="schedule__tables">
-            <table class="">
-              <thead>
-                <th>WEDNESDAY</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Intermediate</td>
-                  <td class="tRight">4:30 - 5:30</td>
-                </tr>
-              </tbody>
-            </table>
+                  <tr>
+                    <td>Intermediate</td>
+                    <td class="tRight">5:15 <span>to</span> 6:15</td>
+                  </tr>
+                  <tr>
+                    <td>Advanced 1</td>
+                    <td class="tRight">6:00 <span>to</span> 7:15</td>
+                  </tr>
+                  <tr>
+                    <td>Ballroom</td>
+                    <td class="tRight">7:15 <span>to</span> 8:15</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="schedule__tables">
+              <table class="">
+                <thead>
+                  <th>THURSDAY</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Grade 2</td>
+                    <td class="tRight">2:15 <span>to</span> 3:00</td>
+                  </tr>
+                  <tr>
+                    <td>Grade 3</td>
+                    <td class="tRight">3:00 <span>to</span> 3:45</td>
+                  </tr>
+                  <tr>
+                    <td>Grade 4</td>
+                    <td class="tRight">3:45 <span>to</span> 4:30</td>
+                  </tr>
+                  <tr>
+                    <td>Intermediate Foundation</td>
+                    <td class="tRight">4:30 <span>to</span> 5:15</td>
+                  </tr>
+                  <tr>
+                    <td>Advanced 1</td>
+                    <td class="tRight">5:15 <span>to</span> 6:15</td>
+                  </tr>
+                  <tr>
+                    <td>Advanced 2</td>
+                    <td class="tRight">6:15 <span>to</span> 8:30</td>
+                  </tr>
+                  <tr>
+                    <td>Flamenco (Senior)</td>
+                    <td class="tRight">6:15 <span>to</span> 8:30</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -254,11 +164,15 @@
 
 <style scoped>
   #schedule__Section {
-    min-height: calc(100vh - 10vh);
+    min-height: calc(100vh <span>to</span> 10vh);
     display: flex;
     position: relative;
     height: fit-content;
     color: rgb(0, 0, 0);
+  }
+
+  .flex {
+    display: flex;
   }
   .schedule__Img {
     width: 100%;
@@ -270,7 +184,7 @@
     position: relative;
   }
   .schedule__wrapper {
-    margin: 4rem 0 2rem auto;
+    margin: 6rem 6rem 2rem auto;
     padding: 2rem;
     max-width: 50%;
     box-shadow: 1px 20px 25px rgba(0, 0, 0, 0.3);
@@ -294,6 +208,9 @@
   .float_left {
     margin-left: auto;
   }
+  span {
+    font-size: 0.7rem;
+  }
   h2 {
     text-align: center;
     font-size: 2rem;
@@ -310,6 +227,7 @@
     background-color: rgba(209, 231, 245, 0.795);
     margin: 0.5rem 0;
     padding: 15px;
+    min-height: 12rem;
     border-radius: 10px;
     box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
       0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
@@ -339,10 +257,31 @@
     float: right;
     font-size: 1.1em;
   }
+  @media screen and (max-width: 1344px) {
+    .schedule__wrapper {
+      max-width: 80%;
+    }
+  }
   @media screen and (max-width: 880px) {
     .schedule__wrapper {
       margin: 2rem auto 2rem auto;
-      max-width: 80%;
+      max-width: 99%;
+    }
+  }
+  @media screen and (max-width: 680px) {
+    .schedule__wrapper {
+      margin: 2rem auto 2rem auto;
+      max-width: 99%;
+    }
+    .flex {
+      display: block;
+    }
+    .schedule__tables {
+      display: flex;
+      flex-direction: column;
+      width: 20rem;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
   @media screen and (max-width: 400px) {

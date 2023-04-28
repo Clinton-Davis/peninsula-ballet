@@ -42,15 +42,15 @@
             link: "https://bit.ly/2WksRlg",
             mapImage:
               "https://res.cloudinary.com/peninsulaballet/image/upload/q_100/v1616494521/web_pages/Maps/FHMap_vwustf.webp"
-          },
-          {
-            id: 2,
-            name: "Kommetjie",
-            address: "Wellness Centre in Ruby Rd",
-            link: "https://bit.ly/36fsM7e",
-            mapImage:
-              "https://res.cloudinary.com/peninsulaballet/image/upload/q_100/v1616495019/web_pages/Maps/rubyMap_r1lays.webp"
-          },
+          }
+          // {
+          //   id: 2,
+          //   name: "Kommetjie",
+          //   address: "Wellness Centre in Ruby Rd",
+          //   link: "https://bit.ly/36fsM7e",
+          //   mapImage:
+          //     "https://res.cloudinary.com/peninsulaballet/image/upload/q_100/v1616495019/web_pages/Maps/rubyMap_r1lays.webp"
+          // },
           // {
           //   id: 3,
           //   name: "Muizenberg Junior School",
@@ -59,14 +59,14 @@
           //   mapImage:
           //     "https://res.cloudinary.com/peninsulaballet/image/upload/q_100/v1616494109/web_pages/Maps/MJHSMap_ffoxbm.webp",
           // },
-          {
-            id: 4,
-            name: "Alive Dance Studio",
-            address: "15 Palmer Road Muizenberg",
-            link: "https://bit.ly/3sqRkoB",
-            mapImage:
-              "https://res.cloudinary.com/peninsulaballet/image/upload/q_100/v1616494101/web_pages/Maps/Alive_Studios_yxvdyy.webp"
-          }
+          // {
+          //   id: 4,
+          //   name: "Alive Dance Studio",
+          //   address: "15 Palmer Road Muizenberg",
+          //   link: "https://bit.ly/3sqRkoB",
+          //   mapImage:
+          //     "https://res.cloudinary.com/peninsulaballet/image/upload/q_100/v1616494101/web_pages/Maps/Alive_Studios_yxvdyy.webp"
+          // }
         ],
         studioImg: {
           backgroundImage: `url(${require("@/assets/images/dancer_on_rock-min.jpg")})`
@@ -113,7 +113,7 @@
   }
   .studio__card-wrapper {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin: 1rem;
@@ -125,7 +125,7 @@
     height: fit-content;
     min-height: 16rem;
     margin: 1rem;
-    max-width: 50%;
+    max-width: 20rem;
     position: relative;
     box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
       0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;

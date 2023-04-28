@@ -1,18 +1,5 @@
 <template>
-  <nav
-    :class="{
-      welcome_colors: welcomePage,
-      teachers_colors: teachersPage,
-      schedule_colors: schedulePage,
-
-      enrolment_colors: enrolmentPage,
-      studio_colors: studiosPage,
-      eventlist_colors: eventlistPage,
-      theEvent_colors: theEventPage,
-      attire_colors: attirePage,
-      vanish_nav: closeNav
-    }"
-  >
+  <nav :class="navClasses">
     <div class="logo"></div>
     <ul class="nav-links " :class="{ nav_active: navActive }">
       <li>
@@ -56,53 +43,9 @@
       </li>
     </ul>
     <div class="burger" @click="bugerClick">
-      <div
-        class="line line1"
-        :class="{
-          toggle1: navActive,
-          welcome_burger: welcomePage,
-          teachers_burger: teachersPage,
-          schedule_burger: schedulePage,
-
-          enrolment_burger: enrolmentPage,
-          studio_burger: studiosPage,
-          eventlist_burger: eventlistPage,
-          theEvent_burger: theEventPage,
-          attire_burger: attirePage
-        }"
-      ></div>
-
-      <div
-        class="line line2"
-        :class="{
-          toggle2: navActive,
-          welcome_burger: welcomePage,
-          teachers_burger: teachersPage,
-          schedule_burger: schedulePage,
-
-          enrolment_burger: enrolmentPage,
-          studio_burger: studiosPage,
-          eventlist_burger: eventlistPage,
-          theEvent_burger: theEventPage,
-          attire_burger: attirePage
-        }"
-      ></div>
-
-      <div
-        class="line line3"
-        :class="{
-          toggle3: navActive,
-          welcome_burger: welcomePage,
-          teachers_burger: teachersPage,
-          schedule_burger: schedulePage,
-
-          enrolment_burger: enrolmentPage,
-          studio_burger: studiosPage,
-          eventlist_burger: eventlistPage,
-          theEvent_burger: theEventPage,
-          attire_burger: attirePage
-        }"
-      ></div>
+      <div class="line" :class="burgerClasses(1)"></div>
+      <div class="line" :class="burgerClasses(2)"></div>
+      <div class="line" :class="burgerClasses(3)"></div>
     </div>
   </nav>
 </template>
@@ -114,21 +57,11 @@
       return {
         burgerActive: false,
         navActive: false,
-        welcomePage: true,
-        teachersPage: false,
-        schedulePage: false,
-        covidPage: false,
-        enrolmentPage: false,
-        studiosPage: false,
-        eventlistPage: false,
-        theEventPage: false,
-        attirePage: false,
         closeNav: false
       };
     },
     watch: {
-      $route(page) {
-        this.changeNavColor(page.name);
+      $route() {
         this.closeBurger();
       }
     },
@@ -136,127 +69,57 @@
       window.addEventListener("scroll", this.handleScroll);
     },
     computed: {
-      ...mapGetters("auth", ["isAuthenticated"])
+      ...mapGetters("auth", ["isAuthenticated"]),
+      currentPage() {
+        return this.$route.name;
+      },
+      navClasses() {
+        return {
+          welcome_colors: this.currentPage === "welcome",
+          teachers_colors: this.currentPage === "teachers",
+          schedule_colors: this.currentPage === "schedule",
+          enrolment_colors: this.currentPage === "enrolment",
+          studio_colors: this.currentPage === "studios",
+          eventlist_colors: this.currentPage === "eventlist",
+          theEvent_colors: this.currentPage === "theEvent",
+          attire_colors: this.currentPage === "attire",
+          vanish_nav: this.closeNav
+        };
+      }
     },
-
     methods: {
       handleScroll(event) {
         let scrolY = event.path[1].scrollY;
-        if (scrolY > 100) {
-          this.closeNav = true;
-        } else {
-          this.closeNav = false;
-        }
+        this.closeNav = scrolY > 100;
       },
       bugerClick() {
         this.burgerActive = !this.burgerActive;
-        if (this.burgerActive === true) {
-          this.navActive = true;
-        } else {
-          this.burgerActive = false;
-          this.navActive = false;
-        }
+        this.navActive = this.burgerActive;
       },
       closeBurger() {
-        if (this.burgerActive === false) {
-          this.navActive = false;
-        } else {
-          this.burgerActive === true;
-          this.navActive = false;
-          this.burgerActive = false;
-        }
+        this.burgerActive = false;
+        this.navActive = false;
       },
-      changeNavColor(page) {
-        if (page === "welcome") {
-          this.welcomePage = true;
-          this.teachersPage = false;
-          this.schedulePage = false;
-          this.covidPage = false;
-          this.enrolmentPage = false;
-          this.studiosPage = false;
-          this.eventlistPage = false;
-          this.theEventPage = false;
-          this.attirePage = false;
-        } else if (page === "teachers") {
-          this.teachersPage = true;
-          this.welcomePage = false;
-          this.schedulePage = false;
-          this.covidPage = false;
-          this.enrolmentPage = false;
-          this.studiosPage = false;
-          this.eventlistPage = false;
-          this.theEventPage = false;
-          this.attirePage = false;
-        } else if (page === "schedule") {
-          this.schedulePage = true;
-          this.welcomePage = false;
-          this.teachersPage = false;
-          this.covidPage = false;
-          this.enrolmentPage = false;
-          this.studiosPage = false;
-          this.eventlistPage = false;
-          this.theEventPage = false;
-          this.attirePage = false;
-        } else if (page === "covid") {
-          this.covidPage = true;
-          this.welcomePage = false;
-          this.teachersPage = false;
-          this.schedulePage = false;
-          this.enrolmentPage = false;
-          this.studiosPage = false;
-          this.eventlistPage = false;
-          this.theEventPage = false;
-          this.attirePage = false;
-        } else if (page === "enrolment") {
-          this.enrolmentPage = true;
-          this.welcomePage = false;
-          this.teachersPage = false;
-          this.schedulePage = false;
-          this.covidPage = false;
-          this.studiosPage = false;
-          this.eventlistPage = false;
-          this.theEventPage = false;
-          this.attirePage = false;
-        } else if (page === "studios") {
-          this.studiosPage = true;
-          this.schedulePage = false;
-          this.welcomePage = false;
-          this.teachersPage = false;
-          this.covidPage = false;
-          this.enrolmentPage = false;
-          this.eventlistPage = false;
-          this.theEventPage = false;
-          this.attirePage = false;
-        } else if (page === "eventlist") {
-          this.eventlistPage = true;
-          this.theEventPage = false;
-          this.welcomePage = false;
-          this.teachersPage = false;
-          this.schedulePage = false;
-          this.covidPage = false;
-          this.enrolmentPage = false;
-          this.studiosPage = false;
-          this.attirePage = false;
-        } else if (page === "theEvent") {
-          this.theEventPage = true;
-          this.eventlistPage = true;
-          this.welcomePage = false;
-          this.teachersPage = false;
-          this.schedulePage = false;
-          this.covidPage = false;
-          this.enrolmentPage = false;
-          this.studiosPage = false;
-          this.attirePage = false;
-        } else {
-          this.attirePage = true;
-          this.welcomePage = false;
-          this.teachersPage = false;
-          this.schedulePage = false;
-          this.covidPage = false;
-          this.enrolmentPage = false;
-          this.studiosPage = false;
-          this.eventlistPage = false;
+      burgerClasses(lineNum) {
+        let baseClasses = {
+          welcome_burger: this.currentPage === "welcome",
+          teachers_burger: this.currentPage === "teachers",
+          schedule_burger: this.currentPage === "schedule",
+          enrolment_burger: this.currentPage === "enrolment",
+          studio_burger: this.currentPage === "studios",
+          eventList_burger: this.currentPage === "eventlist",
+          theEvent_burger: this.currentPage === "theEvent",
+          attire_burger: this.currentPage === "attire"
+        };
+
+        if (lineNum === 1) {
+          baseClasses["toggle1"] = this.navActive;
+        } else if (lineNum === 2) {
+          baseClasses["toggle2"] = this.navActive;
+        } else if (lineNum === 3) {
+          baseClasses["toggle3"] = this.navActive;
         }
+        return baseClasses;
       }
     },
     beforeUnmount() {
@@ -429,7 +292,7 @@
   .attire_burger {
     background-color: white;
   }
-  .eventlist_burger,
+  .eventList_burger,
   .theEvent_burger {
     background-color: #f9d423;
   }

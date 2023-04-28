@@ -61,6 +61,12 @@
           should be pulled back.
         </p>
         <h2 class="text-Shadow-Black">Outlets</h2>
+        <p>
+          Tracy currently has a limited stock of Lycra, Leotards, Charter shoes,
+          and Ballet shoes. For further information, please feel free to contact
+          Tracy.
+        </p>
+        <br />
         <ul class="attire-p">
           <li>
             <a
