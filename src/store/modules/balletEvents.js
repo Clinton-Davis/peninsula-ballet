@@ -6,8 +6,7 @@ export default {
         {
           id: "Ballet_In_2020",
           name: "Ballet in 2020",
-          desc:
-            "2020 has been a very challenging year for everyone,  and the dance industry has had to adapt to regulations brought on by covid-19.  Our dancers rose to the challenge with online classes, and having to wear masks during classes, on return to the studio's. \
+          desc: "2020 has been a very challenging year for everyone,  and the dance industry has had to adapt to regulations brought on by covid-19.  Our dancers rose to the challenge with online classes, and having to wear masks during classes, on return to the studio's. \
                       We would like to thank our students for their adaptability and perseverance, during this difficult year.\
                       Tracy and Leilani ",
           hasVideo: false,
@@ -18,7 +17,6 @@ export default {
             "b3",
             "b4",
             "b5",
-
             "b7",
             "b8",
             "b9",
@@ -57,9 +55,8 @@ export default {
         },
         {
           id: "Jerusalema_Challange",
-          name: "Jerusalema Challange",
-          desc:
-            'An Angolan dance troupe recorded themselves dancing to a hit South African house track by DJ Master KG and vocalist Nomcelo in February. \
+          name: "Jerusalema Challenge",
+          desc: 'An Angolan dance troupe recorded themselves dancing to a hit South African house track by DJ Master KG and vocalist Nomcelo in February. \
                     It became an internet rage during the Covid-19 lockdown known as the #Jerusalemachallenge,\
                     with people from across countries uploading videos dancing to Jerusalema.\
                      September 24th is South African Heritage Day - President Cyril Ramaphosa urged his people to\
@@ -98,8 +95,7 @@ export default {
         {
           id: "Ballet_On_The_Beach",
           name: "Ballet On The Beach",
-          desc:
-            "When the beach is on your doorstep and it is to hot in the studio, The beach is a great place to cool off and have a lesson.",
+          desc: "When the beach is on your doorstep and it is to hot in the studio, The beach is a great place to cool off and have a lesson.",
           hasVideo: false,
           video: "",
           imageIds: [
@@ -118,8 +114,7 @@ export default {
         {
           id: "Ballet_In_2021",
           name: "Ballet In 2021",
-          desc:
-            "Ballet in the summer months inside can become hot, so we took advantage of the smaller classes and move the lesson to the pool.",
+          desc: "Ballet in the summer months inside can become hot, so we took advantage of the smaller classes and move the lesson to the pool.",
           hasVideo: false,
           video: "",
           imageIds: [
@@ -138,8 +133,7 @@ export default {
         {
           id: "A_Decade_of_Dance",
           name: "A Decade of Dance",
-          desc:
-            "We commemorated our 10-year anniversary with a performance entitled 'A Decade of Dance'\
+          desc: "We commemorated our 10-year anniversary with a performance entitled 'A Decade of Dance'\
             As the dancers progress through the years, they demonstrate their progress.\
             This performance showcases Tracy, Leilani, and Nicolene's excellent choreography and passion for dance with a variety of dancers.",
           video: "",

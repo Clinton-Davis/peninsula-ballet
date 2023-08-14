@@ -35,12 +35,6 @@
                     <td>Pointe & Strength</td>
                     <td class="tRight">4:45 <span>to</span> 5:45</td>
                   </tr>
-                  <tr>
-                    <td>
-                      Adult Beginners
-                    </td>
-                    <td class="tRight">5:45 <span>to</span> 6:45</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -155,10 +149,10 @@
     data() {
       return {
         cssProps: {
-          backgroundImage: `url(${require("@/assets/images/iiona-virgin-lssGvg6tpnU-unsplash.jpg")})`
-        }
+          backgroundImage: `url(${require("@/assets/images/iiona-virgin-lssGvg6tpnU-unsplash.jpg")})`,
+        },
       };
-    }
+    },
   };
 </script>
 
