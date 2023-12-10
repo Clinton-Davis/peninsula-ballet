@@ -7,7 +7,7 @@
       </transition>
     </router-view>
   </main>
-  <!-- <BackTopTop /> -->
+  <BackTopTop />
   <Footer />
 </template>
 
@@ -17,14 +17,14 @@ import Footer from "./components/UI/Footer.vue";
 import windowScrollPosition from "./windowScrollPosition";
 
 export default {
-  mixins: [windowScrollPosition("position")],
+  // mixins: [windowScrollPosition("position")],
   components: {
     NavBar,
     Footer,
   },
   data() {
     return {
-      windwPos: this.position[1],
+      // windwPos: this.position[1],
     };
   },
   created() {

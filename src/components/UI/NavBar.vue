@@ -88,10 +88,10 @@
       }
     },
     methods: {
-      handleScroll(event) {
-        let scrolY = event.path[1].scrollY;
-        this.closeNav = scrolY > 100;
-      },
+      // handleScroll(event) {
+      //   let scrolY = event.path[1].scrollY;
+      //   this.closeNav = scrolY > 100;
+      // },
       bugerClick() {
         this.burgerActive = !this.burgerActive;
         this.navActive = this.burgerActive;

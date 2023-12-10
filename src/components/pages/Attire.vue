@@ -17,10 +17,10 @@
         <p>
           Female students should wear a leotard and pink tights. <br />
           Male dancers will require a white t-shirt and black leggings.<br />
-          All clothing items can be purchased from a dancewear Outlets, either
+          All clothing items can be purchased from a dance wear Outlets, either
           in store or online, however you may prefer to buy in-person in order
           to try different sizes first. <br />
-          Facemasks and/or face shields
+          Face masks and/or face shields
         </p>
 
         <h2 class="text-Shadow-Black">Ballet Shoes</h2>
@@ -35,7 +35,7 @@
           the material of construction is about personal choice based on “feel.”
           Know that canvas shoes will be easier to clean, as they are
           machine-washable. If you have younger children, you may look for
-          ballet shoes that have pre-sewnelastics on them.
+          ballet shoes that have pre-sew new elastics on them.
         </p>
 
         <h2 class="text-Shadow-Black">Hairstyle</h2>

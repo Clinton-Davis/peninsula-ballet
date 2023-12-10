@@ -4,134 +4,107 @@
       <div class="enrol__wrapper">
         <!--Form goes here-->
         <p class="text_center" v-if="formSend">
-          Thank you {{ first_name }} {{ last_name }} for enrolling. <br />Your
-          form has been sent, and you will hear from us as soon.
+          Thank you {{ first_name }} for enrolling. <br />Your form has been
+          sent, and you will hear from us as soon.
         </p>
-        <p v-if="!formSend">
-          The Peninsula Ballet School
-          <small
-            >is compliant with the Protection of Personal Information Act 4 of
-            2013 (POPIA). The information that you submit via this online form
-            is safeguarded through industry-standard security layer protocols
-            (SSL or TSL) offering protection from malware and viruses. Your
-            information will only be used for the purpose of enrollment in our
-            classes and for contacting you regarding these classes. We will be
-            adding you, the parent/guardian, to specific Whatsapp Groups, for
-            ease of communication relating to classes. If you would not like to
-            be added to the Whatsapp Group, please advise us accordingly.</small
-          >
-        </p>
-        <form v-if="!formSend" class="contact-form">
-          <input
-            class="text"
-            type="text"
-            minlength="3"
-            placeholder="Students First Name*"
-            v-model.trim="first_name"
-            required
-          />
-
-          <input
-            class="text"
-            type="text"
-            minlength="3"
-            placeholder="Students Surname*"
-            v-model.trim="last_name"
-            required
-          />
-
-          <input
-            class="email"
-            type="email"
-            name="email"
-            v-model.trim="email"
-            placeholder="Email*"
-            required
-          />
-
-          <!-- Date of Birth -->
-          <div id="dobWrapper">
-            <div class="text"><p>Date of Birth:&nbsp;</p></div>
-            <div class="date">
+        <h1 class="formHeading">Enrollment Form</h1>
+        <form
+          v-if="!formSend"
+          @submit.prevent="formValidate"
+          class="contact-form">
+          <div class="fromWrapper">
+            <div class="flex">
+              <label for="first_name">Students First Name:</label>
               <input
-                type="number"
-                name="day"
-                minlength="2"
-                maxlength="2"
-                placeholder="Day*"
-                v-model="day"
-                required
-              />
+                id="first_name"
+                class="text"
+                type="text"
+                minlength="3"
+                @input="validateFirstName"
+                v-model.trim="first_name"
+                required />
+              <p class="ValError" v-if="errors.first_name">
+                {{ errors.first_name }}
+              </p>
             </div>
-            &nbsp;/&nbsp;
-            <div class="date">
+
+            <div class="flex">
+              <label for="first_name">Last Name:</label>
               <input
-                type="number"
-                name="mth"
-                minlength="2"
-                maxlength="2"
-                placeholder="Mth*"
-                v-model="month"
-                required
-              />
+                id="last_name"
+                class="text"
+                type="text"
+                minlength="3"
+                @input="validateLastName"
+                v-model="last_name"
+                required />
+              <p class="ValError" v-if="errors.last_name">
+                {{ errors.last_name }}
+              </p>
             </div>
-            &nbsp;/&nbsp;
-            <div class="year">
+            <div class="flex">
+              <label for="email">Email:</label>
               <input
-                type="number"
-                name="year"
-                minlength="4"
-                maxlength="4"
-                placeholder="Year*"
-                v-model="year"
-                required
-              />
+                id="email"
+                class="email"
+                type="email"
+                name="email"
+                v-model="email"
+                @input="validateEmail"
+                required />
+              <p class="ValError" v-if="errors.email">{{ errors.email }}</p>
+            </div>
+            <!-- Date of Birth -->
+            <div class="flex">
+              <label for="dob">Date of Birth</label>
+              <input
+                id="dob"
+                type="date"
+                name="dob"
+                v-model="dob"
+                min="01-01-1940"
+                @input="validateDob" />
+              <p class="ValError" v-if="errors.dob">{{ errors.dob }}</p>
+            </div>
+            <div class="flex">
+              <label for="dob">Guardian</label>
+              <input
+                id="guardian"
+                class="text"
+                type="text"
+                placeholder="Only if needed"
+                name="guardian"
+                @input="validateGuardian"
+                v-model="guardian" />
+              <p class="ValError" v-if="errors.guardian">
+                {{ errors.guardian }}
+              </p>
+            </div>
+            <div class="flex">
+              <label for="contact_number">Contact Number</label>
+              <input
+                type="tel"
+                name="contact_number"
+                minlength="5"
+                v-model.trim="contact_number"
+                @input="validateContactNumber"
+                required />
+              <p class="ValError" v-if="errors.contact_number">
+                {{ errors.contact_number }}
+              </p>
             </div>
           </div>
-          <input
-            hidden
-            readonly
-            type="text"
-            name="age"
-            placeholder="Students Age"
-            v-model="age"
-          />
-          <input
-            v-if="!isLegal"
-            class="text"
-            type="text"
-            name="guardian"
-            minlength="6"
-            placeholder="Parent/Guardian Full Name*"
-            v-model.trim="guardian"
-            required
-          />
-          <input
-            type="tel"
-            name="contact_number"
-            minlength="5"
-            placeholder="Contact Number*"
-            v-model.trim="contact_number"
-            required
-          />
-          <input
-            type="tel"
-            name="emergency_number"
-            minlength="5"
-            placeholder="Emergency Contact Number*"
-            v-model.trim="emergency_number"
-          />
-          <p>
-            Any other relevant details that we may need to know to enable us to
-            provide you with the best possible training. Please contact us
-            directly to discuss any specific physical or emotional
-            limitations/injuries. <br />(This information will be kept in the
-            strictest of confidence)
-          </p>
+          <div class="center">
+            <p>
+              Any other relevant details that we may need to know to enable us
+              to provide you with the best possible training. Please contact us
+              directly to discuss any specific physical or emotional
+              limitations/injuries. <br />(This information will be kept in the
+              strictest of confidence)
+            </p>
+          </div>
           <div class="termanconditons">
-            <h2>
-              Terms and Conditions of Peninsula Ballet.
-            </h2>
+            <h2>Terms and Conditions of Peninsula Ballet.</h2>
             <ul>
               <li>
                 Ballet fees may be paid PER MONTH on the 1st of the month, ORPER
@@ -185,12 +158,11 @@
           </div>
           <div class="checkBox">
             <input
-              style="width:2rem;"
+              style="width: 2rem"
               type="checkbox"
               value=""
               id="guardianConsent"
-              required
-            />
+              required />
             <label for="guardianConsent">
               I hereby <span>consent</span> to the information of my child/the
               child I have Guardianship of, being sent via this
@@ -209,11 +181,10 @@
           <div class="checkBox">
             <input
               type="checkbox"
-              style="width:1.2rem;"
+              style="width: 1.2rem"
               value=""
               id="phone"
-              required
-            />
+              required />
             <label for="phone">
               I hereby <span>consent</span> to my
               <span>phone number being added </span>to the relevant class
@@ -241,19 +212,34 @@
               type="checkbox"
               value=""
               id="virtualSign"
-              required
-            />
+              required />
             <label class="" for="virtualSign">
               I agree and accept that checking this checkbox is akin to my
               signature.
             </label>
           </div>
+          <div class="center">
+            <p>
+              The Peninsula Ballet School
+              <small
+                >is compliant with the Protection of Personal Information Act 4
+                of 2013 (POPIA). The information that you submit via this online
+                form is safeguarded through industry-standard security layer
+                protocols (SSL or TSL) offering protection from malware and
+                viruses. Your information will only be used for the purpose of
+                enrollment in our classes and for contacting you regarding these
+                classes. We will be adding you, the parent/guardian, to specific
+                Whatsapp Groups, for ease of communication relating to classes.
+                If you would not like to be added to the Whatsapp Group, please
+                advise us accordingly.</small
+              >
+            </p>
+          </div>
           <div id="botCheck">
             <img
               id="bot-img"
               :src="require('@/assets/images/newbotbal.png')"
-              alt="A picture of a word."
-            />
+              alt="A picture of a word." />
             <label for="notBot"
               >Please type the word above in the box below</label
             ><br />
@@ -263,18 +249,13 @@
               name="notBot"
               class="inputStyle"
               placeholder="Check to see if you are a human"
-              required
-            />
+              required />
           </div>
           <br />
 
-          <base-btn
-            type="submit"
-            mode="enrollment"
-            :disabled="isDisabled"
-            @click.prevent="formValidate"
-            >{{ dynamicBtn }}</base-btn
-          >
+          <base-btn type="submit" mode="enrollment" :disabled="isDisabled">
+            {{ dynamicBtn }}
+          </base-btn>
         </form>
       </div>
     </div>
@@ -294,18 +275,18 @@
         guardian: "",
         contact_number: "",
         emergency_number: "",
-        day: "",
-        month: "",
-        year: "",
-        age: null,
-        isLegal: false,
-        validInput: false,
+        dob: "",
+
         isDisabled: false,
         formSend: false,
+        errors: {
+          first_name: "",
+          email: "",
+        },
 
         enrolImg: {
-          backgroundImage: `url(${require("@/assets/images/little_dancerD.jpg")})`
-        }
+          backgroundImage: `url(${require("@/assets/images/little_dancerD.jpg")})`,
+        },
       };
     },
     watch: {
@@ -314,39 +295,90 @@
           this.sendForm();
         }
       },
-      year() {
-        this.checkYear();
-      },
-      contact_number() {
-        this.emergency_number = this.contact_number;
-      }
     },
 
     computed: {
       dynamicBtn() {
         if (this.formSend) return "Sending...";
         return "Enroll";
-      }
+      },
     },
 
     methods: {
+      validateFirstName() {
+        this.errors.first_name =
+          this.first_name.length >= 3
+            ? ""
+            : "First Name must be at least 3 characters.";
+      },
+      validateLastName() {
+        this.errors.last_name =
+          this.last_name.length >= 3
+            ? ""
+            : "Last Name must be at least 3 characters.";
+      },
+      validateEmail() {
+        const regex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+        this.errors.email = regex.test(this.email)
+          ? ""
+          : "Invalid email address.";
+      },
+      validateDob() {
+        // Ensure the input is a valid date
+        if (isNaN(Date.parse(this.dob))) {
+          this.errors.dob = "Please enter a valid date.";
+          return;
+        }
+
+        // Create a date object from the input
+        const dob = new Date(this.dob);
+
+        // Get today's date with the time set to 00:00:00 for a fair comparison
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        // Check if the DOB is not in the future
+        this.errors.dob =
+          dob < today ? "" : "Date of birth cannot be in the future.";
+      },
+      validateGuardian() {
+        this.errors.guardian =
+          this.guardian.length >= 3
+            ? ""
+            : "Please enter a valid guardian name.";
+      },
+      validateContactNumber() {
+        const contactNumber = this.contactNumber.trim();
+
+        // Check if the contact number is numeric and within the acceptable length range (7 to 15 digits)
+        if (/^\d{7,15}$/.test(contactNumber)) {
+          this.errors.contactNumber = "";
+        } else {
+          this.errors.contactNumber = "Please enter a valid contact number.";
+        }
+      },
+
       formValidate() {
-        this.isDisabled = true;
         try {
+          this.validateFirstName();
+          this.validateLastName();
+          this.validateEmail();
+          this.validateDob();
+          this.ContactNumber();
+
           if (
-            this.first_name !== "" ||
-            this.last_name !== "" ||
-            this.email !== "" ||
-            this.email.includes("@") ||
-            this.email.includes(".") ||
-            this.contact_number !== "" ||
-            this.age !== null
+            !this.errors.first_name &&
+            !this.errors.last_name &&
+            !this.errors.email &&
+            !this.errors.dob &&
+            !this.errors.contactNumber
           ) {
             this.validInput = true;
+            this.isDisabled = true;
+            this.sendForm();
           }
         } catch (error) {
           console.error("error:", error);
-          this.validInput = false;
           this.isDisabled = false;
           return;
         }
@@ -354,28 +386,35 @@
       sendForm() {
         let headersList = {
           Authorization: "",
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         };
         let data = {
           first_name: this.first_name,
           last_name: this.last_name,
+          dob: this.dob,
           email: this.email,
           guardian: this.guardian,
           contact_number: this.contact_number,
           emergency_number: this.emergency_number,
-          age: this.age
         };
         let reqOptions = {
+          // url: "https://peninsula-ballet-backend.herokuapp.com/api/enrollment/",
+          url: "http://127.0.0.1:8000/api/enrollment/",
+          method: "POST",
+          headers: headersList,
+          data: data,
+        };
+        axios({
           url: "https://peninsula-ballet-backend.herokuapp.com/api/enrollment/",
           // url: "http://127.0.0.1:8000/api/enrollment/",
           method: "POST",
           headers: headersList,
-          data: data
-        };
-
-        axios
-          .request(reqOptions)
-          .then(response => {
+          data: data,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => {
             if (response.status === 202) {
               this.formSend = true;
               setTimeout(() => {
@@ -384,34 +423,51 @@
               }, 10000);
             }
           })
-          .catch(err => {
+          .catch((err) => {
             console.error("catch error:", err);
             this.isDisabled = false;
           });
       },
-      checkYear() {
-        const year = new Date();
-        const thisYear = year.getFullYear();
-        const birthYear = this.year;
-        this.age = thisYear - birthYear;
-        this.age < 19 ? (this.isLegal = false) : (this.isLegal = true);
-      }
-    }
+    },
   };
 </script>
 
 <style scoped>
+  .flex {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+  }
+  .fromWrapper {
+    margin: auto;
+    max-width: 500px;
+  }
+  .formHeading {
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ValError {
+    color: red;
+    font-size: 0.8rem;
+    margin: 0;
+  }
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
   span {
     font-weight: bold;
     font-size: 1.1rem;
   }
+
   #enrol__Section {
-    display: flex;
     position: relative;
     height: fit-content;
     color: white;
     min-height: 100vh;
   }
+
   .enrol__Img {
     width: 100%;
     display: flex;
@@ -422,6 +478,7 @@
     background-attachment: fixed;
     position: relative;
   }
+
   .enrol__wrapper {
     margin-top: 5rem;
     margin-bottom: 2rem;
@@ -443,17 +500,16 @@
     margin: 0.5rem 0;
     line-height: 1.2rem;
   }
+
   form {
     display: flex;
     flex-direction: column;
   }
+
   input {
     background-color: rgb(247, 224, 236);
-    margin: 0.5rem;
     font-size: 1rem;
     width: 300px;
-    margin-left: auto;
-    margin-right: auto;
     height: 2em;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -461,18 +517,23 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
   }
+
   .formBtn {
     transition: all 0.1s linear;
   }
+
   .formBtn:active {
     transform: scale(0.9);
   }
+
   .text {
     text-transform: capitalize;
   }
+
   .email {
     text-transform: lowercase;
   }
+
   textarea {
     background-color: rgb(247, 224, 236);
     margin: 0.5rem;
@@ -484,12 +545,14 @@
     margin-right: auto;
     font-family: inherit;
   }
+
   #dobWrapper {
     display: flex;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
   }
+
   #dobWrapper input {
     width: 3.5rem;
   }
@@ -508,6 +571,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   /* #botCheck label {
   margin-bottom: -1rem;
 } */
@@ -516,11 +580,13 @@
     margin-right: auto;
     transform: scale(1.4);
   }
+
   .checkBox {
     margin: 0.5rem 0;
     display: flex;
     align-items: center;
   }
+
   .checkBox input {
     font-size: 0.6rem;
     width: 1rem;
@@ -530,13 +596,16 @@
   .termanconditons {
     margin: 1rem;
   }
+
   .termanconditons h2 {
     margin-bottom: 1rem;
     text-align: center;
   }
+
   ul {
     list-style-image: url("../../assets/images/shoe15.svg");
   }
+
   li {
     /* list-style: upper-roman; */
     line-height: 1.4rem;
@@ -547,24 +616,29 @@
     margin-top: 1em;
     padding: 0.25em 2em;
   }
+
   .tandc_heading {
     text-align: center;
     margin: 1rem 0;
     font-size: 2rem;
   }
+
   @media screen and (max-width: 880px) {
     .enrol__wrapper {
       margin: 5rem auto 2rem auto;
       max-width: 80%;
     }
   }
+
   @media screen and (max-width: 400px) {
     input {
       width: 100%;
     }
+
     textarea {
       width: 93%;
     }
+
     .enrol__wrapper {
       margin: 7rem auto 2rem auto;
       padding: 0.2rem;
