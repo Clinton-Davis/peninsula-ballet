@@ -11,7 +11,7 @@ export default function windowScrollPosition(propertyName) {
       if (!this.$isServer) {
         this._scrollListener = () => {
           // window.pageX/YOffset is equivalent to window.scrollX/Y, but works in IE
-          // We round values because high-DPI devies can provide some really nasty subpixel values
+          // We round values because high-DPI devices can provide some really nasty subpixel values
           this[propertyName] = [
             Math.round(window.pageXOffset),
             Math.round(window.pageYOffset),

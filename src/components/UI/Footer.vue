@@ -5,16 +5,14 @@
         <img
           class="footer_logo"
           :src="require('@/assets/images/BSLogo.png')"
-          alt="Peninisula Ballet School Logo"
-        />
+          alt="Peninisula Ballet School Logo" />
         <img
           class="footer_logo"
           :src="require('@/assets/images/RAD_logo_black_small_mb.jpg')"
-          alt="RAD Registered Teacher Logo"
-        />
+          alt="RAD Registered Teacher Logo" />
       </div>
       <div class="main_footer">
-        <h3 class="feet ">Pages</h3>
+        <h3 class="feet">Pages</h3>
         <ul class="pages">
           <li>
             <router-link class="feet" to="/welcome">Welcome</router-link>
@@ -52,53 +50,33 @@
         <a
           href="mailto:tracychaston@gmail.com"
           class="feet text_center"
-          aria-label="Contact Us"
-        >
+          aria-label="Contact Us">
           <img
             class="mail_icon"
             :src="require('@/assets/images/email-svgrepo-com.svg')"
-            alt="email icon"
-          />
+            alt="email icon" />
           Contact Us</a
         >
-        <a
-          href="https://ecoengineered.co.za/"
-          target="_blank"
-          rel="noopener noreferrer"
-          label="Eco Engineered Sanitising is used."
-          aria-label="Eco Engineered Sanitising is used."
-        >
-          <img
-            class="footer_logo"
-            :src="
-              require('@/assets/images/eco_engineered_sanitising_Trans.png')
-            "
-            alt="Eco Engineered Sanitising Logo"
-          />
-        </a>
       </div>
     </div>
     <div class="sub_footer_container">
       <div class="subfooter feet vt">
-        &copy; Peninisula Ballet <span>{{ year }}</span>
+        &copy; Peninsula Ballet <span>{{ year }}</span>
       </div>
       <div class="subfooter feet">
         <a
           class="clint_link"
           href="https://www.digital-web.solutions/"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           <img
             class="icons"
             :src="require('@/assets/images/logo_white.svg')"
-            alt="email icon"
-          />
+            alt="email icon" />
           <img
             class="cd_icon icons spinning"
             :src="require('@/assets/images/color_icon__blue_favicon.svg')"
-            alt="email icon"
-          />
+            alt="email icon" />
         </a>
       </div>
     </div>
@@ -109,13 +87,13 @@
   export default {
     data() {
       return {
-        year: ""
+        year: "",
       };
     },
     mounted() {
       const date = new Date();
       return (this.year = date.getFullYear());
-    }
+    },
   };
 </script>
 

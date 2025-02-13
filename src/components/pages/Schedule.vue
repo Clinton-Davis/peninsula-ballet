@@ -2,7 +2,10 @@
   <section id="schedule__Section">
     <div class="schedule__Img" :style="cssProps">
       <div class="schedule__wrapper">
-        <div class="schedule__content">
+        <div class="schedule__content" id="printableSchedule">
+          <button @click="printSchedule" class="print-button">
+            Download Schedule
+          </button>
           <div class="schedule__info">
             <h2>Fish Hoek Classes</h2>
             <br />
@@ -15,127 +18,123 @@
             </h4>
             <br />
           </div>
-          <!-- MONDAY-TUES  -->
-          <div class="flex">
-            <div class="schedule__tables">
-              <table>
-                <thead>
-                  <th>MONDAY</th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Grade 3</td>
-                    <td class="tRight">3:15 <span>to</span> 4:00</td>
-                  </tr>
-                  <tr>
-                    <td>Intermediate (H)</td>
-                    <td class="tRight">4:00 <span>to</span> 4:45</td>
-                  </tr>
-                  <tr>
-                    <td>Pointe & Strength</td>
-                    <td class="tRight">4:45 <span>to</span> 5:45</td>
-                  </tr>
-                </tbody>
-              </table>
+          <div class="schedule__grid">
+            <div class="schedule__day">
+              <h3>MONDAY</h3>
+              <hr />
+              <ul>
+                <li>
+                  <span class="class-name">Grade 5</span>
+                  <span class="class-time">3:30 - 4:15</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Intermediate</span>
+                  <span class="class-time">4:30 - 5:30</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Senior Open Class</span>
+                  <span class="class-time">5:30 - 6:45</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Grade 6</span>
+                  <span class="class-time">7:00 - 8:00</span>
+                </li>
+              </ul>
             </div>
-            <div class="schedule__tables">
-              <table class="">
-                <thead>
-                  <th>TUESDAY</th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Grade 1</td>
-                    <td class="tRight">3:15 <span>to</span> 4:00</td>
-                  </tr>
-                  <tr>
-                    <td>Grade 4</td>
-                    <td class="tRight">4:00 <span>to</span> 4:45</td>
-                  </tr>
-                  <tr>
-                    <td>Intermediate</td>
-                    <td class="tRight">5:00 <span>to</span> 6:00</td>
-                  </tr>
-                  <tr>
-                    <td>Open / Tone</td>
-                    <td class="tRight">6:00 <span>to</span> 7:00</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="schedule__day">
+              <h3>TUESDAY</h3>
+              <hr />
+              <ul>
+                <li>
+                  <span class="class-name">Grade 3</span>
+                  <span class="class-time">3:30 - 4:15</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Intermediate Foundation</span>
+                  <span class="class-time">4:15 - 5:00</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name"
+                    >Intermediate Foundation (exam class)</span
+                  >
+                  <span class="class-time">5:00 - 6:00</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Advanced 1</span>
+                  <span class="class-time">6:00 - 7:00</span>
+                </li>
+              </ul>
             </div>
-          </div>
-          <!-- WED-THURS  -->
-          <div class="flex">
-            <div class="schedule__tables">
-              <table>
-                <thead>
-                  <th>WEDNESDAY</th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Primary / Grade 1</td>
-                    <td class="tRight">3:00 <span>to</span> 3:45</td>
-                  </tr>
-                  <tr>
-                    <td>Flamenco (Junior)</td>
-                    <td class="tRight">3:45 <span>to</span> 4:30</td>
-                  </tr>
-                  <tr>
-                    <td>Grade 5</td>
-                    <td class="tRight">4:30 <span>to</span> 5:15</td>
-                  </tr>
-
-                  <tr>
-                    <td>Intermediate</td>
-                    <td class="tRight">5:15 <span>to</span> 6:15</td>
-                  </tr>
-                  <tr>
-                    <td>Advanced 1</td>
-                    <td class="tRight">6:00 <span>to</span> 7:15</td>
-                  </tr>
-                  <tr>
-                    <td>Ballroom</td>
-                    <td class="tRight">7:15 <span>to</span> 8:15</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="schedule__day">
+              <h3>WEDNESDAY</h3>
+              <hr />
+              <ul>
+                <li>
+                  <span class="class-name">Pre-Primary</span>
+                  <span class="class-time">3:00 - 3:30</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Grade 1</span>
+                  <span class="class-time">3:30 - 4:15</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Uno (Flamenco)</span>
+                  <span class="class-time">4:15 - 5:00</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Intermediate</span>
+                  <span class="class-time">5:00 - 6:00</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Grade 6</span>
+                  <span class="class-time">6:00 - 6:45</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Advanced 1</span>
+                  <span class="class-time">6:45 - 7:45</span>
+                </li>
+              </ul>
             </div>
-            <div class="schedule__tables">
-              <table class="">
-                <thead>
-                  <th>THURSDAY</th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Grade 2</td>
-                    <td class="tRight">2:15 <span>to</span> 3:00</td>
-                  </tr>
-                  <tr>
-                    <td>Grade 3</td>
-                    <td class="tRight">3:00 <span>to</span> 3:45</td>
-                  </tr>
-                  <tr>
-                    <td>Grade 4</td>
-                    <td class="tRight">3:45 <span>to</span> 4:30</td>
-                  </tr>
-                  <tr>
-                    <td>Intermediate Foundation</td>
-                    <td class="tRight">4:30 <span>to</span> 5:15</td>
-                  </tr>
-                  <tr>
-                    <td>Advanced 1</td>
-                    <td class="tRight">5:15 <span>to</span> 6:15</td>
-                  </tr>
-                  <tr>
-                    <td>Advanced 2</td>
-                    <td class="tRight">6:15 <span>to</span> 8:30</td>
-                  </tr>
-                  <tr>
-                    <td>Flamenco (Senior)</td>
-                    <td class="tRight">6:15 <span>to</span> 8:30</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="schedule__day">
+              <h3>THURSDAY</h3>
+              <hr />
+              <ul>
+                <li>
+                  <span class="class-name">Uno (Flamenco)</span>
+                  <span class="class-time">3:00 - 3:45</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Grade 3</span>
+                  <span class="class-time">3:45 - 4:30</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Grade 5</span>
+                  <span class="class-time">4:30 - 5:15</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Intermediate Foundation</span>
+                  <span class="class-time">5:15 - 6:15</span>
+                </li>
+                <hr />
+                <li>
+                  <span class="class-name">Flamenco</span>
+                  <span class="class-time">6:15 - 7:15</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -153,10 +152,49 @@
         },
       };
     },
+    methods: {
+      printSchedule() {
+        const printableContent = document
+          .getElementById("printableSchedule")
+          .cloneNode(true);
+        const originalBody = document.body.innerHTML;
+
+        document.body.innerHTML = "";
+        document.body.appendChild(printableContent);
+        window.print();
+        document.body.innerHTML = originalBody;
+        window.location.reload();
+      },
+    },
   };
 </script>
 
 <style scoped>
+  .schedule__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  .schedule__day {
+    margin-left: auto;
+    margin-right: auto;
+    width: 25rem;
+    padding: 1rem;
+    background: rgba(209, 231, 245, 0.795);
+    max-width: 25rem;
+    border-radius: 10px;
+    box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
+      0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
+    margin-bottom: 0.2rem;
+  }
+  .class-name {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .class-time {
+    float: right;
+    font-size: 1rem;
+  }
   #schedule__Section {
     min-height: calc(100vh - 10vh);
     display: flex;
@@ -180,7 +218,7 @@
   .schedule__wrapper {
     margin: 6rem 6rem 2rem auto;
     padding: 2rem;
-    max-width: 50%;
+    width: 30rem;
     box-shadow: 1px 20px 25px rgba(0, 0, 0, 0.3);
     background-image: linear-gradient(
       to bottom right,
@@ -197,7 +235,7 @@
     display: flex;
     flex-direction: column;
     width: 20rem;
-    margin: 0.25rem;
+    margin: 1rem;
   }
   .float_left {
     margin-left: auto;
@@ -215,41 +253,14 @@
     text-align: center;
     text-shadow: 1px 1px rgba(255, 255, 255, 0.35);
   }
-  table {
-    color: black;
-    border: 1px solid rgb(135, 206, 250);
-    background-color: rgba(209, 231, 245, 0.795);
-    margin: 0.5rem 0;
-    padding: 15px;
-    min-height: 12rem;
-    border-radius: 10px;
-    box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
-      0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
-    border-radius: 20px;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
-  .schedule__table-div {
-    color: black;
-    border: 1px solid rgb(135, 206, 250);
-    background-color: rgba(209, 231, 245, 0.795);
-    margin: 0.5rem;
-
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
-      0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
-    border-radius: 20px;
-  }
-  th {
-    float: left;
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    font-weight: 600;
-    text-shadow: 2px 1px rgb(255, 255, 255);
-  }
-
-  .tRight {
-    float: right;
-    font-size: 1.1em;
+  li {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
   }
   @media screen and (max-width: 1344px) {
     .schedule__wrapper {
@@ -295,6 +306,35 @@
     }
     h4 {
       font-size: 1.3rem;
+    }
+  }
+  .print-button {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .print-button:hover {
+    background-color: #0056b3;
+  }
+  @media print {
+    /* Hide everything except the schedule */
+    body * {
+      display: none !important;
+    }
+    #printableSchedule,
+    #printableSchedule * {
+      display: block !important;
+      visibility: visible !important;
+    }
+    #printableSchedule {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
     }
   }
 </style>
