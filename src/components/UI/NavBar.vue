@@ -1,7 +1,7 @@
 <template>
   <nav :class="navClasses">
     <div class="logo"></div>
-    <ul class="nav-links " :class="{ nav_active: navActive }">
+    <ul class="nav-links" :class="{ nav_active: navActive }">
       <li>
         <router-link to="/welcome">Welcome</router-link>
       </li>
@@ -32,15 +32,15 @@
       <li>
         <router-link to="/attire">Attire</router-link>
       </li>
-      <li v-if="!isAuthenticated">
+      <!-- <li v-if="!isAuthenticated">
         <router-link to="/login">Login</router-link>
-      </li>
-      <li v-if="isAuthenticated">
+      </li> -->
+      <!-- <li v-if="isAuthenticated">
         <router-link to="/profile">Profile</router-link>
       </li>
       <li v-if="isAuthenticated">
         <router-link to="/logout">Logout</router-link>
-      </li>
+      </li> -->
     </ul>
     <div class="burger" @click="bugerClick">
       <div class="line" :class="burgerClasses(1)"></div>
@@ -57,13 +57,13 @@
       return {
         burgerActive: false,
         navActive: false,
-        closeNav: false
+        closeNav: false,
       };
     },
     watch: {
       $route() {
         this.closeBurger();
-      }
+      },
     },
     mounted() {
       window.addEventListener("scroll", this.handleScroll);
@@ -83,9 +83,9 @@
           eventlist_colors: this.currentPage === "eventlist",
           theEvent_colors: this.currentPage === "theEvent",
           attire_colors: this.currentPage === "attire",
-          vanish_nav: this.closeNav
+          vanish_nav: this.closeNav,
         };
-      }
+      },
     },
     methods: {
       // handleScroll(event) {
@@ -109,7 +109,7 @@
           studio_burger: this.currentPage === "studios",
           eventList_burger: this.currentPage === "eventlist",
           theEvent_burger: this.currentPage === "theEvent",
-          attire_burger: this.currentPage === "attire"
+          attire_burger: this.currentPage === "attire",
         };
 
         if (lineNum === 1) {
@@ -120,11 +120,11 @@
           baseClasses["toggle3"] = this.navActive;
         }
         return baseClasses;
-      }
+      },
     },
     beforeUnmount() {
       window.removeEventListener("scroll", this.handleScroll);
-    }
+    },
   };
 </script>
 

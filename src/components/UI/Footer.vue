@@ -15,29 +15,26 @@
         <h3 class="feet">Pages</h3>
         <ul class="pages">
           <li>
-            <router-link class="feet" to="/welcome">Welcome</router-link>
-          </li>
-          <li>
-            <router-link class="feet" to="/teachers">Teachers</router-link>
-          </li>
-
-          <li>
             <router-link class="feet" to="/schedule">Schedules</router-link>
           </li>
           <li>
-            <router-link class="feet" to="/covid">Covid</router-link>
-          </li>
-          <li>
-            <router-link class="feet" to="/enrolment">Enrol</router-link>
+            <router-link class="feet" to="/attire">Attire</router-link>
           </li>
           <li>
             <router-link class="feet" to="/studios">Studios</router-link>
           </li>
           <li>
-            <router-link class="feet" to="/eventlist">Events</router-link>
+            <router-link class="feet" to="/teachers">Teachers</router-link>
           </li>
           <li>
-            <router-link class="feet" to="/attire">Attire</router-link>
+            <router-link class="feet" to="/eventlist">Events</router-link>
+          </li>
+
+          <li>
+            <router-link class="feet" to="/enrolment">Enrol</router-link>
+          </li>
+          <li>
+            <router-link class="feet" to="/terms">Terms</router-link>
           </li>
           <li>
             <router-link class="feet text_center" to="/privacypolicy"
@@ -47,16 +44,50 @@
         </ul>
       </div>
       <div class="main_footer">
-        <a
-          href="mailto:tracychaston@gmail.com"
-          class="feet text_center"
-          aria-label="Contact Us">
-          <img
-            class="mail_icon"
-            :src="require('@/assets/images/email-svgrepo-com.svg')"
-            alt="email icon" />
-          Contact Us</a
-        >
+        <h3 class="feet">Contact</h3>
+        <ul class="pages2">
+          <li>
+            <a
+              href="mailto:tracychaston@gmail.com"
+              class="feet text_center"
+              aria-label="Contact Us">
+              <img
+                class="mail_icon"
+                :src="require('@/assets/images/social/icons8-email.png')"
+                alt="email icon" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/ThePeninsulaBalletSchool"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="feet text_center"
+              aria-label="Contact Us">
+              <img
+                class="mail_icon"
+                :src="
+                  require('@/assets/images/social/icons8-facebook-logo-94.png')
+                "
+                alt="email icon" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/peninsula_ballet_studio?igsh=MjJha3RkYjB1MTk3"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="feet text_center"
+              aria-label="Contact Us">
+              <img
+                class="mail_icon"
+                :src="
+                  require('@/assets/images/social/icons8-instagram-logo-94.png')
+                "
+                alt="email icon" />
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="sub_footer_container">
