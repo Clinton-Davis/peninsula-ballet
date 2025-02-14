@@ -1,137 +1,229 @@
 <template>
   <section>
     <article>
-      <h1>Website Privacy Policy</h1>
+      <h1>Peninsula Ballet Privacy Policy</h1>
+      <hr />
+      <p>Effective Date: 14/02/2025</p>
+      <br />
       <p>
-        The Peninsula Ballet School (“us”, “we”, or “our”) is a ballet school
-        that provides ballet and dance classes to children and adults.
+        Peninsula Ballet School ("we", "our", or "us") is committed to
+        protecting your personal information and ensuring that your privacy is
+        safeguarded.
       </p>
       <p>
-        This page informs you of the lifecycle of your Personal Information,
-        namely the collection, using of, storing, sharing and maintaining of
-        your Information when you use our site. We use your Personal Information
-        for the purposes of providing our Service to you. By using the site, you
-        agree to the collection and use of information in accordance with this
-        policy.
+        This Privacy Policy explains how we collect, use, store, share, and
+        protect your personal information in accordance with the Protection of
+        Personal Information Act (POPIA) of South Africa.
       </p>
-      <h3>Information collection and use</h3>
+      <br />
+      <hr />
+      <br />
+      <h2 class="section-heading">1. Collection of Personal Information</h2>
       <p>
-        While using our site, we may ask you to provide us with certain
-        personally identifiable information that can be used to contact or
-        identify you and to record your use of our Service. Personally
-        identifiable information may include, but is not limited to, your email
-        address, registered name, email address and phone number (“Personal
-        Information”). We collect this information for the purpose of providing
-        the Service, identifying and communicating with you, responding to your
-        requests/inquiries and improving our services.
+        We collect and process personal information to provide our services,
+        improve our offerings, and comply with legal obligations. The types of
+        personal information we collect include, but are not limited to:
       </p>
-      <h3>Storage of Personal Information</h3>
+      <br />
+      <ul class="list">
+        <li>Full name</li>
+        <li>Email address</li>
+        <li>Phone number</li>
+        <li>Residential address</li>
+        <li>Emergency contact details</li>
+        <li>Child’s name and age (for student enrolment)</li>
+        <li>Payment and billing details (if applicable)</li>
+      </ul>
+      <br />
       <p>
-        While using our site, your Personal Information will be stored
-        electronically on a secure cloud database.
+        We collect this information directly from you when you register, contact
+        us, or use our website.
       </p>
-      <h3>Log Data</h3>
-      <p>
-        When using the site, we may collect certain information automatically,
-        including, but not limited to, the type of device you use, your device’s
-        unique ID, the IP address of your device, your operating system, the
-        type of Internet browser you use and other statistics (“Log Data”).
+      <br />
+      <hr />
+      <br />
+      <h2 class="section-heading">2. Legal Basis for Processing</h2>
+      <p>We process your personal information based on:</p>
+      <br />
+      <ul class="list">
+        <li>
+          Your <strong>consent</strong> (e.g., when signing up for a class).
+        </li>
+        <li><strong>Performance of a contract</strong> (e.g., enrolment).</li>
+        <li><strong>Legal obligations</strong> and compliance.</li>
+      </ul>
+      <br />
+      <hr />
+      <br />
+      <h2 class="section-heading">3. Storage & Retention</h2>
+      <p class="content">
+        Your data is securely stored on cloud servers within South Africa or
+        compliant jurisdictions and retained only as necessary.
       </p>
-      <h3>Location information</h3>
+      <br />
+      <hr />
+      <br />
+      <h2 class="section-heading">
+        4. Children's Privacy and Parental Consent
+      </h2>
+      <div class="section-content">
+        <p>
+          As Peninsula Ballet School provides services to children, we are
+          committed to protecting minors' privacy.
+        </p>
+        <br />
+        <ul>
+          <li>
+            If you are under 18 years old, you may only provide personal
+            information with parental or guardian consent.
+          </li>
+          <li>
+            Parents or guardians may request access to, modification of, or
+            deletion of their child’s personal data at any time.
+          </li>
+        </ul>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <h2>5. How We Use Your Personal Information</h2>
+      <ul>
+        <li>Enrolment and administration of ballet and dance classes</li>
+        <li>
+          Communication regarding schedules, events, and important updates
+        </li>
+        <li>Billing and invoicing (if applicable)</li>
+        <li>Ensuring student safety and emergency contact purposes</li>
+        <li>Marketing and promotions, but only with your explicit consent</li>
+        <li>Compliance with legal and regulatory obligations</li>
+      </ul>
+      <br />
+      <hr />
+      <br />
+      <h2>6. Disclosure of Personal Information</h2>
       <p>
-        We may use and store information about your location depending on the
-        permissions you have set on your device. We use this information to
-        provide features of our Service and to improve and customise our
-        services to you. You can enable or disable location services when you
-        use our website at any time, through your device settings.
+        We do not sell or share your personal information with third parties for
+        marketing purposes. However, we may disclose your information:
       </p>
-      <h3>Cookies</h3>
+      <br />
+      <ul>
+        <li>
+          To service providers assisting us with operations (e.g., payment
+          processors, IT support)
+        </li>
+        <li>If required by law, court order, or government regulation</li>
+        <li>To protect our rights, safety, and security</li>
+      </ul>
+      <br />
+      <hr />
+      <br />
+      <h2>7. Use of Cookies and Tracking Technologies</h2>
       <p>
-        Cookies are files with a small amount of data, which may include an
-        anonymous unique identifier. We use Functional Cookies that remember who
-        you are as a user of our site. We use them to remember any preferences
-        you may have selected on our site, like saving your username, password
-        or settings. Cookies are sent to your browser from a website and
-        transferred to your device. The Cookies are used to collect information
-        in order to improve our services for you. You can instruct your browser
-        to refuse all cookies or to indicate when a cookie is being sent. The
-        Help feature on most browsers provides information on how to accept
-        cookies, disable cookies or to notify you when receiving a new cookie.
-        If you do not accept cookies, you may not be able to use some features
-        of our website and we recommend that you leave them turned on.
+        We use cookies to enhance your browsing experience. Cookies help us
+        remember user preferences and improve website functionality.
       </p>
-      <h3>Do Not Track Disclosure</h3>
       <p>
-        Do Not Track is a preference you can set in your web browser to inform
-        websites that you do not want to be tracked. You can enable or disable
-        Do Not Track by visiting the Preferences or Settings page of your web
-        browser.
+        You can disable cookies in your browser settings, but some features of
+        our website may not function properly without them.
       </p>
-      <h3>Compliance with Laws</h3>
       <p>
-        We will disclose your Personal Information where required to do so by
-        law or if we believe that such action is necessary to comply with the
-        law and the reasonable requests of law enforcement or to protect the
-        security or integrity of our Service.
+        We do not use cookies for intrusive tracking or third-party marketing.
       </p>
-      <h3>Security</h3>
-      <p>
-        The security of your Personal Information is important to us, and we
-        strive to implement and maintain reasonable, commercially acceptable
-        security procedures and practices appropriate to the nature of the
-        information we store, in order to protect it from unauthorised access,
-        destruction, use, modification, or disclosure. However, please be aware
-        that no method of transmission over the internet, or method of
-        electronic storage is completely secure and we are unable to guarantee
-        the security of the Personal Information we have collected from you.
+      <br />
+      <hr />
+      <br />
+      <h2>8. Your Rights Under POPIA</h2>
+      <ul>
+        <li>
+          <strong>Access</strong> – Request a copy of the personal information
+          we hold about you.
+        </li>
+        <li>
+          <strong>Correction</strong> – Request corrections to inaccurate or
+          incomplete personal data.
+        </li>
+        <li>
+          <strong>Deletion</strong> – Request the deletion of personal
+          information when it is no longer necessary.
+        </li>
+        <li>
+          <strong>Objection</strong> – Object to the processing of your personal
+          data for legitimate reasons.
+        </li>
+        <li>
+          <strong>Withdraw Consent</strong> – Revoke your consent at any time
+          where processing is based on consent.
+        </li>
+        <li>
+          <strong>Lodge a Complaint</strong> – If you believe your data is
+          misused, you may lodge a complaint with the
+          <a href="mailto:complaints.IR@justice.gov.za"
+            >Information Regulator of South Africa</a
+          >.
+        </li>
+      </ul>
+      <br />
+      <hr />
+      <br />
+      <h2 class="section-heading">9. Security Measures</h2>
+      <p class="content">
+        We employ industry-standard security, but no system is 100% secure.
       </p>
-      <h3>Links to Other Sites</h3>
-      <p>
-        Our site may contain links to other sites that are not operated by us.
-        If you click on a third party link, you will be directed to that third
-        party’s site. We strongly advise you to review the Privacy Policy of
-        every site you visit. We have no control over, and assume no
-        responsibility for the content, privacy policies or practices of any
-        third party sites or services.
+      <br />
+      <hr />
+      <br />
+      <h2 class="section-heading">10. Third-Party Links</h2>
+      <p class="content">
+        We are not responsible for external sites linked from our website.
       </p>
-      <h3>Aggregated statistics</h3>
-      <p>
-        We may collect statistics about the behaviour of visitors to our site.
-        We may display this information publicly or provide it to others.
-        However, we will not disclose your personally-identifying information.
+      <br />
+      <hr />
+      <br />
+      <h2 class="section-heading">11. Policy Updates</h2>
+      <p class="content">
+        We may update this policy. Continued use constitutes acceptance of
+        changes.
       </p>
-      <h3>Changes to this Privacy Policy</h3>
-      <p>
-        This Privacy Policy is effective as of 30th June 2021 and will remain in
-        effect except with respect to any changes in its provisions in the
-        future, which will be in effect immediately after being posted on this
-        page. We reserve the right to update or change our Privacy Policy at any
-        time and you should check this Privacy Policy periodically. Your
-        continued use of the site after we post any modifications to the Privacy
-        Policy on this page will constitute your acknowledgment of the
-        modifications and your consent to abide by and be bound by the modified
-        Privacy Policy.
-      </p>
-      <h3>Contact us</h3>
-      <p>
-        If you have any questions about this Privacy Policy, please contact us.
+      <br />
+      <hr />
+      <br />
+      <h2 class="section-heading">12. Contact Us</h2>
+      <p class="content">If you have any privacy-related inquiries:</p>
+      <p class="contact">
+        Email:
+        <a href="mailto:[Insert School’s Privacy Contact Email]" class="link"
+          >tracychaston@gmail.com</a
+        >
       </p>
     </article>
   </section>
 </template>
 
 <style scoped>
+  h1,
+  h2 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
   section {
-    background-color: #131313;
+    background-color: #fdd0e9;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   article {
-    margin: 1rem;
+    margin: 5rem;
     background-color: whitesmoke;
     padding: 2rem;
-    margin-top: 5%;
+    margin-top: 10%;
     box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
       0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
     border-radius: 20px;

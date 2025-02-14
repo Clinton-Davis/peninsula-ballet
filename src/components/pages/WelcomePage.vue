@@ -20,41 +20,27 @@
               </span>
             </p>
             <p>
-              Embark on a captivating journey where your child unlocks the many
-              benefits of ballet.<br />
-              Our classes not only promote physical fitness, improving
-              flexibility, strength, and posture, but they also nurture mental
-              wellbeing. Children learn focus, perseverance, and self-confidence
-              in our caring environment.
+              Discover the joy of ballet, where your child builds strength,
+              flexibility, and grace while developing focus, confidence, and
+              creativity. Our caring environment nurtures friendships and
+              lifelong skills like perseverance and teamwork.
             </p>
 
             <p>
-              As your child masters ballet techniques, they'll develop
-              discipline, creativity, and teamwork essential life skills. Our
-              studio fosters friendships and unforgettable experiences,
-              confirming that choosing Peninsula Ballet is the right decision.
+              Ballet enhances posture, prevents injury, and promotes overall
+              well-being.
             </p>
-            <p>
-              Having flexibility is essential in ballet, as it helps to prevent
-              injury and promotes muscle strength, which in turn results in good
-              posture.
-            </p>
-            <p>
-              Join us and let your child embrace the magic of ballet. Welcome to
-              Peninsula Ballet, where dreams gracefully come to life!
-            </p>
+            <p>Join us and let your child experience the magic of dance!</p>
           </div>
-          <div
-            class="welcome__enrolBtn text-Shadow-White"
-            title="Go to Enrolment Form"
-          >
-            <router-link
-              to="Enrolment"
+          <div class="button_div">
+            <button
+              @click="downloadPdf"
+              class="welcome__enrolBtn text-Shadow-White"
+              title="Download Enrolment Form"
               aria-command-name="Enrolment Form button"
-              aria-label="Link to enrolment page"
-            >
-              Enrolment Form &raquo;</router-link
-            >
+              aria-label="Download enrolment form">
+              Download Enrolment Form &raquo;
+            </button>
           </div>
         </div>
       </div>
@@ -67,15 +53,33 @@
     data() {
       return {
         cssProps: {
-          backgroundImage: `url(${require("@/assets/images/adam-walker-KRIfJDXgsiQ-unsplash.jpg")})`
-        }
+          backgroundImage: `url(${require("@/assets/images/adam-walker-KRIfJDXgsiQ-unsplash.jpg")})`,
+        },
       };
     },
-    methods: {}
+    methods: {
+      downloadPdf() {
+        // Define the file URL
+        const pdfUrl = "/extraFiles/Peninsula_Ballet_Enrolment_form.pdf";
+
+        // Create a temporary link element
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "Peninsula_Ballet_Enrolment_form.pdf"; // Force download
+
+        // Append to body, trigger click, and remove
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      },
+    },
   };
 </script>
 
 <style scoped>
+  .button_div {
+    margin: 1rem;
+  }
   #welcome__Section {
     display: flex;
     position: relative;
@@ -101,7 +105,7 @@
     z-index: 45;
     margin: 2em;
     box-shadow: 1px 20px 25px rgba(0, 0, 0, 0.3);
-    border-radius: 30px;
+
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -168,12 +172,20 @@
     z-index: 44;
   }
   .welcome__enrolBtn {
-    font-family: var(--Italianno);
-    margin-bottom: 1rem;
-    padding: 0.4em 1.4em;
-    font-size: 2.2em;
-    text-align: center;
+    /* background-color: rgb(0, 123, 255, 0.3); */
+    /* color: white; */
+    padding: 10px 20px;
+    /* font-size: 0.8em; */
+    border: none;
     cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+  }
+  .welcome__enrolBtn:hover {
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.48);
+    -webkit-box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.48);
   }
   a {
     color: inherit;

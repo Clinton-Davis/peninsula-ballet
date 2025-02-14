@@ -9,6 +9,7 @@ import Teachers from "./components/pages/Teachers.vue";
 import EventList from "./components/pages/eventPage/EventList.vue";
 import TheEvent from "./components/pages/eventPage/TheEvent.vue";
 import PrivacyPolicy from "./components/pages/PrivacyPolicy.vue";
+import Terms from "./components/pages/Terms.vue";
 import Login from "./components/pages/auth/Login.vue";
 import Register from "./components/pages/auth/Register.vue";
 import Logout from "./components/pages/auth/Logout.vue";
@@ -30,7 +31,7 @@ const router = createRouter({
       path: "/eventlist/:eventId",
       name: "theEvent",
       component: TheEvent,
-      props: true
+      props: true,
     },
     { path: "/login", name: "login", component: Login },
     { path: "/logout", name: "logout", component: Logout },
@@ -38,9 +39,10 @@ const router = createRouter({
       path: "/profile",
       name: "profile",
       component: Profile,
-      meta: { requiredAuth: true }
+      meta: { requiredAuth: true },
     },
     { path: "/privacypolicy", name: "privacypolicy", component: PrivacyPolicy },
+    { path: "/terms", name: "terms", component: Terms },
     { path: "/register", name: "register", component: Register },
     { path: "/schedule", name: "schedule", component: Schedule },
     { path: "/studios", name: "studios", component: Studios },
@@ -48,21 +50,21 @@ const router = createRouter({
       path: "/show",
       name: "show",
       component: Show,
-      meta: { requiredAuth: true }
+      meta: { requiredAuth: true },
     },
     {
       path: "/success",
       name: "PaymentSuccess",
-      component: PaymentSuccess
+      component: PaymentSuccess,
     },
     { path: "/teachers", name: "teachers", component: Teachers },
     { path: "/welcome", name: "welcome", component: WelcomePage },
-    { path: "/:notFound(.*)", component: WelcomePage }
-  ]
+    { path: "/:notFound(.*)", component: WelcomePage },
+  ],
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiredAuth)) {
+  if (to.matched.some((record) => record.meta.requiredAuth)) {
     if (store.getters["auth/isAuthenticated"]) {
       next();
     } else {

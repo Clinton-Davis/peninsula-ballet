@@ -6,7 +6,7 @@
 
 **_Peninsula Ballet_** school website is to show potential students and parents what the school is all about,
 It contain the essential information that the client and User stories have highlighted.
-It will soon have a student profile page and online pershases can be make when avaible
+It will soon have a student profile page and online preshapes can be make when avaible
 
 My clients brief was that she wanted an **_elegant_** website, with all the information that clients would need.
 The overall goal is to get more new students and give information to the existing students and parents.
