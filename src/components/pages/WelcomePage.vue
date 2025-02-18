@@ -7,23 +7,24 @@
           <h2 class="welcome__Tag text-Shadow-White">
             Passionate about teaching
           </h2>
+          <hr class="welcome__hr" />
           <div class="welcome__celebration">
             <h3 class="textShadow text-Shadow-White">
-              Celebrating A Decade of Dance.
+              Celebrating {{ yearsInBusiness }} Years of Dance.
             </h3>
           </div>
           <div class="welcome__benefits">
             <!-- <h2 class="text-Shadow-White">Welcome</h2> -->
-            <p>
+            <!-- <p>
               <span class="welcome__headder"
                 >Welcome to Peninsula Ballet!
               </span>
-            </p>
+            </p> -->
             <p>
-              Discover the joy of ballet, where your child builds strength,
-              flexibility, and grace while developing focus, confidence, and
-              creativity. Our caring environment nurtures friendships and
-              lifelong skills like perseverance and teamwork.
+              <span class="DD">D</span>iscover the joy of ballet, where your
+              child builds strength, flexibility, and grace while developing
+              focus, confidence, and creativity. Our caring environment nurtures
+              friendships and lifelong skills like perseverance and teamwork.
             </p>
 
             <p>
@@ -55,7 +56,14 @@
         cssProps: {
           backgroundImage: `url(${require("@/assets/images/adam-walker-KRIfJDXgsiQ-unsplash.jpg")})`,
         },
+        startYear: 2011,
       };
+    },
+    computed: {
+      yearsInBusiness() {
+        const currentYear = new Date().getFullYear();
+        return currentYear - this.startYear;
+      },
     },
     methods: {
       downloadPdf() {
@@ -77,6 +85,16 @@
 </script>
 
 <style scoped>
+  span.DD {
+    font-family: var(--Italianno);
+    font-size: 2.6em;
+    color: var(--lightBlack);
+    margin-right: 0.1rem;
+  }
+  .text-Shadow-White {
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+  }
+
   .button_div {
     margin: 1rem;
   }
@@ -151,6 +169,7 @@
     line-height: 1.3rem;
   }
   .welcome__celebration {
+    margin-bottom: 1rem;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -205,6 +224,12 @@
     animation: fireworks1 0.2s ease-in-out alternate-reverse 20;
     -webkit-animation: fireworks1 0.2s ease-in-out alternate-reverse 20;
     animation-delay: 1.1s;
+  }
+  .welcome__hr {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
   }
   @keyframes fireworks1 {
     from {
