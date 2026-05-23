@@ -1,110 +1,63 @@
 <template>
   <footer>
-    <div class="footer-container">
-      <div class="main_footer">
-        <img
-          class="footer_logo"
-          :src="bsLogo"
-          alt="Peninisula Ballet School Logo" />
-        <img
-          class="footer_logo"
-          :src="radLogo"
-          alt="RAD Registered Teacher Logo" />
-      </div>
-      <div class="main_footer">
-        <h3 class="feet">Pages</h3>
-        <ul class="pages">
-          <li>
-            <router-link class="feet" to="/schedule">Schedules</router-link>
-          </li>
-          <li>
-            <router-link class="feet" to="/attire">Attire</router-link>
-          </li>
-          <li>
-            <router-link class="feet" to="/studios">Studios</router-link>
-          </li>
-          <li>
-            <router-link class="feet" to="/teachers">Teachers</router-link>
-          </li>
-          <li>
-            <router-link class="feet" to="/eventlist">Events</router-link>
-          </li>
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <router-link class="footer-link" to="/schedule">Schedules</router-link>
+        <router-link class="footer-link" to="/attire">Attire</router-link>
+        <router-link class="footer-link" to="/studios">Studios</router-link>
+        <router-link class="footer-link" to="/teachers">Teachers</router-link>
+        <router-link class="footer-link" to="/eventlist">Events</router-link>
+        <router-link class="footer-link" to="/enrolment">Enrol</router-link>
+        <router-link class="footer-link" to="/terms">Terms</router-link>
+        <router-link class="footer-link" to="/privacypolicy"
+          >Privacy Policy</router-link
+        >
+      </nav>
 
-          <li>
-            <router-link class="feet" to="/enrolment">Enrol</router-link>
-          </li>
-          <li>
-            <router-link class="feet" to="/terms">Terms</router-link>
-          </li>
-          <li>
-            <router-link class="feet text_center" to="/privacypolicy"
-              >Privacy Policy</router-link
-            >
-          </li>
-        </ul>
-      </div>
-      <div class="main_footer">
-        <h3 class="feet">Contact</h3>
-        <ul class="pages2">
-          <li>
-            <a
-              href="mailto:tracychaston@gmail.com"
-              class="feet text_center"
-              aria-label="Contact Us">
-              <img
-                class="mail_icon"
-                :src="emailIcon"
-                alt="email icon" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.facebook.com/ThePeninsulaBalletSchool"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="feet text_center"
-              aria-label="Contact Us">
-              <img
-                class="mail_icon"
-                :src="facebookIcon"
-                alt="email icon" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/peninsula_ballet_studio?igsh=MjJha3RkYjB1MTk3"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="feet text_center"
-              aria-label="Contact Us">
-              <img
-                class="mail_icon"
-                :src="instagramIcon"
-                alt="email icon" />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="sub_footer_container">
-      <div class="subfooter feet vt">
-        &copy; Peninsula Ballet <span>{{ year }}</span>
-      </div>
-      <div class="subfooter feet">
+      <div class="footer-social">
         <a
-          class="clint_link"
-          href="https://www.digital-web.solutions/"
-          target="_blank"
-          rel="noopener noreferrer">
-          <img
-            class="icons"
-            :src="logoWhite"
-            alt="email icon" />
-          <img
-            class="cd_icon icons spinning"
-            :src="cdIcon"
-            alt="email icon" />
+          href="mailto:tracychaston@gmail.com"
+          class="footer-social-link"
+          aria-label="Email us"
+        >
+          <img class="social-icon" :src="emailIcon" alt="" />
         </a>
+        <a
+          href="https://www.facebook.com/ThePeninsulaBalletSchool"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-social-link"
+          aria-label="Facebook"
+        >
+          <img class="social-icon" :src="facebookIcon" alt="" />
+        </a>
+        <a
+          href="https://www.instagram.com/peninsula_ballet_studio?igsh=MjJha3RkYjB1MTk3"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-social-link"
+          aria-label="Instagram"
+        >
+          <img class="social-icon" :src="instagramIcon" alt="" />
+        </a>
+      </div>
+
+      <div class="footer-logos">
+        <img
+          class="footer-logo"
+          :src="bsLogo"
+          alt="Peninsula Ballet School logo"
+        />
+        <img
+          class="footer-logo"
+          :src="radLogo"
+          alt="RAD Registered Teacher logo"
+        />
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; Peninsula Ballet {{ year }}</p>
+       
       </div>
     </div>
   </footer>
@@ -129,117 +82,119 @@
         instagramIcon,
         logoWhite,
         cdIcon,
-        year: "",
+        year: new Date().getFullYear(),
       };
-    },
-    mounted() {
-      const date = new Date();
-      return (this.year = date.getFullYear());
     },
   };
 </script>
 
 <style scoped>
-  #logo {
-    max-width: 5rem;
-  }
-
   footer {
     width: 100%;
-    min-height: 10rem;
-    background-color: rgb(0, 0, 0);
+    background-color: #000;
   }
 
-  a {
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: revert;
-  }
-
-  h4 {
-    margin-bottom: 1rem;
-    text-align: center;
-    font-weight: 700;
-  }
-
-  .main_footer {
-    display: grid;
-    place-items: center;
-  }
-  .main_footer h3 {
-    margin-bottom: 1rem;
-  }
-
-  .mail_icon {
-    margin: 0.5rem;
-    width: 2rem;
-    vertical-align: middle;
-  }
-
-  .cd_icon {
-    width: 2rem;
-    vertical-align: middle;
-  }
-
-  .icons {
-    margin: 1rem 4px;
-    vertical-align: sub;
-  }
-
-  .footer_logo {
-    width: 10rem;
-  }
-
-  .footer-container {
-    margin: 1rem auto;
-    min-height: 10vh;
-    width: min(90%, 75rem);
-    display: grid;
-    gap: 1em;
-    grid-auto-flow: column;
-  }
-
-  .pages {
+  .footer-inner {
+    max-width: 75rem;
     margin: 0 auto;
-    display: grid;
-    gap: 1em;
-    grid-template-columns: 50% 50%;
-
-    /* place-items: center; */
+    padding: 3rem 1.5rem 2rem;
+    text-align: center;
   }
 
-  .sub_footer_container {
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.75rem;
+  }
+
+  .footer-link {
+    color: #d1d5db;
+    font-family: var(--Roboto);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-link:hover,
+  .footer-link.router-link-active {
+    color: #fff;
+  }
+
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .footer-social-link {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    opacity: 0.85;
+    transition: opacity 0.2s ease, transform 0.2s ease;
   }
 
-  @media screen and (max-width: 580px) {
-    .footer-container {
-      grid-auto-flow: row;
-    }
-    .sub_footer_container {
-      flex-direction: column;
-    }
+  .footer-social-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
   }
 
-  .feet {
-    color: var(--white);
+  .social-icon {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+  }
+
+  .footer-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .footer-logo {
+    width: 8rem;
+    max-height: 5rem;
+    object-fit: contain;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 2rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .footer-copy {
+    color: #9ca3af;
     font-family: var(--Roboto);
+    font-size: 0.85rem;
+    margin: 0;
   }
 
-  .subfooter {
-    text-align: center;
-    margin: 0 1rem;
+  .footer-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .credit-icon {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
   }
 
   .spinning {
-    animation-name: spin;
-    animation-duration: 20000ms; /* How long lasts 1 turn */
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: spin 20s linear infinite;
   }
 
   @keyframes spin {
@@ -248,6 +203,28 @@
     }
     to {
       transform: rotate(360deg);
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    .footer-inner {
+      padding: 2.5rem 1rem 1.5rem;
+    }
+
+    .footer-nav {
+      gap: 0.65rem 1.25rem;
+    }
+
+    .footer-logos {
+      gap: 1.25rem;
+    }
+
+    .footer-logo {
+      width: 6.5rem;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
     }
   }
 </style>
