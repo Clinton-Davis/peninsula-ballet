@@ -26,8 +26,6 @@
               >Login</base-btn
             >
           </form>
-          <!-- <p>If you dont have a login yet you can</p>
-        <base-btn link to="/register" mode="flat">Register here</base-btn> -->
         </base-tile>
       </div>
       <div v-else class="tile_wrapper">
@@ -40,11 +38,13 @@
 </template>
 
 <script>
-  import { mapGetters } from "vuex";
   import BaseBtn from "../../EventUI/BaseBtn.vue";
   import BaseTile from "../../EventUI/BaseTile.vue";
+  import { useAuthStore } from "@/stores/useAuthStore";
+  import { mapState } from "pinia";
 
-  import axios from "axios";
+  const API_BASE = "https://peninsula-ballet-backend.herokuapp.com";
+
   export default {
     components: { BaseTile, BaseBtn },
 
@@ -52,11 +52,11 @@
       return {
         invalidInput: false,
         email: "",
-        password: ""
+        password: "",
       };
     },
     computed: {
-      ...mapGetters("auth", ["isAuthenticated"])
+      ...mapState(useAuthStore, ["isAuthenticated"]),
     },
     methods: {
       formValidate() {
@@ -72,64 +72,59 @@
           this.loginUser();
         }
       },
-      loginUser() {
-        let headersList = {
-          Authorization: "",
-          "Content-Type": "application/json"
-        };
-        let data = {
-          username: this.email,
-          email: this.email,
-          password: this.password
-        };
-        let reqOptions = {
-          url: "https://peninsula-ballet-backend.herokuapp.com/profiles/login/",
-          method: "POST",
-          headers: headersList,
-          data: data
-        };
+      async loginUser() {
+        const authStore = useAuthStore();
 
-        axios
-          .request(reqOptions)
-          .then(response => {
-            if (response.status === 200) {
-              const token = response.data.token;
-              localStorage.setItem("accesstoken", token);
-              this.$store.dispatch("auth/set_token", token);
-              this.get_profile();
-            }
-          })
-          .catch(err => {
-            console.log(err);
+        try {
+          const res = await fetch(`${API_BASE}/profiles/login/`, {
+            method: "POST",
+            headers: {
+              Authorization: "",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              username: this.email,
+              email: this.email,
+              password: this.password,
+            }),
           });
+
+          if (res.ok) {
+            const data = await res.json();
+            const token = data.token;
+            localStorage.setItem("accesstoken", token);
+            authStore.set_token(token);
+            await this.get_profile();
+          }
+        } catch (err) {
+          console.log(err);
+        }
       },
-      get_profile() {
-        let token = localStorage.getItem("accesstoken");
-        let headersList = {
-          Authorization: "Token " + token,
-          "Content-Type": "application/json"
-        };
-        let reqOptions = {
-          url:
-            "https://peninsula-ballet-backend.herokuapp.com/api/get_user_details/",
-          method: "GET",
-          headers: headersList
-        };
-        axios
-          .request(reqOptions)
-          .then(response => {
-            if (response.status === 200) {
-              this.$store.dispatch("auth/load_data", response.data);
-              setTimeout(() => {
-                this.$router.push("/profile");
-              }, 1000);
-            }
-          })
-          .catch(err => {
-            console.log(err);
+      async get_profile() {
+        const authStore = useAuthStore();
+        const token = localStorage.getItem("accesstoken");
+
+        try {
+          const res = await fetch(`${API_BASE}/api/get_user_details/`, {
+            method: "GET",
+            headers: {
+              Authorization: "Token " + token,
+              "Content-Type": "application/json",
+            },
           });
-      }
-    }
+
+          if (res.ok) {
+            const data = await res.json();
+            authStore.load_data(data);
+            setTimeout(() => {
+              this.$router.push("/profile");
+            }, 1000);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      },
+    },
   };
 </script>
 

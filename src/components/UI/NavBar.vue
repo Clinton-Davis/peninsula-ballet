@@ -51,7 +51,9 @@
 </template>
 
 <script>
-  import { mapGetters } from "vuex";
+  import { useAuthStore } from "@/stores/useAuthStore";
+  import { mapState } from "pinia";
+
   export default {
     data() {
       return {
@@ -69,7 +71,7 @@
       window.addEventListener("scroll", this.handleScroll);
     },
     computed: {
-      ...mapGetters("auth", ["isAuthenticated"]),
+      ...mapState(useAuthStore, ["isAuthenticated"]),
       currentPage() {
         return this.$route.name;
       },

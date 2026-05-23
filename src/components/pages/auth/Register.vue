@@ -75,7 +75,9 @@
 <script>
   import BaseBtn from "../../EventUI/BaseBtn.vue";
   import BaseTile from "../../EventUI/BaseTile.vue";
-  import axios from "axios";
+
+  const API_BASE = "https://peninsula-ballet-backend.herokuapp.com";
+
   export default {
     components: { BaseTile, BaseBtn },
 
@@ -138,33 +140,33 @@
           this.formIsValid = false;
         }
       },
-      submitRegForm() {
+      async submitRegForm() {
         this.formValidate();
         if (!this.formIsValid) {
           return;
         }
 
-        let headersList = {
-          Authorization: "",
-          "Content-Type": "application/json"
-        };
-        let data = {
-          first_name: this.firstName,
-          last_name: this.lastName,
-          email: this.email,
-          password: this.password
-        };
-        let reqOptions = {
-          url:
-            "https://peninsula-ballet-backend.herokuapp.com/profiles/register/",
-          method: "POST",
-          headers: headersList,
-          data: data
-        };
+        try {
+          const res = await fetch(`${API_BASE}/profiles/register/`, {
+            method: "POST",
+            headers: {
+              Authorization: "",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              first_name: this.first_name.value,
+              last_name: this.last_name.value,
+              email: this.email.value,
+              password: this.password.value,
+            }),
+          });
 
-        axios.request(reqOptions).then(response => {
-          this.changeRoute(response);
-        });
+          if (res.ok) {
+            this.changeRoute({ status: res.status });
+          }
+        } catch (err) {
+          console.log(err);
+        }
       },
       changeRoute(response) {
         if (response.status === 201) {

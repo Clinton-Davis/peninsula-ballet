@@ -31,6 +31,8 @@
 </template>
 
 <script>
+  import studioBg from "@/assets/images/dancer_on_rock-min.jpg";
+
   export default {
     data() {
       return {
@@ -69,8 +71,8 @@
           // }
         ],
         studioImg: {
-          backgroundImage: `url(${require("@/assets/images/dancer_on_rock-min.jpg")})`
-        }
+          backgroundImage: `url(${studioBg})`,
+        },
       };
     }
   };

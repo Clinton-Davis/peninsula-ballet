@@ -50,11 +50,13 @@
 </template>
 
 <script>
+  import welcomeBg from "@/assets/images/adam-walker-KRIfJDXgsiQ-unsplash.jpg";
+
   export default {
     data() {
       return {
         cssProps: {
-          backgroundImage: `url(${require("@/assets/images/adam-walker-KRIfJDXgsiQ-unsplash.jpg")})`,
+          backgroundImage: `url(${welcomeBg})`,
         },
         startYear: 2011,
       };

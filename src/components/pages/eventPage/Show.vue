@@ -2,77 +2,62 @@
   <section class="show_section">
     <div class="show_background">
       <div class="video__wrapper">
-        <vue-vimeo-player
-          ref="player"
-          :video-id="videoID"
-          :player-width="width"
-          :player-height="height"
-          @ready="onReady"
-        >
-        </vue-vimeo-player>
+        <iframe
+          src="https://player.vimeo.com/video/626558962"
+          width="700"
+          height="500"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          @load="onReady"
+        ></iframe>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-  import axios from "axios";
-  import { vueVimeoPlayer } from "vue-vimeo-player";
+  const API_BASE = "https://peninsula-ballet-backend.herokuapp.com";
+
   export default {
     name: "Show",
-    components: { vueVimeoPlayer },
     data() {
       return {
-        videoID: "626558962",
-        height: 500,
-        width: 700,
-        options: {
-          muted: true,
-          autoplay: false
-        },
-        playerReady: false
+        playerReady: false,
       };
     },
     watch: {
-      playerReady() {
-        this.activated();
-      }
+      playerReady(value) {
+        if (value) {
+          this.activated();
+        }
+      },
     },
-
     methods: {
       onReady() {
         this.playerReady = true;
       },
-      play() {
-        this.$refs.player.play();
-      },
-      pause() {
-        this.$refs.player.pause();
-      },
+      async activated() {
+        const token = localStorage.getItem("accesstoken");
 
-      activated() {
-        let token = localStorage.getItem("accesstoken");
-        let data = { activation: 1 };
-        let headersList = {
-          Authorization: "Token " + token,
-          "Content-Type": "application/json"
-        };
-        let reqOptions = {
-          url: "https://peninsula-ballet-backend.herokuapp.com/api/activate/",
-          method: "POST",
-          headers: headersList,
-          data: data
-        };
-        axios
-          .request(reqOptions)
-          .then(response => {
-            if (response.status === 200) console.log("Activated ");
-          })
-          .catch(err => {
-            console.log(err);
+        try {
+          const res = await fetch(`${API_BASE}/api/activate/`, {
+            method: "POST",
+            headers: {
+              Authorization: "Token " + token,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ activation: 1 }),
           });
-      }
-    }
+
+          if (res.ok) {
+            console.log("Activated ");
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      },
+    },
   };
 </script>
 

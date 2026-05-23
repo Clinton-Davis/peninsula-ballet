@@ -1,12 +1,14 @@
 import App from "./App.vue";
 import { createApp } from "vue";
+import { createPinia } from "pinia";
 import { init } from "emailjs-com";
 import router from "./router";
-import store from "./store/index.js";
 
 init("user_3B9k5oVXE8HXYgesuRXAt");
 const app = createApp(App);
-app.use(store);
+const pinia = createPinia();
+
+app.use(pinia);
 app.use(router);
 router.isReady().then(() => {
   app.mount("#app");

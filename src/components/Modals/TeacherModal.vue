@@ -23,14 +23,16 @@
 </template>
 
 <script>
+  import bioBg from "@/assets/images/ladyinGrassright.jpg";
+
   export default {
     props: ["open"],
     emits: ["close"],
     data() {
       return {
         bioImg: {
-          backgroundImage: `url(${require("@/assets/images/ladyinGrassright.jpg")})`
-        }
+          backgroundImage: `url(${bioBg})`,
+        },
       };
     }
   };

@@ -128,12 +128,14 @@
 </template>
 
 <script>
+  import attireBg from "@/assets/images/agility-1850711_1280.jpg";
+
   export default {
     data() {
       return {
         attireImage: {
-          backgroundImage: `url(${require("@/assets/images/agility-1850711_1280.jpg")})`
-        }
+          backgroundImage: `url(${attireBg})`,
+        },
       };
     }
   };

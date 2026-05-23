@@ -4,11 +4,11 @@
       <div class="main_footer">
         <img
           class="footer_logo"
-          :src="require('@/assets/images/BSLogo.png')"
+          :src="bsLogo"
           alt="Peninisula Ballet School Logo" />
         <img
           class="footer_logo"
-          :src="require('@/assets/images/RAD_logo_black_small_mb.jpg')"
+          :src="radLogo"
           alt="RAD Registered Teacher Logo" />
       </div>
       <div class="main_footer">
@@ -53,7 +53,7 @@
               aria-label="Contact Us">
               <img
                 class="mail_icon"
-                :src="require('@/assets/images/social/icons8-email.png')"
+                :src="emailIcon"
                 alt="email icon" />
             </a>
           </li>
@@ -66,9 +66,7 @@
               aria-label="Contact Us">
               <img
                 class="mail_icon"
-                :src="
-                  require('@/assets/images/social/icons8-facebook-logo-94.png')
-                "
+                :src="facebookIcon"
                 alt="email icon" />
             </a>
           </li>
@@ -81,9 +79,7 @@
               aria-label="Contact Us">
               <img
                 class="mail_icon"
-                :src="
-                  require('@/assets/images/social/icons8-instagram-logo-94.png')
-                "
+                :src="instagramIcon"
                 alt="email icon" />
             </a>
           </li>
@@ -102,11 +98,11 @@
           rel="noopener noreferrer">
           <img
             class="icons"
-            :src="require('@/assets/images/logo_white.svg')"
+            :src="logoWhite"
             alt="email icon" />
           <img
             class="cd_icon icons spinning"
-            :src="require('@/assets/images/color_icon__blue_favicon.svg')"
+            :src="cdIcon"
             alt="email icon" />
         </a>
       </div>
@@ -115,9 +111,24 @@
 </template>
 
 <script>
+  import bsLogo from "@/assets/images/BSLogo.png";
+  import radLogo from "@/assets/images/RAD_logo_black_small_mb.jpg";
+  import emailIcon from "@/assets/images/social/icons8-email.png";
+  import facebookIcon from "@/assets/images/social/icons8-facebook-logo-94.png";
+  import instagramIcon from "@/assets/images/social/icons8-instagram-logo-94.png";
+  import logoWhite from "@/assets/images/logo_white.svg";
+  import cdIcon from "@/assets/images/color_icon__blue_favicon.svg";
+
   export default {
     data() {
       return {
+        bsLogo,
+        radLogo,
+        emailIcon,
+        facebookIcon,
+        instagramIcon,
+        logoWhite,
+        cdIcon,
         year: "",
       };
     },

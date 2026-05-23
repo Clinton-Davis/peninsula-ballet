@@ -33,7 +33,7 @@
 </template>
 
 <script>
-  import { onMounted } from "@vue/runtime-core";
+  import { onMounted } from "vue";
   import BaseBtn from "../../EventUI/BaseBtn.vue";
   import { loadStripe } from "@stripe/stripe-js";
   import BaseTile from "../../EventUI/BaseTile.vue";

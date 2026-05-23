@@ -17,7 +17,7 @@ import Profile from "./components/pages/Profile.vue";
 import Checkout from "./components/pages/eventPage/Checkout.vue";
 import PaymentSuccess from "./components/pages/eventPage/PaymentSuccess.vue";
 import Show from "./components/pages/eventPage/Show.vue";
-import store from "./store";
+import { useAuthStore } from "./stores/useAuthStore";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -65,7 +65,8 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some((record) => record.meta.requiredAuth)) {
-    if (store.getters["auth/isAuthenticated"]) {
+    const authStore = useAuthStore();
+    if (authStore.isAuthenticated) {
       next();
     } else {
       router.replace("/login");

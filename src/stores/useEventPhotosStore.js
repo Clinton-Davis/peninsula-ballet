@@ -1,9 +1,9 @@
-export default {
-  namespaced: true,
-  state() {
-    return {
-      eventPhotos: [
-        {
+import { defineStore } from "pinia";
+
+export const useEventPhotosStore = defineStore("eventPhotos", {
+  state: () => ({
+    eventPhotos: [
+{
           id: "b1",
           image:
             "https://res.cloudinary.com/peninsulaballet/image/upload/v1610617765/Ballet%20in%202020/20200917_142359_ejo73n_ksv4cu.jpg",
@@ -425,12 +425,9 @@ export default {
           image:
             "https://res.cloudinary.com/peninsulaballet/image/upload/c_scale,w_400/v1631781643/web_pages/a_decade_of_dance_1_hz4i0f.webp",
         },
-      ],
-    };
-  },
+    ],
+  }),
   getters: {
-    eventPhotos(state) {
-      return state.eventPhotos;
-    },
+    eventPhotos: (state) => state.eventPhotos,
   },
-};
+});

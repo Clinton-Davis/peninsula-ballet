@@ -144,11 +144,13 @@
 </template>
 
 <script>
+  import scheduleBg from "@/assets/images/iiona-virgin-lssGvg6tpnU-unsplash.jpg";
+
   export default {
     data() {
       return {
         cssProps: {
-          backgroundImage: `url(${require("@/assets/images/iiona-virgin-lssGvg6tpnU-unsplash.jpg")})`,
+          backgroundImage: `url(${scheduleBg})`,
         },
       };
     },

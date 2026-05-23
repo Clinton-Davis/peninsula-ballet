@@ -25,49 +25,46 @@
 
 <script>
   import BaseTile from "../EventUI/BaseTile.vue";
-
-  import { mapGetters } from "vuex";
-  import axios from "axios";
   import BaseBtn from "../EventUI/BaseBtn.vue";
+  import { useAuthStore } from "@/stores/useAuthStore";
+  import { mapState } from "pinia";
+
+  const API_BASE = "https://peninsula-ballet-backend.herokuapp.com";
+
   export default {
     components: { BaseTile, BaseBtn },
-    data() {
-      return {
-        errors: "",
-        tickets: ""
-      };
-    },
     created() {
       this.get_profile();
     },
     computed: {
-      ...mapGetters("auth", ["get_token", "get_user_data", "get_tickets"])
+      ...mapState(useAuthStore, ["get_user_data", "get_tickets"]),
     },
     methods: {
-      get_profile() {
-        let token = localStorage.getItem("accesstoken");
-        let headersList = {
-          Authorization: "Token " + token,
-          "Content-Type": "application/json"
-        };
-        let reqOptions = {
-          url:
-            "https://peninsula-ballet-backend.herokuapp.com/profiles/get_user_details/",
-          method: "GET",
-          headers: headersList
-        };
-        axios
-          .request(reqOptions)
-          .then(response => {
-            if (response.status === 200) {
-              this.$store.dispatch("auth/load_data", response.data);
+      async get_profile() {
+        const authStore = useAuthStore();
+        const token = localStorage.getItem("accesstoken");
+
+        try {
+          const res = await fetch(
+            `${API_BASE}/profiles/get_user_details/`,
+            {
+              method: "GET",
+              headers: {
+                Authorization: "Token " + token,
+                "Content-Type": "application/json",
+              },
             }
-          })
-          .catch(err => {
-            console.log(err);
-          });
-      }
-    }
+          );
+
+          if (res.ok) {
+            const data = await res.json();
+            authStore.load_data(data);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      },
+    },
   };
 </script>
 
