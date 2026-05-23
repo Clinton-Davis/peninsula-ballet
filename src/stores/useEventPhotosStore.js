@@ -427,7 +427,4 @@ export const useEventPhotosStore = defineStore("eventPhotos", {
         },
     ],
   }),
-  getters: {
-    eventPhotos: (state) => state.eventPhotos,
-  },
 });

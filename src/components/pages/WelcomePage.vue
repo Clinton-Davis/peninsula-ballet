@@ -50,7 +50,7 @@
 </template>
 
 <script>
-  import welcomeBg from "@/assets/images/adam-walker-KRIfJDXgsiQ-unsplash.jpg";
+  import welcomeBg from "@/assets/images/landingSunset.png";
 
   export default {
     data() {
@@ -178,7 +178,7 @@
   }
   .welcome__celebration h3 {
     font-family: var(--Italianno);
-    font-size: 2.2em;
+    font-size: 3.2em;
     text-align: center;
   }
   .welcome__Img {

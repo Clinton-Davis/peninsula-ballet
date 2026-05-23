@@ -141,7 +141,4 @@ export const useBalletEventsStore = defineStore("balletEvents", {
         },
     ],
   }),
-  getters: {
-    balletEvents: (state) => state.balletEvents,
-  },
 });
