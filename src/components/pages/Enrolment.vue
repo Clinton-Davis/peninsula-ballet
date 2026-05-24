@@ -21,13 +21,14 @@
 
 <script>
   import BaseBtn from "../EventUI/BaseBtn.vue";
-  import axios from "axios";
+  import enrolImgSrc from "@/assets/images/little_dancerD.jpg";
+
   export default {
     components: { BaseBtn },
     data() {
       return {
         enrolImg: {
-          backgroundImage: `url(${require("@/assets/images/little_dancerD.jpg")})`,
+          backgroundImage: `url(${enrolImgSrc})`,
         },
       };
     },

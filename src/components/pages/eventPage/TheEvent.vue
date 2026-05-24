@@ -36,10 +36,13 @@
 
 <script>
   import TheGallery from "../../EventUI/TheGallery.vue";
-  import TheVideo from "../../EventUI//TheVideo";
+  import TheVideo from "../../EventUI/TheVideo.vue";
   import BackTopTop from "../../UI/BackToTop.vue";
   import BaseBtn from "../../EventUI/BaseBtn.vue";
-  import { mapGetters } from "vuex";
+  import eventsImgSrc from "@/assets/images/rob-laughter-dark.jpg";
+  import { useBalletEventsStore } from "@/stores/useBalletEventsStore";
+  import { useEventPhotosStore } from "@/stores/useEventPhotosStore";
+  import { mapState } from "pinia";
   export default {
     name: "TheEvent",
     components: { TheGallery, TheVideo, BackTopTop, BaseBtn },
@@ -56,20 +59,13 @@
         showImages: false,
         hasVideo: false,
         eventsImg: {
-          backgroundImage: `url(${require("@/assets/images/rob-laughter-dark.jpg")})`
-        }
+          backgroundImage: `url(${eventsImgSrc})`,
+        },
       };
     },
     computed: {
-      ...mapGetters("auth", ["get_logged_status"]),
-      balletEvents() {
-        let ballet_event = this.$store.getters["bltEvn/balletEvents"];
-        // this.get_event_detail(ballet_event);
-        return ballet_event;
-      },
-      eventPhotos() {
-        return this.$store.getters["evnPic/eventPhotos"];
-      }
+      ...mapState(useBalletEventsStore, ["balletEvents"]),
+      ...mapState(useEventPhotosStore, ["eventPhotos"]),
     },
     methods: {
       loadBalletEvents(eventId) {

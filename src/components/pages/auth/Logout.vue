@@ -15,47 +15,44 @@
 <script>
   import BaseBtn from "../../EventUI/BaseBtn.vue";
   import BaseTile from "../../EventUI/BaseTile.vue";
-  import axios from "axios";
-  import { mapGetters } from "vuex";
+  import { useAuthStore } from "@/stores/useAuthStore";
+  import { mapState } from "pinia";
+
+  const API_BASE = "https://peninsula-ballet-backend.herokuapp.com";
+
   export default {
     components: { BaseTile, BaseBtn },
 
-    data() {
-      return {};
-    },
     computed: {
-      ...mapGetters("auth", ["isAuthenticated"])
+      ...mapState(useAuthStore, ["isAuthenticated"]),
     },
     methods: {
-      logout() {
-        let token = localStorage.getItem("accesstoken");
-        let headersList = {
-          Authorization: "Token " + token,
-          "Content-Type": "application/json"
-        };
-        let reqOptions = {
-          url:
-            "https://peninsula-ballet-backend.herokuapp.com/profiles/logout/",
-          method: "POST",
-          headers: headersList,
-          data: "Loging out"
-        };
-        axios
-          .request(reqOptions)
-          .then(response => {
-            if (response.status === 204) {
-              localStorage.removeItem("accesstoken");
-              this.$store.dispatch("auth/logout");
-              setTimeout(() => {
-                this.$router.push("/welcome");
-              }, 1500);
-            }
-          })
-          .catch(err => {
-            console.log(err);
+      async logout() {
+        const authStore = useAuthStore();
+        const token = localStorage.getItem("accesstoken");
+
+        try {
+          const res = await fetch(`${API_BASE}/profiles/logout/`, {
+            method: "POST",
+            headers: {
+              Authorization: "Token " + token,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify("Loging out"),
           });
-      }
-    }
+
+          if (res.status === 204) {
+            localStorage.removeItem("accesstoken");
+            authStore.logout();
+            setTimeout(() => {
+              this.$router.push("/welcome");
+            }, 1500);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      },
+    },
   };
 </script>
 

@@ -14,26 +14,20 @@
 <script>
 import NavBar from "./components/UI/NavBar.vue";
 import Footer from "./components/UI/Footer.vue";
-import windowScrollPosition from "./windowScrollPosition";
+import BackTopTop from "./components/UI/BackToTop.vue";
+import { useAuthStore } from "./stores/useAuthStore";
 
 export default {
-  // mixins: [windowScrollPosition("position")],
   components: {
     NavBar,
     Footer,
+    BackTopTop,
   },
   data() {
-    return {
-      // windwPos: this.position[1],
-    };
+    return {};
   },
   created() {
-    this.$store.dispatch("auth/autoLogin");
-  },
-  watch: {
-    windwPos() {
-      console.log(this.windwPos);
-    },
+    useAuthStore().autoLogin();
   },
 };
 </script>

@@ -16,6 +16,9 @@
 
 <script>
   import EventCard from "../../Cards/EventCard.vue";
+  import eventsImgSrc from "@/assets/images/rob-laughter-dark.jpg";
+  import { useBalletEventsStore } from "@/stores/useBalletEventsStore";
+  import { mapState } from "pinia";
 
   export default {
     components: { EventCard },
@@ -23,15 +26,13 @@
     data() {
       return {
         eventsImg: {
-          backgroundImage: `url(${require("@/assets/images/rob-laughter-dark.jpg")})`
-        }
+          backgroundImage: `url(${eventsImgSrc})`,
+        },
       };
     },
     computed: {
-      balletEvents() {
-        return this.$store.getters["bltEvn/balletEvents"];
-      }
-    }
+      ...mapState(useBalletEventsStore, ["balletEvents"]),
+    },
   };
 </script>
 <style scoped>

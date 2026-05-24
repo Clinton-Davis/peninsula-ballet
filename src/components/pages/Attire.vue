@@ -128,12 +128,14 @@
 </template>
 
 <script>
+  import attireBg from "@/assets/images/agility-1850711_1280.jpg";
+
   export default {
     data() {
       return {
         attireImage: {
-          backgroundImage: `url(${require("@/assets/images/agility-1850711_1280.jpg")})`
-        }
+          backgroundImage: `url(${attireBg})`,
+        },
       };
     }
   };
@@ -170,7 +172,6 @@
     text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   }
   #attire__section {
-    top: 1rem;
     display: flex;
     position: relative;
     height: fit-content;

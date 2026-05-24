@@ -69,12 +69,14 @@
 </template>
 
 <script>
+  import maskBg from "@/assets/images/mask.jpg";
+
   export default {
     data() {
       return {
         maskImage: {
-          backgroundImage: `url(${require("@/assets/images/mask.jpg")})`
-        }
+          backgroundImage: `url(${maskBg})`,
+        },
       };
     }
   };

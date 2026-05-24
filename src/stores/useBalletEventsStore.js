@@ -1,9 +1,9 @@
-export default {
-  namespaced: true,
-  state() {
-    return {
-      balletEvents: [
-        {
+import { defineStore } from "pinia";
+
+export const useBalletEventsStore = defineStore("balletEvents", {
+  state: () => ({
+    balletEvents: [
+{
           id: "Ballet_In_2020",
           name: "Ballet in 2020",
           desc: "2020 has been a very challenging year for everyone,  and the dance industry has had to adapt to regulations brought on by covid-19.  Our dancers rose to the challenge with online classes, and having to wear masks during classes, on return to the studio's. \
@@ -139,12 +139,6 @@ export default {
           video: "",
           imageIds: ["sh1"],
         },
-      ],
-    };
-  },
-  getters: {
-    balletEvents(state) {
-      return state.balletEvents;
-    },
-  },
-};
+    ],
+  }),
+});

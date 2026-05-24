@@ -3,44 +3,51 @@
     <div class="logo"></div>
     <ul class="nav-links" :class="{ nav_active: navActive }">
       <li>
-        <router-link to="/welcome">Welcome</router-link>
+        <a
+          href="#welcome"
+          :class="{ 'nav-link-active': isSectionActive('welcome') }"
+          @click.prevent="goToSection('welcome')"
+          >Welcome</a
+        >
       </li>
-      <!-- // TODO Finish About -->
-      <!-- <li>
-        <router-link to="/welcome">About</router-link>
-      </li> -->
-
       <li>
-        <router-link to="/teachers">Teachers</router-link>
+        <a
+          href="#teachers"
+          :class="{ 'nav-link-active': isSectionActive('teachers') }"
+          @click.prevent="goToSection('teachers')"
+          >Teachers</a
+        >
       </li>
-
+      <li>
+        <a
+          href="#studios"
+          :class="{ 'nav-link-active': isSectionActive('studios') }"
+          @click.prevent="goToSection('studios')"
+          >Studios</a
+        >
+      </li>
+      <li>
+        <a
+          href="#enrolment"
+          :class="{ 'nav-link-active': isSectionActive('enrolment') }"
+          @click.prevent="goToSection('enrolment')"
+          >Enrol</a
+        >
+      </li>
+      <li>
+        <a
+          href="#attire"
+          :class="{ 'nav-link-active': isSectionActive('attire') }"
+          @click.prevent="goToSection('attire')"
+          >Attire</a
+        >
+      </li>
       <li>
         <router-link to="/schedule">Schedules</router-link>
-      </li>
-      <!-- <li>
-        <router-link to="/covid">Covid</router-link>
-      </li> -->
-      <li>
-        <router-link to="/enrolment">Enrol</router-link>
-      </li>
-      <li>
-        <router-link to="/studios">Studios</router-link>
       </li>
       <li>
         <router-link to="/eventlist">Events</router-link>
       </li>
-      <li>
-        <router-link to="/attire">Attire</router-link>
-      </li>
-      <!-- <li v-if="!isAuthenticated">
-        <router-link to="/login">Login</router-link>
-      </li> -->
-      <!-- <li v-if="isAuthenticated">
-        <router-link to="/profile">Profile</router-link>
-      </li>
-      <li v-if="isAuthenticated">
-        <router-link to="/logout">Logout</router-link>
-      </li> -->
     </ul>
     <div class="burger" @click="bugerClick">
       <div class="line" :class="burgerClasses(1)"></div>
@@ -51,26 +58,41 @@
 </template>
 
 <script>
-  import { mapGetters } from "vuex";
+  import { useAuthStore } from "@/stores/useAuthStore";
+  import { mapState } from "pinia";
+  import {
+    HOME_SECTIONS,
+    navigateToHomeSection,
+  } from "@/utils/scrollToSection";
+
   export default {
     data() {
       return {
         burgerActive: false,
         navActive: false,
         closeNav: false,
+        activeSection: "welcome",
+        sectionObserver: null,
       };
     },
     watch: {
       $route() {
         this.closeBurger();
+        this.syncScrollSpy();
       },
     },
     mounted() {
-      window.addEventListener("scroll", this.handleScroll);
+      this.syncScrollSpy();
     },
     computed: {
-      ...mapGetters("auth", ["isAuthenticated"]),
+      ...mapState(useAuthStore, ["isAuthenticated"]),
+      isHomePage() {
+        return this.$route.path === "/welcome";
+      },
       currentPage() {
+        if (this.isHomePage) {
+          return this.activeSection;
+        }
         return this.$route.name;
       },
       navClasses() {
@@ -88,10 +110,56 @@
       },
     },
     methods: {
-      // handleScroll(event) {
-      //   let scrolY = event.path[1].scrollY;
-      //   this.closeNav = scrolY > 100;
-      // },
+      isSectionActive(section) {
+        return this.isHomePage && this.activeSection === section;
+      },
+      goToSection(section) {
+        this.closeBurger();
+        this.activeSection = section;
+        navigateToHomeSection(this.$router, section);
+      },
+      syncScrollSpy() {
+        this.teardownScrollSpy();
+
+        if (!this.isHomePage) {
+          return;
+        }
+
+        if (this.$route.hash) {
+          this.activeSection = this.$route.hash.replace("#", "") || "welcome";
+        } else {
+          this.activeSection = "welcome";
+        }
+
+        this.$nextTick(() => {
+          this.setupScrollSpy();
+        });
+      },
+      setupScrollSpy() {
+        this.sectionObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                this.activeSection = entry.target.id;
+              }
+            });
+          },
+          { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+        );
+
+        HOME_SECTIONS.forEach((sectionId) => {
+          const el = document.getElementById(sectionId);
+          if (el) {
+            this.sectionObserver.observe(el);
+          }
+        });
+      },
+      teardownScrollSpy() {
+        if (this.sectionObserver) {
+          this.sectionObserver.disconnect();
+          this.sectionObserver = null;
+        }
+      },
       bugerClick() {
         this.burgerActive = !this.burgerActive;
         this.navActive = this.burgerActive;
@@ -123,7 +191,7 @@
       },
     },
     beforeUnmount() {
-      window.removeEventListener("scroll", this.handleScroll);
+      this.teardownScrollSpy();
     },
   };
 </script>
@@ -182,7 +250,8 @@
 
   a:hover,
   a:active,
-  a.router-link-active {
+  a.router-link-active,
+  a.nav-link-active {
     background-color: rgba(160, 160, 160, 0.2);
     box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.3),
       0px 2px 21px -1px rgba(0, 0, 0, 0.3) inset;
