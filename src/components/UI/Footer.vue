@@ -3,11 +3,31 @@
     <div class="footer-inner">
       <nav class="footer-nav" aria-label="Footer navigation">
         <router-link class="footer-link" to="/schedule">Schedules</router-link>
-        <router-link class="footer-link" to="/attire">Attire</router-link>
-        <router-link class="footer-link" to="/studios">Studios</router-link>
-        <router-link class="footer-link" to="/teachers">Teachers</router-link>
+        <a
+          href="#attire"
+          class="footer-link"
+          @click.prevent="goToSection('attire')"
+          >Attire</a
+        >
+        <a
+          href="#studios"
+          class="footer-link"
+          @click.prevent="goToSection('studios')"
+          >Studios</a
+        >
+        <a
+          href="#teachers"
+          class="footer-link"
+          @click.prevent="goToSection('teachers')"
+          >Teachers</a
+        >
         <router-link class="footer-link" to="/eventlist">Events</router-link>
-        <router-link class="footer-link" to="/enrolment">Enrol</router-link>
+        <a
+          href="#enrolment"
+          class="footer-link"
+          @click.prevent="goToSection('enrolment')"
+          >Enrol</a
+        >
         <router-link class="footer-link" to="/terms">Terms</router-link>
         <router-link class="footer-link" to="/privacypolicy"
           >Privacy Policy</router-link
@@ -57,7 +77,6 @@
 
       <div class="footer-bottom">
         <p class="footer-copy">&copy; Peninsula Ballet {{ year }}</p>
-       
       </div>
     </div>
   </footer>
@@ -69,8 +88,7 @@
   import emailIcon from "@/assets/images/social/icons8-email.png";
   import facebookIcon from "@/assets/images/social/icons8-facebook-logo-94.png";
   import instagramIcon from "@/assets/images/social/icons8-instagram-logo-94.png";
-  import logoWhite from "@/assets/images/logo_white.svg";
-  import cdIcon from "@/assets/images/color_icon__blue_favicon.svg";
+  import { navigateToHomeSection } from "@/utils/scrollToSection";
 
   export default {
     data() {
@@ -80,10 +98,13 @@
         emailIcon,
         facebookIcon,
         instagramIcon,
-        logoWhite,
-        cdIcon,
         year: new Date().getFullYear(),
       };
+    },
+    methods: {
+      goToSection(section) {
+        navigateToHomeSection(this.$router, section);
+      },
     },
   };
 </script>
@@ -114,6 +135,7 @@
     font-size: 0.95rem;
     text-decoration: none;
     transition: color 0.2s ease;
+    cursor: pointer;
   }
 
   .footer-link:hover,

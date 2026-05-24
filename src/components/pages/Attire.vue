@@ -172,7 +172,6 @@
     text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   }
   #attire__section {
-    top: 1rem;
     display: flex;
     position: relative;
     height: fit-content;

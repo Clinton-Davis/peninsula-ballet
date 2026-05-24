@@ -4,24 +4,28 @@
       <div class="studio__InfoBlock">
         <div class="studio__InfoBlock-heading">
           <h1>Studios</h1>
-          <h4>
-            Before arriving please familiarize with the <br />
-            <router-link id="covidLink" to="/covid"
-              >Covid Safty Regulations</router-link
-            >
-          </h4>
         </div>
         <div class="studio__card-wrapper">
           <div
             v-for="studio in studios"
             :key="studio.id"
             class="studio__card"
-            title="Go to Google Maps"
           >
-            <a :href="studio.link" target="_blank" rel="noopener noreferrer">
-              <h2>{{ studio.name }}</h2>
-              <p>{{ studio.address }}</p>
-              <img :src="studio.mapImage" alt="Map image" />
+            <h2>{{ studio.name }}</h2>
+            <p>{{ studio.address }}</p>
+            <img :src="studio.mapImage" alt="Map image" />
+            <a
+              class="studio__map-btn"
+              :href="studio.link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="studio__map-btn-icon"
+                src="https://img.icons8.com/color/22/000000/google-maps.png"
+                alt=""
+              />
+              Go to Google Maps
             </a>
           </div>
         </div>
@@ -31,7 +35,7 @@
 </template>
 
 <script>
-  import studioBg from "@/assets/images/dancer_on_rock-min.jpg";
+  import studioBg from "@/assets/images/Dancer_on_rock-min.png";
 
   export default {
     data() {
@@ -90,27 +94,27 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     background-size: cover;
-    background-position: top;
+    background-position: center;
     position: relative;
+    min-height: 100vh;
   }
   .studio__InfoBlock {
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: fit-content;
-    min-height: calc(100vh + 10vh);
-
-    margin-left: auto;
-    background-color: #6e563073;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    padding: 11vh 1.5rem 3rem;
   }
   .studio__InfoBlock-heading {
-    position: relative;
-    top: 10vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    margin: 2rem auto 4rem auto;
+    margin-bottom: 1.5rem;
     width: 100%;
   }
   .studio__card-wrapper {
@@ -118,16 +122,18 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: 1rem;
+    width: 100%;
   }
   .studio__card {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 20rem;
     height: fit-content;
     min-height: 16rem;
     margin: 1rem;
     max-width: 20rem;
+    padding: 1rem;
     position: relative;
     box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 0.75),
       0px 2px 21px -1px rgba(0, 0, 0, 0.75) inset;
@@ -137,51 +143,65 @@
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-    transition: all 0.3s ease;
   }
   h1,
   h2,
-  h4,
-  p,
-  a {
+  p {
     text-align: center;
-    padding: 0.4rem;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
-  }
-  a {
-    width: 100%;
-    min-height: 16rem;
-    cursor: pointer;
-    color: inherit;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  #covidLink {
-    display: block;
-    padding: 0.4rem;
-    min-height: 1rem;
-    color: #ecbee9;
   }
   h1 {
     font-size: 5rem;
     font-family: var(--Italianno);
     text-shadow: 1px 1px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin: 0;
+    line-height: 1;
   }
   h2 {
     font-size: 2rem;
+    padding: 0.5rem 0.75rem;
   }
 
   p {
     font-size: 1.1rem;
+    padding: 0.25rem 0.75rem 0.75rem;
   }
-  .studio__card:hover,
-  .studio__card:active {
-    transform: scale(1.1);
+
+  .studio__map-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.65rem 1.25rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #3d2f1f;
+    font-family: var(--Roboto);
+    font-size: 0.95rem;
+    font-weight: 400;
+    text-decoration: none;
+    text-shadow: none;
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
   }
-  img {
+
+  .studio__map-btn:hover,
+  .studio__map-btn:active {
+    background-color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .studio__map-btn-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .studio__card > img {
     width: 98%;
     height: auto;
     border: 1px solid black;
@@ -195,7 +215,7 @@
   }
   @media screen and (max-width: 400px) {
     .studio__card {
-      padding: 0.2rem;
+      padding: 1rem;
       max-width: 98%;
       box-shadow: 0px 2px 21px -1px rgba(0, 0, 0, 1),
         0px 2px 21px -1px rgba(0, 0, 0, 1) inset;

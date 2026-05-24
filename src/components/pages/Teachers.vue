@@ -113,7 +113,6 @@
   @media screen and (max-width: 400px) {
     #teachers__Section {
       height: fit-content;
-      top: 10vh;
     }
   }
 </style>
